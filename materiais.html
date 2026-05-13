@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Materiais executivos | TW Consulting</title>
+  <meta name="description" content="E-books e guias executivos da TW Consulting sobre estratégia, M&A, supply e IA aplicada à decisão. Conteúdo prático para CEOs, conselhos e investidores." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="TW Consulting" />
+  <meta name="theme-color" content="#07515E" />
+  <link rel="canonical" href="https://trwcon.com/materiais.html" />
+
+  <meta property="og:title" content="Materiais executivos | TW Consulting" />
+  <meta property="og:description" content="E-books e guias executivos da TW Consulting." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://trwcon.com/materiais.html" />
+  <meta property="og:site_name" content="TW Consulting" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:image" content="https://trwcon.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Materiais executivos | TW Consulting" />
+  <meta name="twitter:description" content="E-books e guias executivos da TW Consulting." />
+  <meta name="twitter:image" content="https://trwcon.com/og-image.png" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Materiais executivos TW Consulting",
+    "description": "E-books e guias executivos da TW Consulting.",
+    "url": "https://trwcon.com/materiais.html",
+    "inLanguage": "pt-BR",
+    "isPartOf": { "@id": "https://trwcon.com/#website" },
+    "publisher": { "@id": "https://trwcon.com/#organization" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/tw-content.css" />
+  <script defer src="/assets/js/tw-analytics.js"></script>
+</head>
+<body>
+
+<header class="tw-header">
+  <div class="container">
+    <div class="tw-header-inner">
+      <a href="/" class="tw-logo">
+        <div class="tw-logo-box">TW</div>
+        <div class="tw-logo-text">True Worth <span>Consulting</span></div>
+      </a>
+      <nav class="tw-nav">
+        <a href="/#solucoes">Soluções</a>
+        <a href="/#ia-aplicada">IA aplicada</a>
+        <a href="/insights.html">Insights</a>
+        <a href="/materiais.html" class="active">Materiais</a>
+        <a href="/#contato" class="tw-nav-cta">Conversar com um sócio</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section class="tw-hero">
+  <div class="container">
+    <div class="tw-hero-eyebrow">Materiais executivos</div>
+    <h1>Guias práticos para decisões críticas de margem, M&amp;A e crescimento</h1>
+    <p class="tw-hero-lede">
+      E-books e materiais aprofundados produzidos pela equipe TW. Pensados para C-levels que precisam de framework, não de slides genéricos.
+    </p>
+  </div>
+</section>
+
+<section class="tw-section">
+  <div class="container">
+
+    <div class="tw-material-grid">
+
+      <!-- ════════════════════════════════════════════
+           E-BOOK: Margem como decisão
+           Quando publicar:
+             - Substituir o href do download por /materiais/ebook-margem-como-decisao.pdf
+             - Trocar o status "Em produção" por "Disponível"
+             - Integrar o formulário com Formspree/HubSpot/RD/Mailchimp (Dia 7)
+      ════════════════════════════════════════════ -->
+      <div class="tw-material-cover">
+        <div>
+          <span class="tw-material-tag">E-book · Em produção</span>
+          <h2>Margem como <em>decisão</em> — 12 alavancas executivas</h2>
+          <p>
+            Doze alavancas concretas de crescimento, eficiência e M&amp;A para CEOs e conselhos que tratam margem como variável estratégica, não como consequência operacional.
+          </p>
+        </div>
+        <div class="tw-material-meta">
+          <div>
+            <strong>~20 páginas</strong>
+            Guia executivo
+          </div>
+          <div>
+            <strong>PDF</strong>
+            Português · Brasil
+          </div>
+          <div>
+            <strong>Em produção</strong>
+            Lista de espera aberta
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulário de captura -->
+      <div class="tw-material-form">
+        <div id="formInitial">
+          <h3>Receba o e-book em primeira mão</h3>
+          <p class="sub">Assim que a versão final estiver disponível, enviamos o PDF para o seu e-mail corporativo. Sem spam.</p>
+
+          <form id="ebookForm" onsubmit="handleEbookSubmit(event)">
+            <!-- Honeypot anti-spam -->
+            <div class="tw-form-honeypot">
+              <label>Não preencher: <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+            </div>
+
+            <div class="tw-form-group">
+              <label for="nome">Nome completo *</label>
+              <input type="text" id="nome" name="nome" required />
+            </div>
+
+            <div class="tw-form-group">
+              <label for="email">E-mail corporativo *</label>
+              <input type="email" id="email" name="email" required />
+              <div class="hint">Use um e-mail empresarial; o material é executivo.</div>
+            </div>
+
+            <div class="tw-form-group">
+              <label for="empresa">Empresa *</label>
+              <input type="text" id="empresa" name="empresa" required />
+            </div>
+
+            <div class="tw-form-group">
+              <label for="cargo">Cargo *</label>
+              <input type="text" id="cargo" name="cargo" required />
+            </div>
+
+            <div class="tw-form-group">
+              <label for="contexto">O que mais te interessa neste material? *</label>
+              <select id="contexto" name="contexto" required>
+                <option value="">Selecione...</option>
+                <option>Margem operacional sob pressão</option>
+                <option>Crescimento e go-to-market</option>
+                <option>M&amp;A, integração ou carve-out</option>
+                <option>Pricing e política comercial</option>
+                <option>Supply, sourcing e capital de giro</option>
+                <option>IA aplicada à decisão executiva</option>
+                <option>Outro</option>
+              </select>
+            </div>
+
+            <button type="submit" class="tw-form-submit">Receber o e-book quando publicado</button>
+          </form>
+        </div>
+
+        <div id="formSuccess" class="tw-form-success">
+          <h4>Recebemos sua solicitação.</h4>
+          <p>
+            Seu nome entrou na lista de espera. Assim que o e-book "Margem como decisão" estiver pronto, enviamos o PDF para o seu e-mail corporativo, com nota pessoal da equipe TW.
+          </p>
+          <!-- Quando o PDF estiver pronto, descomentar e ajustar o botão abaixo: -->
+          <!--
+          <a href="/materiais/ebook-margem-como-decisao.pdf" class="download-link" download>
+            ↓ Baixar PDF agora
+          </a>
+          -->
+          <a href="/#contato" class="download-link">Conversar com um sócio →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Roadmap de futuros materiais -->
+    <div style="margin-top: 96px;">
+      <div style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.18em; color: var(--teal-400); text-transform: uppercase; margin-bottom: 16px;">Próximos materiais</div>
+      <h2 style="font-size: 1.5rem; font-weight: 700; color: var(--teal-800); letter-spacing: -0.01em; margin-bottom: 32px;">O que está na linha de produção</h2>
+
+      <div class="tw-list-grid">
+        <div class="tw-card tw-card--coming">
+          <div class="tw-card-meta"><span>Guia · M&amp;A</span><span class="dot"></span><span class="status-soon">Em produção</span></div>
+          <h3>Tese de M&amp;A em 30 dias — checklist executivo</h3>
+          <p class="tw-card-desc">Lista prática para CEOs e PE de o que avaliar, em qual ordem, e onde priorizar profundidade analítica.</p>
+          <span class="tw-card-link disabled">Em produção</span>
+        </div>
+
+        <div class="tw-card tw-card--coming">
+          <div class="tw-card-meta"><span>Guia · Pricing</span><span class="dot"></span><span class="status-soon">Em produção</span></div>
+          <h3>Política comercial multicanal — diagnóstico em 7 perguntas</h3>
+          <p class="tw-card-desc">Sete perguntas que indicam se sua política comercial está protegendo ou destruindo margem.</p>
+          <span class="tw-card-link disabled">Em produção</span>
+        </div>
+
+        <div class="tw-card tw-card--coming">
+          <div class="tw-card-meta"><span>Guia · IA aplicada</span><span class="dot"></span><span class="status-soon">Em produção</span></div>
+          <h3>TW Decision Lens — como aplicar IA à decisão executiva</h3>
+          <p class="tw-card-desc">Manual breve do framework: onde acelerar com IA, onde manter julgamento humano, e como organizar a governança.</p>
+          <span class="tw-card-link disabled">Em produção</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="tw-footer">
+  <div class="container">
+    <div class="tw-footer-inner">
+      <div class="tw-footer-brand">
+        <a href="/" class="tw-logo">
+          <div class="tw-logo-box">TW</div>
+          <div class="tw-logo-text" style="color: #fff;">True Worth <span>Consulting</span></div>
+        </a>
+        <p>Boutique de consultoria em estratégia, M&amp;A, supply e IA aplicada para empresas que tratam margem como decisão.</p>
+      </div>
+      <div>
+        <h4>Soluções</h4>
+        <ul>
+          <li><a href="/#solucoes">Estratégia</a></li>
+          <li><a href="/#solucoes">M&amp;A</a></li>
+          <li><a href="/#solucoes">Supply</a></li>
+          <li><a href="/#ia-aplicada">IA aplicada</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="/#como-trabalhamos">Abordagem</a></li>
+          <li><a href="/insights.html">Insights</a></li>
+          <li><a href="/materiais.html">Materiais</a></li>
+          <li><a href="/glossario.html">Glossário</a></li>
+          <li><a href="/#contato">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tw-footer-bottom">
+      <span>© 2026 True Worth Consulting. Todos os direitos reservados.</span>
+      <span><a href="https://www.linkedin.com/company/trwcon/" target="_blank" rel="noopener">LinkedIn</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ════════════════════════════════════════════════════════════
+  // GATING DO E-BOOK — modo demonstração
+  // ⚠️ NÃO envia dados a nenhum destino.
+  // Quando o e-book estiver pronto E o destino integrado, ajustar:
+  //   1. Substituir handleEbookSubmit por integração real (Formspree/HubSpot/Make/Mailchimp)
+  //   2. Descomentar o link de download no #formSuccess
+  //   3. Garantir que o PDF está em /materiais/ebook-margem-como-decisao.pdf
+  // ════════════════════════════════════════════════════════════
+  function handleEbookSubmit(e) {
+    e.preventDefault();
+    // Bloqueia honeypot
+    if (e.target.elements['website'] && e.target.elements['website'].value) return false;
+    document.getElementById('formInitial').style.display = 'none';
+    document.getElementById('formSuccess').classList.add('visible');
+    // Para integração real:
+    // const data = new FormData(e.target);
+    // fetch('https://formspree.io/f/SEU_CODIGO', { method: 'POST', body: data, headers: { 'Accept': 'application/json' }})
+    //   .then(r => { /* ... */ });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quem somos | TW Consulting — Por que True Worth</title>
+  <meta name="description" content="True Worth: o valor verdadeiro que sustenta decisões. Boutique de consultoria estratégica para empresas que tratam margem como decisão." />
+  <meta name="theme-color" content="#07515E" />
+  <link rel="canonical" href="https://trwcon.com/quem-somos.html" />
+
+  <!-- Fonts: Geist + Geist Mono (mesmo sistema da home) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+  /* ───────── DESIGN TOKENS — alinhados ao sistema da home ───────── */
+  :root {
+    --ink: #0B0F12; --ink-2: #1B2228; --ink-3: #3C4750; --ink-4: #6B7680; --ink-5: #9AA4AC;
+    --rule: #DDD7C9; --rule-2: #E8E2D3;
+    --paper: #F6F4EE; --paper-2: #EFEBDF; --paper-3: #FBFAF5;
+    --teal-ink: #04383F; --teal-900: #04383F; --teal-800: #07515E; --teal-700: #0E626F;
+    --teal-600: #19717D; --teal-500: #19717D; --teal-400: #5BAAB4; --teal-300: #5BAAB4;
+    --teal-100: #D8E8E8; --teal-50: #EAF5F6;
+    --signal: #DAA55A;
+
+    --serif: 'Geist', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+    --sans:  'Geist', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+    --mono:  'Geist Mono', ui-monospace, 'SF Mono', monospace;
+
+    --max: 1320px;
+    --gutter: 48px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--paper); color: var(--ink); }
+  body {
+    font-family: var(--sans); font-weight: 400; font-size: 16px; line-height: 1.55;
+    -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); position: relative; }
+  .wrap--narrow { max-width: 1080px; }
+
+  /* type */
+  .kicker {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-4);
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .kicker::before {
+    content: ''; width: 6px; height: 6px; background: var(--signal); border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(218,165,90,0.18);
+  }
+  .kicker--inv { color: rgba(255,255,255,0.55); }
+  .kicker--inv::before { background: var(--teal-300); box-shadow: 0 0 0 4px rgba(124,201,201,0.14); }
+
+  h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; letter-spacing: -0.025em; line-height: 1.05; color: var(--ink); }
+  h1 { font-size: clamp(48px, 6.6vw, 96px); line-height: 0.98; letter-spacing: -0.028em; }
+  h2 { font-size: clamp(36px, 4.4vw, 64px); }
+  h3 { font-size: clamp(22px, 2vw, 28px); line-height: 1.18; }
+  h4 { font-size: 18px; line-height: 1.25; letter-spacing: -0.012em; }
+  .italic-em { font-style: normal; color: var(--ink-3); font-weight: 500; }
+
+  p { color: var(--ink-3); }
+  .lede { font-family: var(--serif); font-weight: 400; font-size: clamp(20px, 1.6vw, 26px); line-height: 1.4; color: var(--ink-2); letter-spacing: -0.012em; }
+  .lede em { font-style: normal; color: var(--ink-3); font-weight: 500; }
+  .body-lg { font-size: 17px; line-height: 1.65; color: var(--ink-3); }
+
+  .tag {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ink-4);
+  }
+
+  /* buttons */
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase;
+    font-weight: 500; padding: 14px 18px;
+    transition: transform .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .btn--ink { background: var(--ink); color: var(--paper); }
+  .btn--ink:hover { background: var(--teal-ink); }
+  .btn--ghost { color: var(--ink); border-bottom: 1px solid var(--ink); padding: 6px 0; gap: 8px;}
+  .btn--ghost:hover { color: var(--teal-700); border-color: var(--teal-700); }
+  .btn--inv { background: var(--paper); color: var(--ink); }
+  .btn--inv:hover { background: var(--teal-300); }
+  .btn--ghostinv { color: var(--paper); border-bottom: 1px solid rgba(246,244,238,.5); padding: 6px 0; gap: 8px;}
+  .btn--ghostinv:hover { color: var(--teal-300); border-color: var(--teal-300); }
+  .btn .arr { display: inline-block; transition: transform .2s ease; }
+  .btn:hover .arr { transform: translateX(3px); }
+
+  /* nav (replicado da home) */
+  header.nav {
+    position: sticky; top: 0; z-index: 40;
+    background: rgba(246,244,238,0.78);
+    backdrop-filter: saturate(140%) blur(8px);
+    -webkit-backdrop-filter: saturate(140%) blur(8px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-inner { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 32px; height: 64px; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand-mark {
+    width: 38px; height: 22px;
+    background-image: url('assets/logo-t-clean.png');
+    background-size: contain; background-repeat: no-repeat; background-position: center;
+    flex-shrink: 0;
+  }
+  .brand-name { font-family: var(--serif); font-size: 17px; letter-spacing: -0.02em; }
+  .brand-name b { font-weight: 500; }
+  .brand-name span { color: var(--ink-4); margin-left: 6px; font-style: italic; }
+  .nav-links { display: flex; gap: 28px; justify-self: center; }
+  .nav-links a {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--ink-3); padding: 6px 0; border-bottom: 1px solid transparent;
+    transition: color .15s, border-color .15s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--ink); border-color: var(--ink); }
+  .nav-right { display: flex; align-items: center; gap: 18px; }
+  .nav-cta {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 9px 14px; background: var(--ink); color: var(--paper);
+  }
+  .nav-cta:hover { background: var(--teal-ink); }
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .nav-inner { grid-template-columns: auto 1fr; }
+  }
+
+  /* sections */
+  section { padding: 120px 0; position: relative; }
+  section + section { border-top: 1px solid var(--rule); }
+  .section-tag {
+    position: absolute; top: 20px; left: var(--gutter);
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-4);
+  }
+  .section-tag b { color: var(--ink); font-weight: 500; }
+
+  /* ═══════════ PORQUE TRUE WORTH — HERO ═══════════ */
+  #porque {
+    padding: 80px 0 120px;
+    background: var(--paper);
+    position: relative;
+  }
+  .qs-meta {
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-4); padding-bottom: 16px; border-bottom: 1px solid var(--rule);
+  }
+  .qs-meta b { color: var(--ink); font-weight: 500; }
+
+  .qs-hero {
+    margin-top: 72px;
+    display: grid; grid-template-columns: 1fr; gap: 56px;
+  }
+
+  /* epígrafe */
+  .epigraph {
+    max-width: 920px;
+    border-left: 2px solid var(--ink);
+    padding: 8px 0 8px 28px;
+  }
+  .epigraph .quote {
+    font-family: var(--serif); font-weight: 400; font-style: italic;
+    font-size: clamp(28px, 3.6vw, 48px); line-height: 1.18; letter-spacing: -0.025em;
+    color: var(--ink); text-wrap: pretty;
+  }
+  .epigraph .source {
+    margin-top: 18px;
+    font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-4);
+  }
+  .epigraph .source b { color: var(--ink); font-weight: 500; }
+
+  /* etimologia / definição */
+  .qs-definition {
+    margin-top: 0;
+    display: grid; grid-template-columns: 240px 1fr; gap: 56px;
+    padding-top: 40px; border-top: 1px solid var(--rule);
+  }
+  .qs-definition .label {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ink-4);
+  }
+  .qs-definition .label b { color: var(--ink); font-weight: 500; display: block; margin-bottom: 6px; font-size: 13px; }
+  .qs-definition .text {
+    font-family: var(--serif); font-size: clamp(20px, 1.6vw, 24px); line-height: 1.5; color: var(--ink-2);
+    letter-spacing: -0.012em; max-width: 62ch;
+  }
+  .qs-definition .text em { font-style: italic; color: var(--ink); }
+  @media (max-width: 800px) { .qs-definition { grid-template-columns: 1fr; gap: 16px; } }
+
+  /* tese principal */
+  .qs-thesis {
+    margin-top: 24px; padding-top: 56px; border-top: 1px solid var(--rule);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end;
+  }
+  .qs-thesis-h {
+    font-family: var(--serif); font-weight: 600;
+    font-size: clamp(40px, 5vw, 72px); line-height: 1; letter-spacing: -0.03em;
+    color: var(--ink); text-wrap: pretty;
+  }
+  .qs-thesis-h em { font-style: italic; color: var(--teal-700); font-weight: 500; }
+  .qs-thesis-p { font-size: 17px; line-height: 1.65; color: var(--ink-3); max-width: 52ch; }
+  .qs-thesis-p b { color: var(--ink); font-weight: 500; }
+  @media (max-width: 1000px) { .qs-thesis { grid-template-columns: 1fr; gap: 32px; } }
+
+  /* T mark — signature flourish closing §01 */
+  .qs-signature {
+    margin-top: 64px;
+    padding-top: 36px;
+    border-top: 1px solid var(--rule);
+    display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center;
+  }
+  .qs-signature-text {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-4); line-height: 1.6;
+  }
+  .qs-signature-text b { color: var(--ink); font-weight: 500; display: block; margin-bottom: 4px; }
+  .qs-signature-mark {
+    width: clamp(220px, 28vw, 360px);
+    aspect-ratio: 690 / 264;
+    background-image: url('assets/logo-t-watermark.png');
+    background-size: contain; background-repeat: no-repeat; background-position: right center;
+    filter: brightness(0.55) contrast(1.4);
+  }
+  @media (max-width: 720px) {
+    .qs-signature { grid-template-columns: 1fr; gap: 24px; }
+    .qs-signature-mark { width: 70%; justify-self: end; }
+  }
+  /* ═══════════ QUEM SOMOS ═══════════ */
+  #quem {
+    background: var(--paper-3);
+  }
+  .quem-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: start;
+  }
+  .quem-left .kicker { margin-bottom: 18px; }
+  .quem-left h2 { margin-bottom: 28px; }
+  .quem-left h2 em { font-style: italic; color: var(--teal-700); font-weight: 500; }
+  .quem-left .lede { margin-bottom: 32px; }
+
+  .quem-right {
+    border-left: 1px solid var(--rule); padding-left: 56px;
+    display: flex; flex-direction: column; gap: 32px;
+  }
+  .quem-right .stat-row {
+    display: grid; grid-template-columns: 140px 1fr; align-items: baseline; gap: 28px;
+    padding-bottom: 28px; border-bottom: 1px dashed var(--rule);
+  }
+  .quem-right .stat-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .quem-right .stat-num {
+    font-family: var(--serif); font-weight: 500;
+    font-size: 56px; line-height: 1; letter-spacing: -0.03em; color: var(--ink);
+    font-feature-settings: 'lnum', 'tnum';
+  }
+  .quem-right .stat-text {
+    font-size: 15px; line-height: 1.55; color: var(--ink-3);
+  }
+  .quem-right .stat-text b { color: var(--ink); font-weight: 500; display: block; margin-bottom: 4px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; }
+
+  @media (max-width: 1000px) {
+    .quem-grid { grid-template-columns: 1fr; gap: 48px; }
+    .quem-right { border-left: none; padding-left: 0; padding-top: 32px; border-top: 1px solid var(--rule); }
+  }
+
+  /* manifesto block */
+  .manifesto {
+    margin-top: 80px; padding-top: 56px; border-top: 1px solid var(--rule);
+    display: grid; grid-template-columns: 1fr 2fr; gap: 64px;
+  }
+  .manifesto-label {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-4); align-self: start;
+  }
+  .manifesto-text p {
+    font-family: var(--serif); font-size: clamp(20px, 1.7vw, 26px); line-height: 1.4; color: var(--ink-2);
+    letter-spacing: -0.012em; text-wrap: pretty;
+  }
+  .manifesto-text p + p { margin-top: 24px; }
+  .manifesto-text em { font-style: italic; color: var(--ink); }
+  @media (max-width: 900px) { .manifesto { grid-template-columns: 1fr; gap: 16px; } }
+
+  /* ═══════════ PROPÓSITO ═══════════ */
+  #proposito {
+    background: var(--teal-900);
+    color: var(--paper);
+    padding: 140px 0;
+  }
+  #proposito h2 { color: var(--paper); }
+  #proposito p { color: rgba(246,244,238,0.78); }
+  #proposito .section-tag { color: rgba(246,244,238,0.55); }
+  #proposito .section-tag b { color: var(--paper); }
+
+  .prop-grid {
+    display: grid; grid-template-columns: 360px 1fr; gap: 96px; align-items: start;
+  }
+  .prop-h {
+    font-family: var(--serif); font-weight: 600;
+    font-size: clamp(56px, 7vw, 96px); line-height: 0.92; letter-spacing: -0.03em;
+    color: var(--paper);
+  }
+  .prop-h em { font-style: italic; color: var(--teal-300); font-weight: 500; }
+  .prop-statement {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(22px, 2vw, 30px); line-height: 1.4; letter-spacing: -0.012em;
+    color: var(--paper); text-wrap: pretty; max-width: 56ch;
+  }
+  .prop-statement em { font-style: italic; color: var(--teal-300); font-weight: 500; }
+
+  .prop-pillars {
+    margin-top: 64px; padding-top: 40px;
+    border-top: 1px solid rgba(246,244,238,0.15);
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+  }
+  .prop-pillars .cell {
+    border-right: 1px solid rgba(246,244,238,0.12); padding: 0 32px;
+  }
+  .prop-pillars .cell:first-child { padding-left: 0; }
+  .prop-pillars .cell:last-child { border-right: none; padding-right: 0; }
+  .prop-pillars .idx {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.16em; color: var(--teal-300);
+    margin-bottom: 14px; display: block;
+  }
+  .prop-pillars .nm {
+    font-family: var(--serif); font-size: 22px; letter-spacing: -0.018em;
+    color: var(--paper); margin-bottom: 8px;
+  }
+  .prop-pillars .desc {
+    font-size: 13px; line-height: 1.55; color: rgba(246,244,238,0.62);
+  }
+
+  @media (max-width: 1000px) {
+    .prop-grid { grid-template-columns: 1fr; gap: 32px; }
+    .prop-pillars { grid-template-columns: 1fr; }
+    .prop-pillars .cell { border-right: none; border-bottom: 1px solid rgba(246,244,238,0.12); padding: 24px 0; }
+    .prop-pillars .cell:first-child { padding-top: 0; }
+    .prop-pillars .cell:last-child { border-bottom: none; padding-bottom: 0; }
+  }
+
+  /* ═══════════ NOSSO JEITO — stack vertical ═══════════ */
+  #jeito {
+    background: var(--paper);
+  }
+  .jeito-head {
+    max-width: 720px; margin-bottom: 80px;
+  }
+  .jeito-head h2 { margin-top: 16px; margin-bottom: 24px; }
+  .jeito-head h2 em { font-style: italic; color: var(--teal-700); font-weight: 500; }
+
+  .jeito-stack {
+    border-top: 1px solid var(--ink);
+  }
+  .jeito-row {
+    display: grid; grid-template-columns: 100px 380px 1fr; gap: 48px;
+    padding: 56px 0; border-bottom: 1px solid var(--rule);
+    align-items: start;
+    transition: background .25s ease;
+  }
+  .jeito-row:hover { background: var(--paper-3); }
+  .jeito-num {
+    font-family: var(--serif); font-weight: 500;
+    font-size: 56px; line-height: 1; color: var(--ink-4); letter-spacing: -0.02em;
+    font-feature-settings: 'lnum', 'tnum';
+  }
+  .jeito-row:hover .jeito-num { color: var(--teal-700); }
+  .jeito-name {
+    font-family: var(--serif); font-weight: 600; font-size: clamp(28px, 3vw, 40px);
+    letter-spacing: -0.025em; line-height: 1.05; color: var(--ink);
+  }
+  .jeito-name em { font-style: italic; color: var(--ink-3); font-weight: 500; }
+  .jeito-tag {
+    margin-top: 14px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--ink-4); display: inline-flex; align-items: center; gap: 8px;
+  }
+  .jeito-tag::before {
+    content: ''; width: 5px; height: 5px; background: var(--teal-700); border-radius: 50%;
+  }
+  .jeito-text {
+    font-size: 17px; line-height: 1.65; color: var(--ink-3); max-width: 60ch;
+  }
+  .jeito-text b { color: var(--ink); font-weight: 500; }
+
+  @media (max-width: 1000px) {
+    .jeito-row { grid-template-columns: 1fr; gap: 16px; padding: 40px 0; }
+    .jeito-num { font-size: 40px; }
+  }
+
+  /* ═══════════ CTA FINAL ═══════════ */
+  #cta {
+    background: var(--ink); color: var(--paper);
+    padding: 120px 0;
+  }
+  #cta .section-tag { color: rgba(246,244,238,0.55); }
+  #cta .section-tag b { color: var(--paper); }
+  .cta-grid {
+    display: grid; grid-template-columns: 1.4fr 1fr; gap: 96px; align-items: end;
+  }
+  .cta-h {
+    font-family: var(--serif); font-weight: 600;
+    font-size: clamp(40px, 5vw, 72px); line-height: 1.02; letter-spacing: -0.028em;
+    color: var(--paper); text-wrap: pretty;
+  }
+  .cta-h em { font-style: italic; color: var(--teal-300); font-weight: 500; }
+  .cta-right { display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
+  .cta-right p { color: rgba(246,244,238,0.68); font-size: 16px; line-height: 1.6; }
+  .cta-actions { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; margin-top: 8px; }
+  .cta-meta {
+    margin-top: 56px; padding-top: 32px; border-top: 1px solid rgba(246,244,238,0.14);
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+    font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(246,244,238,0.52);
+  }
+  .cta-meta b { color: var(--paper); font-weight: 500; display: block; margin-bottom: 6px; }
+  .cta-meta a { color: rgba(246,244,238,0.85); border-bottom: 1px solid rgba(246,244,238,0.3); }
+  .cta-meta a:hover { color: var(--teal-300); border-color: var(--teal-300); }
+
+  @media (max-width: 1000px) {
+    .cta-grid { grid-template-columns: 1fr; gap: 32px; }
+    .cta-meta { grid-template-columns: 1fr; gap: 16px; }
+  }
+
+  /* footer (replicado) */
+  footer.foot {
+    background: var(--ink); color: rgba(246,244,238,0.6);
+    padding: 80px 0 28px;
+    border-top: 1px solid rgba(246,244,238,0.08);
+  }
+  .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 56px; padding-bottom: 56px; border-bottom: 1px solid rgba(246,244,238,0.12); }
+  .foot-brand { display: flex; flex-direction: column; gap: 16px;}
+  .foot-brand .brand-name { color: var(--paper); font-size: 22px; }
+  .foot-brand .brand-name span { color: rgba(246,244,238,0.55); }
+  .foot-brand .brand-mark { width: 52px; height: 30px; filter: invert(1) brightness(1.05); }
+  .foot-brand p { color: rgba(246,244,238,0.55); font-size: 14px; max-width: 36ch; line-height: 1.6; }
+  .foot-col h5 { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--paper); font-weight: 500; margin-bottom: 16px;}
+  .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px;}
+  .foot-col a { color: rgba(246,244,238,0.62); font-size: 14px; transition: color .15s; }
+  .foot-col a:hover { color: var(--paper); }
+  .foot-bottom {
+    margin-top: 28px; display: flex; justify-content: space-between;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: rgba(246,244,238,0.4);
+  }
+  @media (max-width: 800px) { .foot-grid { grid-template-columns: 1fr 1fr; gap: 40px; } }
+
+  /* reveal */
+  .reveal { opacity: 0; transform: translateY(12px); transition: opacity .9s ease, transform .9s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════ NAV ═══════════ -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand">
+      <div class="brand-mark"></div>
+      <div class="brand-name"><b>True Worth</b><span>Consulting</span></div>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#solucoes">Soluções</a>
+      <a href="index.html#edge">TW Edge</a>
+      <a href="index.html#abordagem">Abordagem</a>
+      <a href="quem-somos.html" class="active">Quem somos</a>
+      <a href="index.html#contato">Contato</a>
+    </nav>
+    <div class="nav-right">
+      <a href="index.html#contato" class="nav-cta">Falar com sócio</a>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════ § 01 · POR QUE TRUE WORTH ═══════════ -->
+<section id="porque" data-screen-label="01 Por que True Worth">
+  <span class="section-tag"><b>§01</b> · Por que True Worth</span>
+  <div class="wrap">
+
+    <!-- meta strip -->
+    <div class="qs-meta">
+      <div><span><b>QS.001</b></span> &nbsp; · &nbsp; <span>Quem somos · True Worth</span></div>
+      <div>True Worth Consulting</div>
+    </div>
+
+    <div class="qs-hero">
+
+      <!-- epígrafe -->
+      <div class="epigraph reveal">
+        <div class="quote">
+          “Preço é o que você paga.<br/>
+          Valor é o que você leva.”
+        </div>
+        <div class="source"><b>Benjamin Graham</b> — The Intelligent Investor, 1949</div>
+      </div>
+
+      <!-- definição etimológica -->
+      <div class="qs-definition reveal">
+        <div class="label">
+          <b>true worth</b>
+          /truː wɜːθ/ · expr.
+        </div>
+        <div class="text">
+          O <em>valor verdadeiro</em> de uma decisão executiva — aquele que sustenta margem, governança e legado depois que o ciclo do projeto termina. <br/><br/>
+          Não é o que parece valer. É o que permanece.
+        </div>
+      </div>
+
+      <!-- tese principal -->
+      <div class="qs-thesis reveal">
+        <h1 class="qs-thesis-h" data-comment-anchor="qs-thesis">
+          O nome <em>é</em> a tese
+        </h1>
+        <p class="qs-thesis-p">
+          Fomos fundados sobre uma convicção: <b>consultoria existe para criar valor verdadeiro</b> — não slides, não diagnósticos brilhantes que não viram resultado, não tese sem responsabilidade. <br/><br/>
+          Por isso somos boutique. Por isso sócios sêniores assinam o trabalho do início ao fim. Por isso recusamos projetos onde o ajuste não é claro.
+        </p>
+      </div>
+
+      <!-- T mark — assinatura visual -->
+      <div class="qs-signature reveal">
+        <div class="qs-signature-text">
+          <b>True Worth Consulting</b>
+          Boutique de estratégia & IA aplicada
+        </div>
+        <div class="qs-signature-mark" aria-hidden="true"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ § 02 · QUEM SOMOS ═══════════ -->
+<section id="quem" data-screen-label="02 Quem somos">
+  <span class="section-tag"><b>§02</b> · Quem somos</span>
+  <div class="wrap">
+
+    <div class="quem-grid">
+      <div class="quem-left">
+        <span class="kicker">A boutique</span>
+        <h2>Consultoria especializada em <em>transformação de negócios</em>, estratégia e M&amp;A</h2>
+        <p class="lede">
+          Apoiamos empresas no planejamento estratégico, no desenho e na implementação de soluções com foco na geração de valor, resultados, escalabilidade e crescimento sustentável.
+        </p>
+        <p class="body-lg">
+          Atuamos também na formação e no desenvolvimento de equipes e na implantação de modelos de gestão. Cada projeto começa por um sócio e termina com um sócio — não há terceirização do julgamento.
+        </p>
+      </div>
+
+      <div class="quem-right">
+        <div class="stat-row">
+          <div class="stat-num">3</div>
+          <div class="stat-text">
+            <b>Sócios fundadores</b>
+            Sêniores no projeto inteiro — Henry Costa, Miguel Vieira e Adriana Hirano
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-num">65+</div>
+          <div class="stat-text">
+            <b>Anos somados de prática executiva</b>
+            Varejo, M&amp;A, supply, consumo, family business e private equity
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-num">100%</div>
+          <div class="stat-text">
+            <b>Independência</b>
+            Sem conflito de marca, sem incentivo de tamanho — só resultado para o cliente
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- manifesto -->
+    <div class="manifesto reveal">
+      <div class="manifesto-label">Manifesto / TW.001</div>
+      <div class="manifesto-text">
+        <p>
+          Acreditamos que <em>estratégia sem implementação é literatura</em> — e que implementação sem estratégia é desperdício. Por isso trabalhamos lado a lado com os executivos das empresas-cliente: cada diagnóstico é construído com a casa, cada recomendação é defendida em conselho, cada melhoria é cocriada e implementada em conjunto.
+        </p>
+        <p>
+          Não somos a maior consultoria do mercado. Somos a que <em>assina</em> o que recomenda.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════ § 03 · PROPÓSITO ═══════════ -->
+<section id="proposito" data-screen-label="03 Propósito">
+  <span class="section-tag"><b>§03</b> · Nosso propósito</span>
+  <div class="wrap">
+
+    <div class="prop-grid">
+      <div>
+        <span class="kicker kicker--inv">Propósito TW</span>
+        <h2 class="prop-h" style="margin-top: 18px;">Nosso<br/><em>propósito</em></h2>
+      </div>
+      <div>
+        <p class="prop-statement">
+          Elevar organizações a modelos de <em>excelência em gestão e governança</em>, inspirando decisões estratégicas que gerem <em>valor econômico</em>, <em>impacto social</em> e <em>legados duradouros</em>.
+        </p>
+      </div>
+    </div>
+
+    <div class="prop-pillars">
+      <div class="cell">
+        <span class="idx">/ 01</span>
+        <div class="nm">Valor econômico</div>
+        <div class="desc">Margem, fluxo, retorno sobre capital — métrica é o teste, não a aspiração</div>
+      </div>
+      <div class="cell">
+        <span class="idx">/ 02</span>
+        <div class="nm">Impacto social</div>
+        <div class="desc">Times desenvolvidos, governança fortalecida, decisões responsáveis</div>
+      </div>
+      <div class="cell">
+        <span class="idx">/ 03</span>
+        <div class="nm">Legado duradouro</div>
+        <div class="desc">O que sustenta a empresa depois que o projeto termina — cultura e modelo</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════ § 04 · NOSSO JEITO ═══════════ -->
+<section id="jeito" data-screen-label="04 Nosso jeito">
+  <span class="section-tag"><b>§04</b> · Nosso jeito</span>
+  <div class="wrap">
+
+    <div class="jeito-head">
+      <span class="kicker">Quatro princípios · Um modo de trabalhar</span>
+      <h2>Unimos metodologias sólidas à capacidade de <em>desenhar soluções sob medida</em></h2>
+      <p class="lede">
+        Respeitamos a essência, os valores e a cultura de cada empresa — porque acreditamos que é isso que as torna singulares e sustentáveis no longo prazo.
+      </p>
+    </div>
+
+    <div class="jeito-stack">
+
+      <div class="jeito-row reveal">
+        <div class="jeito-num">01</div>
+        <div>
+          <div class="jeito-name">Consultoria <em>sob medida</em></div>
+          <div class="jeito-tag">Cocriada · potencializada por IA</div>
+        </div>
+        <div class="jeito-text">
+          Trabalhamos <b>lado a lado</b> com os executivos das empresas-cliente para construir diagnósticos precisos — combinando rigor analítico, experiência sênior e <b>IA aplicada</b> para acelerar leitura de dados, simulações e cenários. Cada recomendação é cocriada e implementada em conjunto, fortalecendo times e decisões. Não vendemos receita pronta — desenhamos a solução que serve para a casa.
+        </div>
+      </div>
+
+      <div class="jeito-row reveal">
+        <div class="jeito-num">02</div>
+        <div>
+          <div class="jeito-name">Mão na <em>massa</em></div>
+          <div class="jeito-tag">Implementação real · ponta a ponta</div>
+        </div>
+        <div class="jeito-text">
+          Nosso diferencial está na <b>atuação direta de uma equipe sênior</b>, com profunda experiência na indústria, presente de ponta a ponta do projeto. Essa proximidade garante precisão nos diagnósticos, assertividade nas recomendações e impacto real nas entregas.
+        </div>
+      </div>
+
+      <div class="jeito-row reveal">
+        <div class="jeito-num">03</div>
+        <div>
+          <div class="jeito-name">Transparência <em>e imparcialidade</em></div>
+          <div class="jeito-tag">Compromisso com a empresa-cliente</div>
+        </div>
+        <div class="jeito-text">
+          Nosso compromisso é com a empresa-cliente. Atuamos com <b>independência</b> e clareza, propondo foco na geração de resultados sustentáveis, na valorização dos acionistas e na satisfação dos clientes — desde novos processos até a revisão do modelo de negócio, sempre pautados pela responsabilidade social.
+        </div>
+      </div>
+
+      <div class="jeito-row reveal">
+        <div class="jeito-num">04</div>
+        <div>
+          <div class="jeito-name">Experiência <em>na prática</em></div>
+          <div class="jeito-tag">Trajetória executiva · não apenas advisory</div>
+        </div>
+        <div class="jeito-text">
+          Sócios com trajetória de <b>liderança executiva direta</b> — não apenas advisory. Significa que entendemos o que é defender uma tese em conselho, fechar uma operação de M&amp;A com restrição de prazo, ou virar a curva de margem com a casa toda olhando.
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════ § 05 · CTA FINAL ═══════════ -->
+<section id="cta" data-screen-label="05 CTA">
+  <span class="section-tag"><b>§05</b> · Próximo passo</span>
+  <div class="wrap">
+
+    <div class="cta-grid">
+      <div>
+        <span class="kicker kicker--inv">Conversa inicial · sob NDA</span>
+        <h2 class="cta-h" style="margin-top: 18px;">
+          Vamos juntos desenhar o <em>futuro</em> da sua empresa — com propósito, estratégia e resultados reais?
+        </h2>
+      </div>
+      <div class="cta-right">
+        <p>
+          Se você se identificou com o que apresentamos, entre em contato. A primeira conversa é conduzida diretamente por um sócio. Sem pressão comercial: se a TW não for o caminho certo, dizemos.
+        </p>
+        <div class="cta-actions">
+          <a href="index.html#contato" class="btn btn--inv">Falar com um sócio <span class="arr">→</span></a>
+          <a href="index.html#equipe" class="btn btn--ghostinv">Conhecer os sócios <span class="arr">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-meta">
+      <div>
+        <b>E-mail</b>
+        <a href="mailto:contato@trwcon.com">contato@trwcon.com</a>
+      </div>
+      <div>
+        <b>LinkedIn</b>
+        <a href="https://www.linkedin.com/company/trwcon/" target="_blank" rel="noopener">/company/trwcon ↗</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html" class="brand">
+          <div class="brand-mark"></div>
+          <div class="brand-name"><b>True Worth</b><span>Consulting</span></div>
+        </a>
+        <p>Consultoria estratégica em estratégia, M&amp;A, supply e IA aplicada para empresas que tratam margem como decisão</p>
+
+      </div>
+      <div class="foot-col">
+        <h5>Soluções</h5>
+        <ul>
+          <li><a href="index.html#solucoes">Estratégia</a></li>
+          <li><a href="index.html#solucoes">M&amp;A</a></li>
+          <li><a href="index.html#solucoes">Supply</a></li>
+          <li><a href="index.html#edge">TW Edge™</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="quem-somos.html">Quem somos</a></li>
+          <li><a href="index.html#equipe">Sócios</a></li>
+          <li><a href="index.html#abordagem">Abordagem</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Conecte</h5>
+        <ul>
+          <li><a href="https://www.linkedin.com/company/trwcon/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+          <li><a href="index.html#contato">Falar com sócio</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 True Worth Consulting · CNPJ sob registro</span>
+      <a href="politica-de-privacidade.html" style="color: inherit;">Política de Privacidade</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* Reveal on scroll */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
