@@ -985,7 +985,19 @@ section + section { border-top: 1px solid var(--rule); }
 /* ───────── FOOTER ───────── */
 footer.foot {
   background: var(--teal-900); color: rgba(246,244,238,0.6);
-  padding: 0 0 28px;
+  padding: 0 0 28px; position: relative; overflow: hidden;
+}
+footer.foot::after {
+  content: '';
+  position: absolute;
+  bottom: -40px; right: -60px;
+  width: 520px; height: 200px;
+  background-image: url('assets/logo-t-watermark.png');
+  background-size: contain; background-repeat: no-repeat; background-position: bottom right;
+  opacity: 0.025;
+  mix-blend-mode: soft-light;
+  filter: blur(0.4px);
+  pointer-events: none; z-index: 0;
 }
 .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 56px; padding: 56px 0; border-bottom: 1px solid rgba(246,244,238,0.12); }
 .foot-brand { display: flex; flex-direction: column; gap: 16px;}
