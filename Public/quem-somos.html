@@ -379,35 +379,89 @@
     .cta-meta { grid-template-columns: 1fr; gap: 16px; }
   }
 
-  /* footer (replicado) */
+  /* footer */
   footer.foot {
     background: var(--teal-900); color: rgba(246,244,238,0.6);
-    padding: 0 0 28px;
-    border-top: none;
-    position: relative; overflow: hidden;
+    padding: 0 0 28px; position: relative; overflow: hidden;
   }
   footer.foot::before {
     content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
     background-image: radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px);
     background-size: 18px 18px;
   }
+  footer.foot::after {
+    content: '';
+    position: absolute;
+    bottom: -20px; right: -40px;
+    width: 560px; height: 160px;
+    background-image: url('assets/logo-tw-watermark.svg');
+    background-size: contain; background-repeat: no-repeat; background-position: bottom right;
+    opacity: 0.03;
+    mix-blend-mode: soft-light;
+    filter: blur(0.3px);
+    pointer-events: none; z-index: 0;
+  }
   footer.foot .wrap { position: relative; z-index: 1; }
-  .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 56px; padding: 56px 0; border-top: 1px solid rgba(246,244,238,0.12); border-bottom: 1px solid rgba(246,244,238,0.12); }
+  .foot-meta {
+    padding: 48px 0 44px;
+    border-bottom: 1px solid rgba(246,244,238,0.1);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+  }
+  .foot-meta-logo { display: flex; align-items: center; }
+  .foot-meta-logo img {
+    height: 32px; width: auto;
+    opacity: 0.72;
+    filter: brightness(0) invert(1);
+  }
+  .foot-meta-contact {
+    display: flex; flex-direction: column; align-items: center; gap: 5px;
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase;
+  }
+  .foot-meta-contact b { color: rgba(246,244,238,0.38); font-weight: 400; }
+  .foot-meta-contact a {
+    color: rgba(246,244,238,0.78); text-decoration: none; font-size: 12.5px;
+    letter-spacing: 0.04em; text-transform: lowercase; font-family: var(--sans);
+    font-weight: 400; border-bottom: 1px solid rgba(246,244,238,0.2);
+    transition: color .15s, border-color .15s;
+  }
+  .foot-meta-contact a:hover { color: var(--terra); border-color: var(--terra); }
+  .foot-meta-linkedin {
+    display: flex; flex-direction: column; align-items: flex-end; gap: 5px;
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase;
+  }
+  .foot-meta-linkedin b { color: rgba(246,244,238,0.38); font-weight: 400; }
+  .foot-meta-linkedin a {
+    color: rgba(246,244,238,0.78); text-decoration: none; font-size: 12.5px;
+    letter-spacing: 0.04em; text-transform: lowercase; font-family: var(--sans);
+    font-weight: 400; border-bottom: 1px solid rgba(246,244,238,0.2);
+    transition: color .15s, border-color .15s;
+  }
+  .foot-meta-linkedin a:hover { color: var(--terra); border-color: var(--terra); }
+  @media (max-width: 700px) {
+    .foot-meta { grid-template-columns: 1fr; gap: 28px; padding: 40px 0 36px; }
+    .foot-meta-logo { justify-content: center; }
+    .foot-meta-contact { align-items: center; }
+    .foot-meta-linkedin { align-items: center; }
+  }
+  .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 56px; padding: 56px 0; border-bottom: 1px solid rgba(246,244,238,0.12); }
   .foot-brand { display: flex; flex-direction: column; gap: 16px;}
   .foot-brand .brand-name { color: var(--paper); font-size: 20px; }
   .foot-brand .brand-name b { color: var(--teal-300); }
   .foot-brand .brand-name span { color: rgba(246,244,238,0.45); }
-  .foot-brand .brand-mark { width: 52px; height: 30px; filter: invert(1) brightness(1.05); }
-  .foot-brand p { color: rgba(246,244,238,0.55); font-size: 14px; max-width: 36ch; line-height: 1.6; }
-  .foot-col h5 { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--paper); font-weight: 500; margin-bottom: 16px;}
+  .foot-brand .brand-mark { width: 40px; height: 40px; border-radius: 6px; }
+  .foot-brand p { color: var(--paper); font-size: 17px; max-width: 32ch; line-height: 1.6; }
+  .foot-col h5 { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(246,244,238,0.4); margin-bottom: 16px; }
   .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px;}
-  .foot-col a { color: rgba(246,244,238,0.62); font-size: 14px; transition: color .15s; }
+  .foot-col a { font-size: 14px; color: rgba(246,244,238,0.7); transition: color .15s; }
   .foot-col a:hover { color: var(--paper); }
   .foot-bottom {
-    margin-top: 28px; display: flex; justify-content: space-between;
-    font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: rgba(246,244,238,0.4);
+    padding-top: 24px; display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--mono); font-size: 11px; color: rgba(246,244,238,0.4); letter-spacing: 0.05em; flex-wrap: wrap; gap: 8px;
   }
-  @media (max-width: 800px) { .foot-grid { grid-template-columns: 1fr 1fr; gap: 40px; } }
+  @media (max-width: 900px) { .foot-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+  @media (max-width: 600px) { .foot-grid { grid-template-columns: 1fr; } }
 
   /* reveal */
   .reveal { opacity: 0; transform: translateY(12px); transition: opacity .9s ease, transform .9s ease; }
@@ -606,11 +660,27 @@
 <!-- ═══════════ FOOTER ═══════════ -->
 <footer class="foot">
   <div class="wrap">
+    <div class="foot-meta">
+      <div class="foot-meta-logo">
+        <img src="assets/logo-t-cropped.png" alt="TW Consulting" aria-hidden="true">
+      </div>
+      <div class="foot-meta-contact">
+        <b>E-mail</b>
+        <a href="mailto:contato@trwcon.com">contato@trwcon.com</a>
+      </div>
+      <div class="foot-meta-linkedin">
+        <b>LinkedIn</b>
+        <a href="https://www.linkedin.com/company/trwcon/" target="_blank" rel="noopener">/company/trwcon ↗</a>
+      </div>
+    </div>
     <div class="foot-grid">
       <div class="foot-brand">
         <a href="index.html" class="brand">
-          <div class="brand-mark"></div>
-          <div class="brand-name"><b>TW</b><span>Consulting</span></div>
+          <svg class="brand-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="100" height="100" fill="#04383F" rx="8"/>
+            <text x="50" y="68" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="52" fill="#F6F4EE" text-anchor="middle" letter-spacing="-1">TW</text>
+          </svg>
+          <div class="brand-name"><b>True Worth</b><span>Consulting</span></div>
         </a>
         <p>Consultoria estratégica em estratégia, M&amp;A, supply e IA aplicada para empresas que tratam margem como decisão</p>
 
