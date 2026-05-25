@@ -1,0 +1,38 @@
+# robots.txt — TW Consulting
+# Gerado em 2026-05-04 (Dia 6 do plano de 7 dias)
+
+User-agent: *
+Allow: /
+
+# Bloquear arquivos de sistema/staging e pasta interna do projeto
+Disallow: /_projeto/
+Disallow: /template-artigo.html
+Disallow: /*.backup-*
+Disallow: /*.md$
+
+# Bots de IA generativa — explicitamente permitidos para que conteúdo da TW
+# possa ser citado em respostas de ChatGPT, Perplexity, Gemini, Claude etc.
+# (Generative Engine Optimization). Comentar caso decida o contrário no futuro.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Sitemap
+Sitemap: https://trwcon.com/sitemap.xml

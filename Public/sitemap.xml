@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Sitemap TW Consulting — gerado em 2026-05-04 (Dia 6 do plano)
+  Atualizar lastmod sempre que houver mudança significativa na página.
+  Adicionar novos URLs ao publicar artigos em /insights/[slug].html.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://trwcon.com/</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://trwcon.com/insights.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://trwcon.com/materiais.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://trwcon.com/glossario.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!--
+    PRÓXIMOS URLs A ADICIONAR (quando publicados):
+    <url>
+      <loc>https://trwcon.com/insights/tese-ma-30-dias.html</loc>
+      <lastmod>YYYY-MM-DD</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>https://trwcon.com/insights/pricing-decisao-margem.html</loc>
+      <lastmod>YYYY-MM-DD</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.7</priority>
+    </url>
+    <url>
+      <loc>https://trwcon.com/insights/ia-decisao-executiva.html</loc>
+      <lastmod>YYYY-MM-DD</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.7</priority>
+    </url>
+  -->
+
+</urlset>
