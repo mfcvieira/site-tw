@@ -1,0 +1,1688 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ══════════════════════════════════════════════════
+       SEO BÁSICO — Editar aqui título, descrição e URLs
+  ══════════════════════════════════════════════════ -->
+  <title>True Worth Consulting | Estratégia, M&A e Supply para Varejo e Consumo</title>
+  <meta name="description" content="Consultoria estratégica premium especializada em crescimento, M&A, pricing, supply e eficiência operacional para empresas de varejo, moda, consumo, distribuição e investidores." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="True Worth Consulting" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="True Worth Consulting | Estratégia, M&A e Supply para Varejo e Consumo" />
+  <meta property="og:description" content="Consultoria estratégica premium especializada em crescimento, M&A, pricing, supply e eficiência operacional para empresas de varejo, moda, consumo, distribuição e investidores." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://trwcon.com" />
+  <meta property="og:site_name" content="True Worth Consulting" />
+  <!-- ATENÇÃO: substituir por imagem real 1200x630 antes da publicação -->
+  <meta property="og:image" content="https://trwcon.com/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="True Worth Consulting | Estratégia, M&A e Supply" />
+  <meta name="twitter:description" content="Consultoria estratégica premium especializada em crescimento, M&A, pricing, supply e eficiência operacional." />
+  <meta name="twitter:image" content="https://trwcon.com/og-image.jpg" />
+
+  <!-- Favicon — ATENÇÃO: substituir pelo favicon final antes da publicação -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+
+    /* ── RESET ──────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'Inter', sans-serif; color: #1A1A1A; background: #fff; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* ── PALETTE ────────────────────────────────────── */
+    :root {
+      --teal-900:  #04383F;
+      --teal-800:  #07515E;   /* primary */
+      --teal-700:  #0E626F;
+      --teal-600:  #19717D;   /* mid */
+      --teal-400:  #5BAAB4;   /* light */
+      --teal-100:  #D8E8E8;
+      --teal-50:   #EAF5F6;
+      --black:     #1A1A1A;
+      --gray-700:  #4A4A4A;
+      --gray-500:  #666666;
+      --gray-300:  #BBBBBB;
+      --gray-100:  #F4F4F4;
+      --white:     #FFFFFF;
+    }
+
+    /* ── LAYOUT ─────────────────────────────────────── */
+    .container    { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+    .container-sm { max-width: 900px;  margin: 0 auto; padding: 0 40px; }
+    .section      { padding: 100px 0; }
+    .section-gray { background: var(--gray-100); }
+    .section-teal { background: var(--teal-50); }
+    .section-dark { background: var(--teal-800); color: var(--white); }
+
+    /* ── TYPE ───────────────────────────────────────── */
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal-600);
+      margin-bottom: 18px;
+    }
+    .eyebrow-light { color: var(--teal-400); }
+    .h1 { font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 900; line-height: 1.08; letter-spacing: -0.03em; }
+    .h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
+    .h3 { font-size: 1.15rem; font-weight: 700; line-height: 1.3; }
+    .lead { font-size: 1.15rem; color: var(--gray-500); line-height: 1.75; }
+    .lead-light { color: rgba(255,255,255,0.7); }
+
+    /* ── BUTTONS ─────────────────────────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.9rem; font-weight: 600; letter-spacing: 0.01em;
+      padding: 15px 32px; border-radius: 3px;
+      cursor: pointer; border: none; transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .btn-primary  { background: var(--teal-800); color: #fff; }
+    .btn-primary:hover  { background: var(--teal-700); transform: translateY(-1px); box-shadow: 0 6px 24px rgba(7,81,94,0.3); }
+    .btn-outline-white  { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.5); }
+    .btn-outline-white:hover  { background: rgba(255,255,255,0.08); border-color: #fff; }
+    .btn-outline-teal { background: transparent; color: var(--teal-800); border: 1.5px solid var(--teal-800); }
+    .btn-outline-teal:hover { background: var(--teal-800); color: #fff; }
+    .btn-arrow::after { content: '→'; font-size: 1rem; }
+
+    /* ── DIVIDER ─────────────────────────────────────── */
+    .rule { width: 48px; height: 3px; background: var(--teal-600); margin-bottom: 28px; }
+    .rule-light { background: var(--teal-400); }
+
+    /* ══════════════════════════════════════════════════
+       BARRA SUPERIOR INSTITUCIONAL — Insight em destaque
+       Editar aqui o texto e o link do insight em destaque
+    ══════════════════════════════════════════════════ */
+    #topbar {
+      background: var(--teal-900);
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    #topbar a {
+      display: inline-flex; align-items: center; gap: 14px;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.78);
+      transition: color 0.2s;
+      padding: 0 20px;
+      text-align: center;
+    }
+    #topbar a:hover { color: #fff; }
+    #topbar .topbar-tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal-400);
+      flex-shrink: 0;
+    }
+    #topbar .topbar-arrow {
+      color: var(--teal-400);
+      font-weight: 600;
+    }
+
+    /* ══════════════════════════════════════════════════
+       HEADER
+    ══════════════════════════════════════════════════ */
+    #header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--teal-800);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+    #header.light { background: #fff; border-bottom: 1px solid var(--teal-100); }
+    nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .logo {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 1.2rem; font-weight: 800; letter-spacing: -0.02em;
+      color: #fff;
+    }
+    #header.light .logo { color: var(--teal-800); }
+    .logo-box {
+      width: 36px; height: 36px; background: rgba(255,255,255,0.15);
+      border-radius: 4px; display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; font-weight: 900; color: #fff; letter-spacing: -1px;
+    }
+    #header.light .logo-box { background: var(--teal-800); }
+    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-links a { font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.8); transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+    #header.light .nav-links a { color: var(--gray-700); }
+    #header.light .nav-links a:hover { color: var(--teal-800); }
+    .nav-cta { margin-left: 8px; font-size: 0.85rem !important; padding: 10px 22px; }
+    .nav-linkedin { display: flex; align-items: center; color: rgba(255,255,255,0.7); transition: color 0.2s; margin-left: 4px; }
+    .nav-linkedin:hover { color: #fff; }
+    #header.light .nav-linkedin { color: var(--gray-500); }
+    #header.light .nav-linkedin:hover { color: var(--teal-800); }
+    .footer-linkedin { display: inline-flex; align-items: center; color: rgba(255,255,255,0.5); transition: color 0.2s; margin-left: 12px; vertical-align: middle; }
+    .footer-linkedin:hover { color: #fff; }
+    #header.light .nav-cta { background: var(--teal-800) !important; color: #fff !important; border-color: var(--teal-800) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 1px; transition: all 0.2s; }
+    #header.light .hamburger span { background: var(--teal-800); }
+    .mobile-menu { display: none; flex-direction: column; background: var(--teal-900); padding: 0 24px 24px; }
+    .mobile-menu a { padding: 14px 0; font-size: 0.95rem; font-weight: 500; color: rgba(255,255,255,0.85); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .mobile-menu.open { display: flex; }
+
+    /* ══════════════════════════════════════════════════
+       HERO
+    ══════════════════════════════════════════════════ */
+    #inicio {
+      background: var(--teal-800);
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding-top: 106px;
+      position: relative; overflow: hidden;
+    }
+    #inicio::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 80% 40%, rgba(91,170,180,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 10% 90%, rgba(4,56,63,0.6) 0%, transparent 60%);
+    }
+    #inicio::after {
+      content: '';
+      position: absolute; right: 0; top: 0; bottom: 0; width: 42%;
+      border-left: 1px solid rgba(255,255,255,0.06);
+      background: linear-gradient(180deg, rgba(4,56,63,0.4) 0%, transparent 100%);
+    }
+    .hero-inner {
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr 0.85fr;
+      gap: 80px; align-items: center;
+      padding: 80px 0;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--teal-400);
+      margin-bottom: 28px;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: block;
+      width: 32px; height: 1.5px; background: var(--teal-400);
+    }
+    .hero-title { color: #fff; margin-bottom: 28px; font-size: clamp(2.1rem, 4.4vw, 3.4rem); font-weight: 900; line-height: 1.12; letter-spacing: -0.025em; }
+    .hero-title em { font-style: normal; color: var(--teal-400); }
+    .hero-desc { color: rgba(255,255,255,0.72); font-size: 1.05rem; line-height: 1.75; margin-bottom: 44px; max-width: 540px; }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-stats {
+      margin-top: 64px; padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 0;
+    }
+    .hero-stat { padding-right: 32px; }
+    .hero-stat + .hero-stat { padding-left: 32px; border-left: 1px solid rgba(255,255,255,0.12); }
+    .hero-stat-n { font-size: 2.4rem; font-weight: 900; color: #fff; letter-spacing: -0.03em; line-height: 1; }
+    .hero-stat-l { font-size: 0.78rem; font-weight: 500; color: rgba(255,255,255,0.5); margin-top: 6px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .hero-panel {
+      position: relative; z-index: 1;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      padding: 36px 32px;
+      backdrop-filter: blur(8px);
+    }
+    .hero-panel-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal-400); margin-bottom: 24px; }
+    .panel-row { display: flex; align-items: flex-start; gap: 16px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .panel-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .panel-num { font-size: 1.5rem; font-weight: 900; color: #fff; min-width: 48px; letter-spacing: -0.03em; padding-top: 2px; }
+    .panel-text-title { font-size: 0.92rem; font-weight: 600; color: rgba(255,255,255,0.95); margin-bottom: 3px; }
+    .panel-text-sub { font-size: 0.76rem; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+    /* ══════════════════════════════════════════════════
+       DESAFIOS QUE RESOLVEMOS
+    ══════════════════════════════════════════════════ */
+    .desafios-header { margin-bottom: 56px; max-width: 760px; }
+    .desafios-header p { color: var(--gray-500); font-size: 1.02rem; line-height: 1.75; margin-top: 12px; }
+    .desafios-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+      background: var(--teal-100); border: 1px solid var(--teal-100);
+    }
+    .desafio-card {
+      background: #fff; padding: 40px 36px;
+      transition: background 0.2s;
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .desafio-card:hover { background: var(--teal-50); }
+    .desafio-num {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em;
+      color: var(--teal-400); text-transform: uppercase;
+    }
+    .desafio-title {
+      font-size: 1.2rem; font-weight: 800; color: var(--teal-800);
+      letter-spacing: -0.015em; line-height: 1.25;
+    }
+    .desafio-desc {
+      font-size: 0.92rem; color: var(--gray-500);
+      line-height: 1.7;
+    }
+
+    /* ══════════════════════════════════════════════════
+       SOBRE
+    ══════════════════════════════════════════════════ */
+    .sobre-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
+    .sobre-visual { position: relative; }
+    .sobre-block {
+      background: var(--teal-800);
+      border-radius: 4px; padding: 56px 48px;
+      position: relative; overflow: hidden;
+    }
+    .sobre-block::before {
+      content: '';
+      position: absolute; bottom: -60px; right: -60px;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: rgba(91,170,180,0.12);
+    }
+    .sobre-block-rule { width: 36px; height: 3px; background: var(--teal-400); margin-bottom: 28px; }
+    .sobre-block-title { font-size: 1.55rem; font-weight: 800; color: #fff; margin-bottom: 12px; line-height: 1.25; }
+    .sobre-block-sub { font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+    .sobre-content { padding-top: 8px; }
+    .sobre-content p { color: var(--gray-500); margin-bottom: 16px; font-size: 0.97rem; line-height: 1.8; }
+    .pilares { display: flex; flex-direction: column; gap: 0; margin-top: 36px; border-top: 1px solid var(--teal-100); }
+    .pilar { display: flex; align-items: flex-start; gap: 18px; padding: 22px 0; border-bottom: 1px solid var(--teal-100); }
+    .pilar-num { font-size: 0.72rem; font-weight: 700; color: var(--teal-600); letter-spacing: 0.06em; min-width: 28px; padding-top: 2px; }
+    .pilar h4 { font-size: 0.95rem; font-weight: 700; color: var(--black); margin-bottom: 4px; }
+    .pilar p { font-size: 0.85rem; color: var(--gray-500); line-height: 1.6; }
+
+    /* ══════════════════════════════════════════════════
+       SOLUÇÕES — Strategy / M&A / Supply
+    ══════════════════════════════════════════════════ */
+    .value-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; flex-wrap: wrap; gap: 24px; }
+    .value-subtitle { font-size: 0.97rem; color: var(--gray-500); line-height: 1.75; max-width: 560px; margin-top: 8px; }
+    .value-grid { display: grid; grid-template-columns: repeat(3,1fr); border: 1px solid var(--teal-100); }
+    .value-card { padding: 40px 36px; border-right: 1px solid var(--teal-100); display: flex; flex-direction: column; background: #fff; }
+    .value-card:last-child { border-right: none; }
+    .value-card-num { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; color: var(--teal-400); text-transform: uppercase; margin-bottom: 12px; }
+    .value-card-title { font-size: 1.55rem; font-weight: 800; color: var(--teal-800); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 12px; }
+    .value-card-desc { font-size: 0.9rem; color: var(--gray-500); line-height: 1.7; margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px solid var(--teal-100); }
+    .value-capabilities { list-style: none; flex: 1; }
+    .value-capabilities li { font-size: 0.85rem; color: var(--gray-700); padding: 10px 0; border-bottom: 1px solid var(--gray-100); display: flex; align-items: flex-start; gap: 10px; line-height: 1.45; }
+    .value-capabilities li:last-child { border-bottom: none; }
+    .value-capabilities li::before { content: ''; width: 7px; height: 7px; min-width: 7px; background: var(--teal-400); border-radius: 1px; margin-top: 6px; flex-shrink: 0; }
+    .value-footer-bar { background: var(--teal-800); padding: 22px 36px; }
+    .value-footer-bar p { font-size: 0.88rem; color: rgba(255,255,255,0.78); line-height: 1.75; text-align: center; }
+
+    /* ══════════════════════════════════════════════════
+       MODELO DE ATUAÇÃO — Chevron
+    ══════════════════════════════════════════════════ */
+    .services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px; flex-wrap: wrap; gap: 24px; }
+    .services-header p.sub { color: var(--gray-500); font-size: 1rem; line-height: 1.7; max-width: 600px; margin-top: 8px; }
+    .chevron-strip { display: flex; margin-bottom: 0; }
+    .chevron-item { flex: 1; padding: 20px 28px; position: relative; }
+    .chevron-item--1 {
+      background: var(--teal-400); z-index: 3;
+      clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 50%, calc(100% - 28px) 100%, 0 100%);
+      padding-left: 28px;
+    }
+    .chevron-item--2 {
+      background: var(--teal-600); z-index: 2;
+      clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 50%, calc(100% - 28px) 100%, 0 100%);
+      margin-left: -28px; padding-left: 40px;
+    }
+    .chevron-item--3 {
+      background: var(--teal-800); z-index: 1;
+      clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 50%, calc(100% - 28px) 100%, 0 100%);
+      margin-left: -28px; padding-left: 40px;
+    }
+    .model-phase { font-size: 0.82rem; font-weight: 800; letter-spacing: 0.1em; color: #fff; margin-bottom: 5px; }
+    .model-subtitle { font-size: 0.78rem; font-weight: 400; color: rgba(255,255,255,0.85); }
+    .model-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; background: #fff; border: 1px solid var(--teal-100); border-top: none; }
+    .model-card { display: flex; flex-direction: column; background: #fff; border-right: 1px solid var(--teal-100); }
+    .model-card:last-child { border-right: none; }
+    .model-body { padding: 28px 28px 20px; flex: 1; display: flex; flex-direction: column; }
+    .model-card-title { font-size: 1.05rem; font-weight: 800; color: var(--teal-800); letter-spacing: -0.015em; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--teal-100); }
+    .model-atividades-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal-600); margin-bottom: 10px; }
+    .model-atividades { list-style: none; flex: 1; }
+    .model-atividades li { font-size: 0.85rem; color: var(--gray-700); line-height: 1.55; padding: 9px 0; border-bottom: 1px solid var(--teal-100); display: flex; align-items: flex-start; gap: 10px; }
+    .model-atividades li:last-child { border-bottom: none; }
+    .model-atividades li::before { content: ''; width: 10px; height: 10px; min-width: 10px; background: var(--teal-400); border-radius: 2px; margin-top: 4px; }
+    .model-entregavel { margin: 0 28px 12px; padding: 14px 16px; border: 1px solid var(--teal-100); border-left: 3px solid var(--teal-600); background: var(--teal-50); }
+    .model-entregavel-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal-600); margin-bottom: 4px; }
+    .model-entregavel-text { font-size: 0.82rem; color: var(--gray-700); line-height: 1.5; }
+    .model-resultado { margin: 0 28px 28px; padding: 14px 16px; border: 1px solid var(--teal-100); border-left: 3px solid var(--teal-800); background: var(--teal-900); }
+    .model-resultado-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal-400); margin-bottom: 4px; }
+    .model-resultado-text { font-size: 0.82rem; color: rgba(255,255,255,0.85); line-height: 1.5; }
+
+    /* ══════════════════════════════════════════════════
+       IA APLICADA AOS PROJETOS
+    ══════════════════════════════════════════════════ */
+    #ia-aplicada { background: var(--teal-900); color: #fff; }
+    .ia-inner { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: start; }
+    .ia-left .eyebrow { color: var(--teal-400); }
+    .ia-left .rule { background: var(--teal-400); }
+    .ia-left h2 { color: #fff; margin-bottom: 24px; }
+    .ia-left p.sub { color: rgba(255,255,255,0.7); font-size: 1rem; line-height: 1.8; margin-bottom: 32px; }
+    .ia-quote {
+      padding: 24px 28px; border-left: 3px solid var(--teal-400);
+      background: rgba(255,255,255,0.04); border-radius: 0 4px 4px 0;
+      font-size: 0.95rem; color: rgba(255,255,255,0.92); line-height: 1.65;
+    }
+    .ia-quote strong { color: var(--teal-400); font-weight: 600; }
+    .ia-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); }
+    .ia-item { background: var(--teal-900); padding: 24px 24px; transition: background 0.2s; }
+    .ia-item:hover { background: rgba(255,255,255,0.03); }
+    .ia-item-num { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; color: var(--teal-400); text-transform: uppercase; margin-bottom: 10px; }
+    .ia-item-text { font-size: 0.88rem; color: rgba(255,255,255,0.85); line-height: 1.6; }
+
+    /* ══════════════════════════════════════════════════
+       CASES — Experiência selecionada
+    ══════════════════════════════════════════════════ */
+    .cases-header { margin-bottom: 48px; }
+    .cases-header p.sub { color: var(--gray-500); font-size: 1rem; line-height: 1.7; max-width: 600px; margin-top: 8px; }
+    .case-card {
+      background: #fff; border: 1px solid var(--teal-100); border-radius: 4px;
+      overflow: hidden;
+    }
+    .case-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .case-cell { padding: 32px 28px; border-right: 1px solid var(--teal-100); }
+    .case-cell:last-child { border-right: none; }
+    .case-cell-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal-400); margin-bottom: 10px; }
+    .case-cell-title { font-size: 0.95rem; font-weight: 700; color: var(--teal-800); margin-bottom: 6px; line-height: 1.3; }
+    .case-cell-text { font-size: 0.86rem; color: var(--gray-500); line-height: 1.65; }
+    .case-cell--impact { background: var(--teal-50); }
+    .case-impact-list { list-style: none; }
+    .case-impact-list li { font-size: 0.85rem; color: var(--gray-700); padding: 6px 0; line-height: 1.5; display: flex; align-items: flex-start; gap: 8px; }
+    .case-impact-list li::before { content: ''; width: 6px; height: 6px; min-width: 6px; background: var(--teal-600); border-radius: 1px; margin-top: 6px; }
+    .case-impact-list li strong { color: var(--teal-800); font-weight: 700; }
+
+    .cases-quote {
+      margin-top: 48px; padding: 56px 60px;
+      background: var(--teal-800); border-radius: 4px;
+    }
+    .quote-mark { font-size: 5rem; color: var(--teal-400); line-height: 0.8; font-family: Georgia, serif; opacity: 0.6; margin-bottom: 16px; }
+    .quote-text { font-size: 1.18rem; font-weight: 400; color: rgba(255,255,255,0.92); line-height: 1.75; font-style: italic; }
+    .quote-author { margin-top: 36px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.12); font-size: 0.82rem; font-weight: 700; color: #fff; letter-spacing: 0.01em; }
+    .quote-author span { color: rgba(255,255,255,0.5); font-weight: 400; }
+
+    /* ══════════════════════════════════════════════════
+       EQUIPE
+    ══════════════════════════════════════════════════ */
+    .equipe-header { margin-bottom: 48px; max-width: 760px; }
+    .equipe-header p { color: var(--gray-500); font-size: 1rem; line-height: 1.7; margin-top: 12px; }
+    .team-list { display: flex; flex-direction: column; gap: 1px; background: var(--teal-100); border: 1px solid var(--teal-100); }
+    .team-member {
+      background: #fff;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 0;
+      transition: background 0.2s;
+    }
+    .team-member:hover { background: var(--teal-50); }
+    .team-left {
+      padding: 40px 36px;
+      border-right: 1px solid var(--teal-100);
+      display: flex; flex-direction: column; align-items: flex-start; gap: 20px;
+    }
+    .team-avatar {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: var(--teal-100);
+    }
+    .team-avatar img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
+    }
+    .team-member:hover .team-avatar img { filter: grayscale(20%); }
+    .team-name { font-size: 1.05rem; font-weight: 800; color: var(--black); line-height: 1.2; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+    .team-name a.linkedin-link { display: inline-flex; align-items: center; color: var(--teal-600); opacity: 0.7; transition: opacity 0.2s ease, color 0.2s ease; flex-shrink: 0; }
+    .team-name a.linkedin-link:hover { opacity: 1; color: var(--teal-800); }
+    .team-name a.linkedin-link svg { width: 16px; height: 16px; }
+    .team-role { font-size: 0.75rem; font-weight: 600; color: var(--teal-600); letter-spacing: 0.06em; text-transform: uppercase; }
+    .team-bio {
+      padding: 40px 44px;
+      font-size: 0.9rem; color: var(--gray-500); line-height: 1.8;
+      display: flex; align-items: center;
+    }
+    .team-bio strong { color: var(--black); font-weight: 700; }
+
+    /* ══════════════════════════════════════════════════
+       INSIGHTS
+    ══════════════════════════════════════════════════ */
+    .insights-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; flex-wrap: wrap; gap: 24px; }
+    .insights-header p.sub { color: var(--gray-500); font-size: 1rem; line-height: 1.7; max-width: 600px; margin-top: 8px; }
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--teal-100);
+      border: 1px solid var(--teal-100);
+    }
+    .insight-card {
+      background: #fff;
+      padding: 36px 32px;
+      display: flex; flex-direction: column; gap: 0;
+      transition: background 0.2s;
+    }
+    .insight-card:hover { background: var(--teal-50); }
+    .insight-card--featured {
+      grid-column: span 1;
+      background: var(--teal-800);
+    }
+    .insight-card--featured:hover { background: var(--teal-700); }
+    .insight-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+    .insight-cat {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--teal-600);
+    }
+    .insight-card--featured .insight-cat { color: var(--teal-400); }
+    .insight-date { font-size: 0.72rem; color: var(--gray-300); }
+    .insight-card--featured .insight-date { color: rgba(255,255,255,0.35); }
+    .insight-title {
+      font-size: 1rem; font-weight: 700; color: var(--black);
+      line-height: 1.4; margin-bottom: 14px;
+    }
+    .insight-card--featured .insight-title { color: #fff; font-size: 1.15rem; }
+    .insight-desc {
+      font-size: 0.85rem; color: var(--gray-500); line-height: 1.7;
+      margin-bottom: 24px; flex: 1;
+    }
+    .insight-card--featured .insight-desc { color: rgba(255,255,255,0.62); }
+    .insight-link {
+      font-size: 0.82rem; font-weight: 600; color: var(--teal-600);
+      display: inline-flex; align-items: center; gap: 6px;
+      transition: gap 0.2s; margin-top: auto;
+    }
+    .insight-card--featured .insight-link { color: var(--teal-400); }
+    .insight-card:hover .insight-link { gap: 10px; }
+
+    /* Newsletter bar */
+    .newsletter-insights-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 40px; flex-wrap: wrap;
+      margin-top: 56px; padding: 36px 48px;
+      background: #fff; border: 1px solid var(--teal-100); border-radius: 4px;
+    }
+    .newsletter-insights-left { flex: 1; min-width: 260px; }
+    .newsletter-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal-600); margin-bottom: 8px; }
+    .newsletter-insights-left h3 { font-size: 1.1rem; font-weight: 800; color: var(--black); margin-bottom: 6px; letter-spacing: -0.01em; }
+    .newsletter-desc { font-size: 0.88rem; color: var(--gray-500); line-height: 1.7; margin-bottom: 0; }
+    .newsletter-insights-form {
+      display: flex; gap: 10px; flex-wrap: wrap; flex-shrink: 0;
+    }
+    .newsletter-insights-form input[type="email"] {
+      width: 280px; padding: 12px 14px;
+      background: #fff; border: 1.5px solid var(--teal-100);
+      border-radius: 3px; font-size: 0.88rem; font-family: inherit; color: var(--black);
+      transition: border-color 0.2s; outline: none;
+    }
+    .newsletter-insights-form input[type="email"]:focus { border-color: var(--teal-600); }
+    .newsletter-insights-form input[type="email"]::placeholder { color: var(--gray-300); }
+    .newsletter-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 12px 22px; background: var(--teal-800);
+      border: 1.5px solid var(--teal-800); border-radius: 3px;
+      font-size: 0.85rem; font-weight: 600; font-family: inherit;
+      color: #fff; cursor: pointer; transition: background 0.2s;
+    }
+    .newsletter-btn:hover { background: var(--teal-700); border-color: var(--teal-700); }
+
+    /* ══════════════════════════════════════════════════
+       MATERIAIS / E-BOOKS
+    ══════════════════════════════════════════════════ */
+    .materiais-header { margin-bottom: 48px; max-width: 760px; }
+    .materiais-header p { color: var(--gray-500); font-size: 1rem; line-height: 1.7; margin-top: 12px; }
+    .materiais-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .material-card {
+      background: #fff; border: 1px solid var(--teal-100); border-radius: 4px;
+      padding: 36px 32px;
+      display: flex; flex-direction: column;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .material-card:hover { border-color: var(--teal-600); transform: translateY(-2px); }
+    .material-tag {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em;
+      color: var(--teal-400); text-transform: uppercase; margin-bottom: 16px;
+    }
+    .material-cover {
+      height: 140px; background: var(--teal-50);
+      border: 1px solid var(--teal-100);
+      border-radius: 3px; margin-bottom: 24px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: Georgia, serif; font-size: 2.2rem; color: var(--teal-600);
+      font-weight: 900; letter-spacing: -0.04em; opacity: 0.9;
+      position: relative; overflow: hidden;
+    }
+    .material-cover::after {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 4px; background: var(--teal-600);
+    }
+    .material-title {
+      font-size: 1.1rem; font-weight: 800; color: var(--teal-800);
+      line-height: 1.3; margin-bottom: 12px; letter-spacing: -0.01em;
+    }
+    .material-desc {
+      font-size: 0.88rem; color: var(--gray-500); line-height: 1.65;
+      margin-bottom: 24px; flex: 1;
+    }
+    .material-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.85rem; font-weight: 600; color: var(--teal-800);
+      padding-top: 20px; border-top: 1px solid var(--teal-100);
+      transition: gap 0.2s;
+    }
+    .material-card:hover .material-cta { gap: 12px; }
+    .material-cta::after { content: '→'; }
+
+    /* ══════════════════════════════════════════════════
+       CONTATO
+    ══════════════════════════════════════════════════ */
+    .contact-inner { display: grid; grid-template-columns: 1fr 1.2fr; gap: 100px; align-items: start; }
+    .contact-info { padding-top: 8px; }
+    .contact-info h2 { margin-bottom: 20px; }
+    .contact-info p { color: var(--gray-500); margin-bottom: 48px; font-size: 0.97rem; line-height: 1.8; }
+    .contact-items { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--teal-100); }
+    .contact-item { display: flex; align-items: flex-start; gap: 20px; padding: 22px 0; border-bottom: 1px solid var(--teal-100); }
+    .contact-item-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal-600); margin-bottom: 4px; }
+    .contact-item-val { font-size: 0.92rem; color: var(--black); font-weight: 500; }
+    .contact-form-wrap { background: var(--gray-100); border-radius: 4px; padding: 44px 40px; }
+    .form-title { font-size: 1.15rem; font-weight: 800; color: var(--black); margin-bottom: 10px; }
+    .form-subtitle { font-size: 0.88rem; color: var(--gray-500); line-height: 1.75; margin-bottom: 6px; }
+    .form-time-badge { display: inline-block; font-size: 0.72rem; font-weight: 600; color: var(--teal-600); letter-spacing: 0.06em; margin-bottom: 28px; }
+    .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-700); margin-bottom: 8px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; padding: 12px 16px;
+      background: #fff; border: 1.5px solid var(--teal-100);
+      border-radius: 3px; font-size: 0.9rem; font-family: inherit; color: var(--black);
+      transition: border-color 0.2s; outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--teal-600); }
+    .form-group textarea { min-height: 100px; resize: vertical; }
+    .form-divider { border: none; border-top: 1px solid var(--teal-100); margin: 24px 0 20px; }
+    .form-section-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal-600); margin-bottom: 16px; display: block; }
+    .form-submit { width: 100%; margin-top: 8px; justify-content: center; }
+    .form-checkbox { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 16px; }
+    .form-checkbox input[type="checkbox"] { accent-color: var(--teal-600); width: 15px; height: 15px; min-width: 15px; margin-top: 2px; cursor: pointer; }
+    .form-checkbox label { font-size: 0.82rem; color: var(--gray-500); line-height: 1.6; cursor: pointer; }
+    .form-checkbox label a { color: var(--teal-600); text-decoration: underline; text-underline-offset: 2px; }
+    .form-checkbox label a:hover { color: var(--teal-800); }
+    .form-privacy { display: flex; justify-content: center; gap: 20px; margin-top: 12px; flex-wrap: wrap; }
+    .form-privacy span { font-size: 0.72rem; color: var(--gray-500); display: flex; align-items: center; gap: 6px; }
+    .form-privacy span::before { content: '·'; color: var(--gray-300); font-size: 1rem; }
+    .form-privacy span:first-child::before { display: none; }
+    .form-success { display: none; text-align: center; padding: 48px 24px; }
+    .form-success-check { width: 48px; height: 48px; border: 2px solid var(--teal-600); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.1rem; font-weight: 700; color: var(--teal-600); }
+    .form-success h3 { font-size: 1.1rem; font-weight: 800; color: var(--teal-800); margin-bottom: 8px; }
+    .form-success p { font-size: 0.88rem; color: var(--gray-500); }
+
+    /* ══════════════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════════════ */
+    footer { background: var(--teal-900); color: rgba(255,255,255,0.6); padding: 64px 0 36px; }
+    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 64px; margin-bottom: 48px; }
+    .footer-logo { color: #fff; margin-bottom: 16px; }
+    .footer-desc { font-size: 0.88rem; line-height: 1.8; max-width: 340px; margin-bottom: 6px; }
+    .footer-desc:last-of-type { margin-bottom: 0; }
+    .footer-col h4 { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 20px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 0.88rem; color: rgba(255,255,255,0.55); transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; }
+
+    /* ══════════════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .chevron-strip { flex-direction: column; }
+      .chevron-item--1, .chevron-item--2, .chevron-item--3 { clip-path: none; margin-left: 0; padding-left: 28px; }
+      .model-grid { grid-template-columns: 1fr; }
+      .model-card { border-right: none; border-bottom: 1px solid var(--teal-100); }
+      .value-grid { grid-template-columns: 1fr; }
+      .value-card { border-right: none; border-bottom: 1px solid var(--teal-100); }
+      .value-card:last-child { border-bottom: none; }
+      .insights-grid { grid-template-columns: repeat(2,1fr); }
+      .materiais-grid { grid-template-columns: 1fr; }
+      .ia-inner { grid-template-columns: 1fr; gap: 56px; }
+      .case-row { grid-template-columns: 1fr 1fr; }
+      .case-cell:nth-child(odd) { border-right: 1px solid var(--teal-100); }
+      .case-cell:nth-child(even) { border-right: none; }
+      .case-cell:nth-child(1), .case-cell:nth-child(2) { border-bottom: 1px solid var(--teal-100); }
+    }
+    @media (max-width: 900px) {
+      .container, .container-sm { padding: 0 24px; }
+      .desafios-grid { grid-template-columns: 1fr; }
+      .ia-list { grid-template-columns: 1fr; }
+      .team-member { grid-template-columns: 1fr; }
+      .team-left { flex-direction: row; align-items: center; border-right: none; border-bottom: 1px solid var(--teal-100); padding: 28px 32px; }
+      .team-bio { padding: 28px 32px; align-items: flex-start; }
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; padding: 60px 0; }
+      .hero-panel { display: block; margin-top: 12px; }
+      .sobre-inner { grid-template-columns: 1fr; gap: 56px; }
+      .contact-inner { grid-template-columns: 1fr; gap: 56px; }
+      .cases-quote { padding: 40px 32px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; }
+    }
+    @media (max-width: 768px) {
+      .section { padding: 72px 0; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .insights-grid { grid-template-columns: 1fr; }
+      .case-row { grid-template-columns: 1fr; }
+      .case-cell { border-right: none !important; border-bottom: 1px solid var(--teal-100) !important; }
+      .case-cell:last-child { border-bottom: none !important; }
+      .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+      .contact-form-wrap { padding: 32px 24px; }
+      .newsletter-insights-bar { padding: 28px 24px; }
+      .newsletter-insights-form input[type="email"] { width: 100%; }
+      #topbar { font-size: 0.72rem; height: auto; padding: 10px 16px; }
+      #topbar a { gap: 8px; }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════
+     HEADER
+     ▸ Topbar com insight em destaque (editar texto e link)
+     ▸ Logo, menu desktop, menu mobile, botão CTA
+     ▸ Substituir "TW" por imagem da logo quando disponível
+══════════════════════════════════════════════════ -->
+<header id="header">
+
+  <!-- Topbar institucional — barra estática com insight em destaque -->
+  <div id="topbar">
+    <a href="#insights">
+      <span class="topbar-tag">Novo insight</span>
+      <span>Como empresas de varejo podem proteger margem em ambientes multicanal</span>
+      <span class="topbar-arrow">→</span>
+    </a>
+  </div>
+
+  <div class="container">
+    <nav>
+      <a href="#inicio" class="logo">
+        <div class="logo-box">TW</div>
+        <span>True Worth <span style="font-weight:300">Consulting</span></span>
+      </a>
+      <!-- Menu desktop simplificado -->
+      <ul class="nav-links">
+        <li><a href="#solucoes">Soluções</a></li>
+        <li><a href="#como-trabalhamos">Abordagem</a></li>
+        <li><a href="#cases">Experiência</a></li>
+        <li><a href="#insights">Insights</a></li>
+        <li><a href="#materiais">Materiais</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <a href="https://www.linkedin.com/company/trwcon/" class="nav-linkedin" target="_blank" rel="noopener" aria-label="LinkedIn da True Worth Consulting"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="#contato" class="btn btn-outline-white nav-cta">Falar com especialista</a>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </div>
+  <!-- Menu mobile — mesmas opções do desktop -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#solucoes" onclick="toggleMenu()">Soluções</a>
+    <a href="#como-trabalhamos" onclick="toggleMenu()">Abordagem</a>
+    <a href="#cases" onclick="toggleMenu()">Experiência</a>
+    <a href="#insights" onclick="toggleMenu()">Insights</a>
+    <a href="#materiais" onclick="toggleMenu()">Materiais</a>
+    <a href="#contato" onclick="toggleMenu()">Contato</a>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════════════
+     HERO
+     ▸ Headline principal de posicionamento
+     ▸ CTAs: agendar conversa estratégica + conhecer soluções
+     ▸ Painel lateral com 4 frentes de atuação
+══════════════════════════════════════════════════ -->
+<section id="inicio">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">Consultoria estratégica orientada à criação de valor</div>
+        <h1 class="hero-title">
+          Estratégia, M&amp;A e Supply para empresas que precisam crescer com<br>
+          <em>margem, foco e disciplina de execução</em>
+        </h1>
+        <p class="hero-desc">
+          A True Worth Consulting apoia empresas de varejo, moda, consumo, distribuição e investidores em decisões críticas de crescimento, transações, eficiência operacional e captura de valor.
+        </p>
+        <div class="hero-actions">
+          <a href="#contato" class="btn btn-primary btn-arrow">Agendar conversa estratégica</a>
+          <a href="#solucoes" class="btn btn-outline-white">Conhecer soluções</a>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="hero-panel-label">Frentes de atuação</div>
+        <div class="panel-row">
+          <div class="panel-num">01</div>
+          <div>
+            <div class="panel-text-title">Strategy</div>
+            <div class="panel-text-sub">Crescimento · Pricing · Go-to-market · Transformação</div>
+          </div>
+        </div>
+        <div class="panel-row">
+          <div class="panel-num">02</div>
+          <div>
+            <div class="panel-text-title">M&amp;A</div>
+            <div class="panel-text-sub">Tese de investimento · Due diligence · PMI · Carve-outs</div>
+          </div>
+        </div>
+        <div class="panel-row">
+          <div class="panel-num">03</div>
+          <div>
+            <div class="panel-text-title">Supply</div>
+            <div class="panel-text-sub">Sourcing · Sortimento · Compras · Eficiência operacional</div>
+          </div>
+        </div>
+        <div class="panel-row">
+          <div class="panel-num">04</div>
+          <div>
+            <div class="panel-text-title">Value Capture</div>
+            <div class="panel-text-sub">Governança · KPIs · Execução · Resultados mensuráveis</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     DESAFIOS QUE RESOLVEMOS
+     ▸ 4 cards em grid 2x2 com situações típicas de cliente
+     ▸ Editar textos diretamente nos cards abaixo
+══════════════════════════════════════════════════ -->
+<section id="desafios" class="section">
+  <div class="container">
+    <div class="desafios-header">
+      <span class="eyebrow">Desafios que resolvemos</span>
+      <div class="rule"></div>
+      <h2 class="h2">Apoiamos empresas em momentos críticos de decisão</h2>
+      <p>Trabalhamos com líderes empresariais para transformar desafios complexos em planos claros, priorizados e executáveis.</p>
+    </div>
+    <div class="desafios-grid">
+      <div class="desafio-card">
+        <span class="desafio-num">01</span>
+        <h3 class="desafio-title">Crescimento com pressão de margem</h3>
+        <p class="desafio-desc">Revisão de estratégia, canais, pricing e portfólio para crescer com rentabilidade.</p>
+      </div>
+      <div class="desafio-card">
+        <span class="desafio-num">02</span>
+        <h3 class="desafio-title">Baixa previsibilidade em compras e estoque</h3>
+        <p class="desafio-desc">Melhoria de sortimento, sourcing, giro e capital alocado.</p>
+      </div>
+      <div class="desafio-card">
+        <span class="desafio-num">03</span>
+        <h3 class="desafio-title">Expansão, aquisição ou venda de negócios</h3>
+        <p class="desafio-desc">Apoio em tese de investimento, diligência, integração e preparação para transações.</p>
+      </div>
+      <div class="desafio-card">
+        <span class="desafio-num">04</span>
+        <h3 class="desafio-title">Transformação que precisa sair do papel</h3>
+        <p class="desafio-desc">Priorização, governança, KPIs e execução junto ao time executivo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     SOBRE
+     ▸ Bloco visual à esquerda + texto e pilares à direita
+══════════════════════════════════════════════════ -->
+<section id="sobre" class="section section-gray">
+  <div class="container">
+    <div class="sobre-inner">
+      <div class="sobre-visual">
+        <div class="sobre-block">
+          <div class="sobre-block-rule"></div>
+          <div class="sobre-block-title">Decisões críticas de crescimento, eficiência e transações</div>
+          <div class="sobre-block-sub">Strategy · M&amp;A · Supply · Captura de valor</div>
+        </div>
+      </div>
+      <div class="sobre-content">
+        <span class="eyebrow">Quem somos</span>
+        <div class="rule"></div>
+        <h2 class="h2" style="margin-bottom:20px;">Consultoria estratégica boutique para decisões críticas de crescimento, eficiência e transações</h2>
+        <p>A True Worth Consulting combina experiência executiva, rigor analítico e pragmatismo de implementação para apoiar empresas em desafios de estratégia, M&amp;A, supply, pricing e transformação operacional.</p>
+        <p>Atuamos lado a lado com acionistas, conselhos e lideranças executivas para estruturar diagnósticos precisos, planos acionáveis e modelos de gestão orientados à captura de valor.</p>
+        <div class="pilares">
+          <div class="pilar">
+            <span class="pilar-num">01</span>
+            <div>
+              <h4>Rigor estratégico</h4>
+              <p>Método consultivo, análise quantitativa e diagnósticos estruturados aplicados a cada decisão de negócio.</p>
+            </div>
+          </div>
+          <div class="pilar">
+            <span class="pilar-num">02</span>
+            <div>
+              <h4>Experiência sênior</h4>
+              <p>Projetos conduzidos por profissionais com vivência executiva em varejo, consumo, M&amp;A e transformação.</p>
+            </div>
+          </div>
+          <div class="pilar">
+            <span class="pilar-num">03</span>
+            <div>
+              <h4>Independência e clareza</h4>
+              <p>Recomendações imparciais, foco em resultados sustentáveis e comunicação direta com acionistas e conselho.</p>
+            </div>
+          </div>
+          <div class="pilar">
+            <span class="pilar-num">04</span>
+            <div>
+              <h4>Execução junto ao cliente</h4>
+              <p>Co-criação com o time executivo e transferência de capacidade para garantir continuidade dos resultados.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     SOLUÇÕES — Strategy / M&A / Supply
+     ▸ 3 cards principais com descrição e capacidades
+     ▸ Editar lista de capacidades em cada card abaixo
+══════════════════════════════════════════════════ -->
+<section id="solucoes" class="section">
+  <div class="container">
+    <div class="value-header">
+      <div>
+        <span class="eyebrow">Soluções</span>
+        <div class="rule"></div>
+        <h2 class="h2">Três frentes integradas para capturar valor</h2>
+        <p class="value-subtitle">Combinamos estratégia, transações e operação para apoiar empresas em decisões críticas e acelerar a geração de resultados.</p>
+      </div>
+      <a href="#contato" class="btn btn-outline-teal btn-arrow">Falar sobre seu projeto</a>
+    </div>
+
+    <div class="value-grid">
+
+      <!-- Strategy -->
+      <div class="value-card">
+        <div class="value-card-num">01</div>
+        <div class="value-card-title">Strategy</div>
+        <div class="value-card-desc">Definimos onde crescer, como competir e como alocar recursos para gerar valor com foco e disciplina.</div>
+        <ul class="value-capabilities">
+          <li>Planejamento estratégico</li>
+          <li>Go-to-market</li>
+          <li>Market scan &amp; market sizing</li>
+          <li>Pricing e política comercial</li>
+          <li>Programas de transformação</li>
+          <li>Eficiência operacional</li>
+        </ul>
+      </div>
+
+      <!-- M&A -->
+      <div class="value-card">
+        <div class="value-card-num">02</div>
+        <div class="value-card-title">M&amp;A</div>
+        <div class="value-card-desc">Apoiamos decisões de aquisição, venda, integração e desinvestimento com visão estratégica, financeira e operacional.</div>
+        <ul class="value-capabilities">
+          <li>Buy-side &amp; sell-side advisory</li>
+          <li>Corporate &amp; M&amp;A strategy</li>
+          <li>Identificação de targets</li>
+          <li>Due diligence estratégica</li>
+          <li>PMI — Post-Merger Integration</li>
+          <li>Desinvestimentos e carve-outs</li>
+        </ul>
+      </div>
+
+      <!-- Supply -->
+      <div class="value-card">
+        <div class="value-card-num">03</div>
+        <div class="value-card-title">Supply</div>
+        <div class="value-card-desc">Melhoramos compras, sortimento, fornecedores e cadeia de suprimentos para proteger margem, caixa e nível de serviço.</div>
+        <ul class="value-capabilities">
+          <li>Strategic sourcing</li>
+          <li>Procurement optimization</li>
+          <li>Plano de sortimento</li>
+          <li>Estratégia de portfólio de produtos</li>
+          <li>Supply chain analysis</li>
+          <li>Eficiência em compras</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="value-footer-bar">
+      <p>Strategy, M&amp;A e Supply atuam de forma integrada para capturar crescimento, eficiência e valor estratégico.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     ABORDAGEM — Como trabalhamos
+     ▸ 3 fases: Discovery, Design, Building
+     ▸ Cada fase tem: atividades, entregável, resultado
+══════════════════════════════════════════════════ -->
+<section id="como-trabalhamos" class="section section-gray">
+  <div class="container">
+    <div class="services-header">
+      <div>
+        <span class="eyebrow">Abordagem</span>
+        <div class="rule"></div>
+        <h2 class="h2">Como trabalhamos</h2>
+        <p class="sub">Do diagnóstico à captura de valor, estruturamos projetos com foco em clareza, velocidade e implementação prática.</p>
+      </div>
+      <a href="#contato" class="btn btn-outline-teal btn-arrow">Falar sobre seu projeto</a>
+    </div>
+
+    <!-- Faixa de fases (chevron) -->
+    <div class="chevron-strip">
+      <div class="chevron-item chevron-item--1">
+        <div class="model-phase">01 | DISCOVERY</div>
+        <div class="model-subtitle">Diagnosticar com precisão</div>
+      </div>
+      <div class="chevron-item chevron-item--2">
+        <div class="model-phase">02 | DESIGN</div>
+        <div class="model-subtitle">Estruturar a solução</div>
+      </div>
+      <div class="chevron-item chevron-item--3">
+        <div class="model-phase">03 | BUILDING</div>
+        <div class="model-subtitle">Implementar com disciplina</div>
+      </div>
+    </div>
+
+    <div class="model-grid">
+
+      <!-- DISCOVERY -->
+      <div class="model-card">
+        <div class="model-body">
+          <div class="model-card-title">Diagnosticar com precisão</div>
+          <div class="model-atividades-label">Atividades</div>
+          <ul class="model-atividades">
+            <li>Entrevistas executivas e análise de dados</li>
+            <li>Mapeamento de oportunidades e restrições</li>
+            <li>Benchmark e leitura de mercado</li>
+            <li>Priorização das hipóteses de valor</li>
+          </ul>
+        </div>
+        <div class="model-entregavel">
+          <div class="model-entregavel-label">Entregável</div>
+          <div class="model-entregavel-text">Diagnóstico executivo e hipóteses priorizadas</div>
+        </div>
+        <div class="model-resultado">
+          <div class="model-resultado-label">Resultado</div>
+          <div class="model-resultado-text">Clareza sobre onde está o valor e quais problemas devem ser resolvidos primeiro</div>
+        </div>
+      </div>
+
+      <!-- DESIGN -->
+      <div class="model-card">
+        <div class="model-body">
+          <div class="model-card-title">Estruturar a solução</div>
+          <div class="model-atividades-label">Atividades</div>
+          <ul class="model-atividades">
+            <li>Modelagem de cenários e business case</li>
+            <li>Desenho de alternativas estratégicas</li>
+            <li>Roadmap, governança e KPIs</li>
+            <li>Workshops de alinhamento com a liderança</li>
+          </ul>
+        </div>
+        <div class="model-entregavel">
+          <div class="model-entregavel-label">Entregável</div>
+          <div class="model-entregavel-text">Plano estruturado com caso de valor, iniciativas e roadmap</div>
+        </div>
+        <div class="model-resultado">
+          <div class="model-resultado-label">Resultado</div>
+          <div class="model-resultado-text">Estratégia acionável, validada e pronta para execução</div>
+        </div>
+      </div>
+
+      <!-- BUILDING -->
+      <div class="model-card">
+        <div class="model-body">
+          <div class="model-card-title">Implementar com disciplina</div>
+          <div class="model-atividades-label">Atividades</div>
+          <ul class="model-atividades">
+            <li>Pilotos e ciclos rápidos de validação</li>
+            <li>Acompanhamento de KPIs</li>
+            <li>Ajustes de rota</li>
+            <li>Transferência de capacidades para o time do cliente</li>
+          </ul>
+        </div>
+        <div class="model-entregavel">
+          <div class="model-entregavel-label">Entregável</div>
+          <div class="model-entregavel-text">Modelo implementado, playbook operacional e governança instalada</div>
+        </div>
+        <div class="model-resultado">
+          <div class="model-resultado-label">Resultado</div>
+          <div class="model-resultado-text">Impacto mensurável e capacidade de execução incorporada ao cliente</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     IA APLICADA AOS PROJETOS
+     ▸ Posicionamento sóbrio: IA como acelerador, não substituto
+     ▸ Editar bullets de aplicação na lista lateral
+══════════════════════════════════════════════════ -->
+<section id="ia-aplicada" class="section">
+  <div class="container">
+    <div class="ia-inner">
+      <div class="ia-left">
+        <span class="eyebrow eyebrow-light">Tecnologia aplicada</span>
+        <div class="rule rule-light"></div>
+        <h2 class="h2">Inteligência artificial aplicada à execução</h2>
+        <p class="sub">Combinamos experiência sênior, método consultivo e recursos de inteligência artificial para acelerar diagnósticos, análises e entregas — sempre com julgamento crítico dos nossos especialistas.</p>
+        <div class="ia-quote">
+          <strong>IA como acelerador.</strong> Experiência sênior como diferencial. Resultado como objetivo.
+        </div>
+      </div>
+      <div class="ia-list">
+        <div class="ia-item">
+          <div class="ia-item-num">01</div>
+          <p class="ia-item-text">Aceleração de pesquisas, benchmarks e análises de mercado</p>
+        </div>
+        <div class="ia-item">
+          <div class="ia-item-num">02</div>
+          <p class="ia-item-text">Estruturação de hipóteses e identificação de padrões</p>
+        </div>
+        <div class="ia-item">
+          <div class="ia-item-num">03</div>
+          <p class="ia-item-text">Apoio na construção de cenários, business cases e simulações</p>
+        </div>
+        <div class="ia-item">
+          <div class="ia-item-num">04</div>
+          <p class="ia-item-text">Automatização de atividades repetitivas de análise e documentação</p>
+        </div>
+        <div class="ia-item">
+          <div class="ia-item-num">05</div>
+          <p class="ia-item-text">Produção mais ágil de materiais executivos, planos de ação e recomendações</p>
+        </div>
+        <div class="ia-item">
+          <div class="ia-item-num">06</div>
+          <p class="ia-item-text">Apoio ao monitoramento de KPIs e acompanhamento da execução</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     CASES — Experiência selecionada
+     ▸ Estrutura: Contexto · Desafio · Atuação TW · Impacto
+     ▸ Adicionar novos cases duplicando o bloco .case-card
+══════════════════════════════════════════════════ -->
+<section id="cases" class="section section-teal">
+  <div class="container">
+    <div class="cases-header">
+      <span class="eyebrow">Experiência selecionada</span>
+      <div class="rule"></div>
+      <h2 class="h2">Impacto em projetos recentes</h2>
+      <p class="sub">Trabalho conduzido com lideranças executivas para gerar resultados concretos em prazos definidos.</p>
+    </div>
+
+    <!-- ATENÇÃO: validar autorização de uso público do nome, depoimento e métricas
+         antes da publicação (Central Importadora Têxtil / Rodrigo Librelotto). -->
+    <!-- Case 1 — Central Importadora Têxtil -->
+    <div class="case-card">
+      <div class="case-row">
+        <div class="case-cell">
+          <div class="case-cell-label">Contexto</div>
+          <div class="case-cell-title">Distribuição têxtil</div>
+          <div class="case-cell-text">Operação híbrida entre varejo, atacado e indústria no setor têxtil.</div>
+        </div>
+        <div class="case-cell">
+          <div class="case-cell-label">Desafio</div>
+          <div class="case-cell-text">Necessidade de alinhar estratégia, compras, vendas e governança para melhorar giro, reduzir estoque antigo e aumentar disciplina de gestão.</div>
+        </div>
+        <div class="case-cell">
+          <div class="case-cell-label">Atuação TW</div>
+          <div class="case-cell-text">Estruturação do planejamento estratégico, redesenho do processo de compras, implementação de Open-to-Buy e consolidação de KPIs gerenciais.</div>
+        </div>
+        <div class="case-cell case-cell--impact">
+          <div class="case-cell-label">Impacto</div>
+          <ul class="case-impact-list">
+            <li><strong>−12%</strong> em estoques antigos</li>
+            <li>Open-to-Buy estruturado</li>
+            <li>KPIs e rotina mensal de resultados</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Depoimento — Editar autor e empresa abaixo -->
+    <div class="cases-quote">
+      <div class="quote-mark">"</div>
+      <p class="quote-text">A TW Consulting teve papel central na transformação da nossa empresa. A equipe compreendeu rapidamente nossos desafios, estruturou e implementou o plano estratégico, entregando resultados concretos em menos de um ano.</p>
+      <div class="quote-author">Rodrigo Librelotto <span>· CEO, Central Importadora Têxtil</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     EQUIPE
+     ▸ 3 sócios: Henry Costa, Miguel Vieira, Adriana Hirano
+     ▸ Substituir foto-*.png pelas imagens finais
+     ▸ Atualizar links do LinkedIn em cada bloco
+══════════════════════════════════════════════════ -->
+<section id="equipe" class="section">
+  <div class="container">
+    <div class="equipe-header">
+      <span class="eyebrow">Equipe</span>
+      <div class="rule"></div>
+      <h2 class="h2">Experiência sênior em estratégia, varejo, M&amp;A e operação</h2>
+      <p>Projetos conduzidos por profissionais com vivência executiva e consultiva em desafios complexos de crescimento, eficiência e transformação.</p>
+    </div>
+    <div class="team-list">
+
+      <!-- Henry Costa -->
+      <div class="team-member">
+        <div class="team-left">
+          <div class="team-avatar"><img src="foto-henry.png" alt="Henry Costa" /></div>
+          <div class="team-id">
+            <div class="team-name">Henry Costa <a href="https://www.linkedin.com/in/henrycostatw" class="linkedin-link" target="_blank" rel="noopener" aria-label="LinkedIn de Henry Costa"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></div>
+            <div class="team-role">Sócio · Varejo &amp; Produto</div>
+          </div>
+        </div>
+        <div class="team-bio">
+          <p>Henry Costa tem mais de 27 anos de experiência na Lojas Renner, incluindo atuação como Diretor Estatutário de Produto. Possui trajetória em varejo, produto, compras, gestão e governança, com formação em Administração, MBA em Gestão de Varejo, especialização em Harvard Business School e formação pelo IBGC para conselheiros de administração.</p>
+        </div>
+      </div>
+
+      <!-- Miguel Vieira -->
+      <div class="team-member">
+        <div class="team-left">
+          <div class="team-avatar"><img src="foto-miguel.png" alt="Miguel Vieira" /></div>
+          <div class="team-id">
+            <div class="team-name">Miguel Vieira <a href="https://www.linkedin.com/in/mfcvieira" class="linkedin-link" target="_blank" rel="noopener" aria-label="LinkedIn de Miguel Vieira"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></div>
+            <div class="team-role">Sócio · Estratégia &amp; M&amp;A</div>
+          </div>
+        </div>
+        <div class="team-bio">
+          <p>Miguel Vieira tem mais de 20 anos de experiência em estratégia, M&amp;A, eficiência operacional e transformação. Atuou em Accenture Strategy, Peers, KPMG e no setor de telecom, liderando projetos em varejo, consumo, saúde, private equity e tecnologia. É formado em Administração, possui MBA em Finanças e participou de programas executivos em Stanford e MIT.</p>
+        </div>
+      </div>
+
+      <!-- Adriana Hirano -->
+      <div class="team-member">
+        <div class="team-left">
+          <div class="team-avatar"><img src="foto-adriana.png" alt="Adriana Hirano" /></div>
+          <div class="team-id">
+            <div class="team-name">Adriana Hirano <a href="https://www.linkedin.com/in/adrianahirano" class="linkedin-link" target="_blank" rel="noopener" aria-label="LinkedIn de Adriana Hirano"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></div>
+            <div class="team-role">Sócia · Sourcing &amp; Categorias</div>
+          </div>
+        </div>
+        <div class="team-bio">
+          <p>Adriana Hirano tem 18 anos de experiência em varejo de moda, com atuação em compras, sourcing, gestão de categorias, marcas globais de beleza e desenvolvimento de produtos de marca própria. Possui vivência em planejamento estratégico, liderança de times e gestão de portfólio, com formação em Administração e MBA em Marketing e Varejo.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     INSIGHTS
+     ▸ Cards de artigos — atualizar links quando publicados
+     ▸ Substituir hrefs por URLs reais (ex: /insights/slug.html)
+══════════════════════════════════════════════════ -->
+<section id="insights" class="section section-gray">
+  <div class="container">
+    <div class="insights-header">
+      <div>
+        <span class="eyebrow">Insights</span>
+        <div class="rule"></div>
+        <h2 class="h2">Insights para decisões estratégicas</h2>
+        <p class="sub">Análises sobre crescimento, M&amp;A, supply, varejo, pricing e transformação operacional.</p>
+        <p class="sub" style="margin-top:14px; font-size:0.92rem; color: var(--gray-500); font-style: italic;">Os artigos completos serão publicados em breve. Enquanto isso, você pode solicitar os materiais e receber novos conteúdos diretamente da equipe True Worth.</p>
+      </div>
+      <a href="#contato" class="btn btn-outline-teal btn-arrow">Receber novos artigos</a>
+    </div>
+    <!-- ATENÇÃO: cards apontando para #contato enquanto as páginas de artigos não existem.
+         FUTURO: substituir os hrefs por URLs reais (ex: /insights/proteger-margem-ambiente-multicanal.html) -->
+    <div class="insights-grid">
+
+      <!-- Artigo em destaque -->
+      <a href="#contato" class="insight-card insight-card--featured">
+        <div class="insight-meta">
+          <span class="insight-cat">Pricing</span>
+          <span class="insight-date">Em breve</span>
+        </div>
+        <h3 class="insight-title">Como proteger margem em ambientes multicanal</h3>
+        <p class="insight-desc">A operação multicanal expõe distorções de preço, descontos sobrepostos e perdas silenciosas de margem. Como estruturar política comercial e governança de pricing entre canais.</p>
+        <span class="insight-link">Solicitar artigo →</span>
+      </a>
+
+      <a href="#contato" class="insight-card">
+        <div class="insight-meta">
+          <span class="insight-cat">Supply</span>
+          <span class="insight-date">Em breve</span>
+        </div>
+        <h3 class="insight-title">O papel do sortimento na geração de caixa no varejo</h3>
+        <p class="insight-desc">Decisões de sortimento determinam giro, margem e capital alocado. Como estruturar o portfólio para liberar caixa sem comprometer disponibilidade.</p>
+        <span class="insight-link">Solicitar artigo →</span>
+      </a>
+
+      <a href="#contato" class="insight-card">
+        <div class="insight-meta">
+          <span class="insight-cat">M&amp;A</span>
+          <span class="insight-date">Em breve</span>
+        </div>
+        <h3 class="insight-title">Como preparar uma empresa para venda</h3>
+        <p class="insight-desc">As frentes que mais influenciam o valor percebido por compradores estratégicos e financeiros antes de um processo de sell-side.</p>
+        <span class="insight-link">Solicitar artigo →</span>
+      </a>
+
+      <a href="#contato" class="insight-card">
+        <div class="insight-meta">
+          <span class="insight-cat">Estratégia</span>
+          <span class="insight-date">Em breve</span>
+        </div>
+        <h3 class="insight-title">Por que planos estratégicos falham na execução</h3>
+        <p class="insight-desc">A maior parte dos fracassos não acontece no planejamento, mas na lacuna entre decisão e ação. Os três padrões de falha mais recorrentes.</p>
+        <span class="insight-link">Solicitar artigo →</span>
+      </a>
+
+      <a href="#contato" class="insight-card">
+        <div class="insight-meta">
+          <span class="insight-cat">Supply</span>
+          <span class="insight-date">Em breve</span>
+        </div>
+        <h3 class="insight-title">Strategic sourcing como alavanca de margem</h3>
+        <p class="insight-desc">Como estruturar processos de sourcing capazes de gerar economia recorrente sem comprometer qualidade, prazo ou nível de serviço.</p>
+        <span class="insight-link">Solicitar artigo →</span>
+      </a>
+
+      <a href="#contato" class="insight-card">
+        <div class="insight-meta">
+          <span class="insight-cat">Gestão</span>
+          <span class="insight-date">Em breve</span>
+        </div>
+        <h3 class="insight-title">Como transformar dados em decisões comerciais</h3>
+        <p class="insight-desc">Do dashboard à decisão: como construir uma rotina executiva que conecta análise de dados, priorização e ação comercial.</p>
+        <span class="insight-link">Solicitar artigo →</span>
+      </a>
+
+    </div>
+
+    <!-- ATENÇÃO: newsletter em modo demonstração.
+         Para evitar percepção falsa de inscrição, o formulário foi substituído por um CTA
+         apontando para a seção de contato. Quando integrar com CRM ou ferramenta de
+         e-mail marketing (Mailchimp, RD Station, ActiveCampaign, Brevo, HubSpot),
+         restaurar o formulário de e-mail e conectar o submit ao serviço escolhido. -->
+    <div class="newsletter-insights-bar">
+      <div class="newsletter-insights-left">
+        <div class="newsletter-label">Newsletter</div>
+        <h3>Receba insights da True Worth</h3>
+        <p class="newsletter-desc">Análises práticas sobre estratégia, M&amp;A, supply, varejo e geração de valor.</p>
+      </div>
+      <a href="#contato" class="newsletter-btn" style="text-decoration:none;">Solicitar recebimento de insights</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     MATERIAIS / E-BOOKS
+     ▸ Cards de materiais ricos para download
+     ▸ Substituir hrefs por landing pages dos materiais
+     ▸ Editar título, descrição e iniciais do "cover" abaixo
+══════════════════════════════════════════════════ -->
+<section id="materiais" class="section">
+  <div class="container">
+    <div class="materiais-header">
+      <span class="eyebrow">Conteúdos estratégicos</span>
+      <div class="rule"></div>
+      <h2 class="h2">Guias práticos para decisões críticas</h2>
+      <p>Conteúdos executivos para apoiar decisões de crescimento, eficiência, M&amp;A e supply.</p>
+      <p style="margin-top:14px; font-size:0.92rem; color: var(--gray-500); font-style: italic;">Os materiais executivos estarão disponíveis em breve. Para receber um conteúdo ou discutir um tema específico, entre em contato com a nossa equipe.</p>
+    </div>
+
+    <!-- ATENÇÃO: cards apontando para #contato enquanto os materiais não existem.
+         FUTURO: substituir os hrefs por landing pages dos materiais
+         (ex: /materiais/guia-pricing-varejo.html) com formulário de captura de lead. -->
+    <div class="materiais-grid">
+
+      <a href="#contato" class="material-card">
+        <div class="material-tag">Guia · Pricing</div>
+        <div class="material-cover">PR</div>
+        <h3 class="material-title">Guia executivo de pricing no varejo</h3>
+        <p class="material-desc">Como estruturar políticas comerciais, proteger margem e reduzir descontos sem perder competitividade.</p>
+        <span class="material-cta">Solicitar material</span>
+      </a>
+
+      <a href="#contato" class="material-card">
+        <div class="material-tag">Guia · M&amp;A</div>
+        <div class="material-cover">M&amp;A</div>
+        <h3 class="material-title">Como preparar uma empresa para venda</h3>
+        <p class="material-desc">Principais frentes para fortalecer a tese de valor antes de um processo de sell-side.</p>
+        <span class="material-cta">Solicitar material</span>
+      </a>
+
+      <a href="#contato" class="material-card">
+        <div class="material-tag">Guia · Supply</div>
+        <div class="material-cover">SP</div>
+        <h3 class="material-title">Estratégia de sortimento e capital de giro</h3>
+        <p class="material-desc">Como melhorar disponibilidade, giro e margem com uma gestão mais disciplinada do portfólio.</p>
+        <span class="material-cta">Solicitar material</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     CONTATO
+     ▸ Formulário qualificado para geração de leads
+     ▸ INTEGRAR com Formspree, HubSpot, Make, Zapier, etc.
+     ▸ Editar campos abaixo conforme prioridades comerciais
+══════════════════════════════════════════════════ -->
+<section id="contato" class="section section-gray">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-info">
+        <span class="eyebrow">Contato</span>
+        <div class="rule"></div>
+        <h2 class="h2" style="margin-bottom:20px;">Vamos entender o desafio e avaliar como podemos apoiar</h2>
+        <p>Conte brevemente o desafio da sua empresa. Nossa equipe avaliará o contexto e retornará para uma conversa inicial.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div>
+              <div class="contact-item-label">Atendimento</div>
+              <div class="contact-item-val">Projetos presenciais e remotos</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div>
+              <div class="contact-item-label">Confidencialidade</div>
+              <div class="contact-item-val">Conversas iniciais sob NDA quando aplicável</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div>
+              <div class="contact-item-label">Resposta</div>
+              <div class="contact-item-val">Retorno em até 1–2 dias úteis</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrap">
+        <div class="form-title">Compartilhe o contexto do seu negócio</div>
+        <p class="form-subtitle">Conte brevemente o desafio da sua empresa. Nossa equipe avaliará o contexto e retornará para uma conversa inicial.</p>
+        <span class="form-time-badge">Tempo estimado: 1 minuto</span>
+
+        <!-- ════════════════════════════════════════════════════════════════
+             ⚠️  ATENÇÃO: FORMULÁRIO EM MODO DEMONSTRAÇÃO  ⚠️
+             Este formulário NÃO envia dados a nenhum destino.
+             Antes de publicar, integrar com Formspree, HubSpot, RD Station,
+             Make/Zapier, Google Sheets, Airtable, CRM ou backend próprio.
+        ════════════════════════════════════════════════════════════════ -->
+
+        <!-- ════════════════════════════════════════════════
+             OPÇÕES DE INTEGRAÇÃO DO FORMULÁRIO
+             Substituir o handler abaixo (handleSubmit) por uma das opções:
+
+             ▸ Formspree
+                <form action="https://formspree.io/f/SEU_CODIGO" method="POST">
+
+             ▸ HubSpot Forms
+                Embed via script HubSpot (Forms → Embed code)
+
+             ▸ Webflow / Wix Forms
+                Trocar por formulário gerenciado pela plataforma de hospedagem
+
+             ▸ Make / Zapier (webhook)
+                <form action="https://hook.us1.make.com/SEU_WEBHOOK" method="POST">
+
+             ▸ Google Sheets
+                Via Apps Script ou serviço como SheetMonkey / Sheety
+
+             ▸ Airtable
+                Via Airtable Forms ou API + middleware
+
+             ▸ CRM / Backend próprio
+                <form action="/api/contato" method="POST">
+
+             Lembrar de remover o atributo `onsubmit="handleSubmit(event)"`
+             quando integrar com serviço externo, ou ajustar o JS para
+             enviar via fetch() antes de mostrar o estado de sucesso.
+        ════════════════════════════════════════════════ -->
+
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+
+          <!-- Principal desafio -->
+          <div class="form-group">
+            <label>Principal desafio *</label>
+            <select name="desafio" required>
+              <option value="">Selecione...</option>
+              <option>Estratégia e crescimento</option>
+              <option>Pricing e rentabilidade</option>
+              <option>M&amp;A e expansão</option>
+              <option>Transformação de negócios</option>
+              <option>Eficiência operacional</option>
+              <option>Supply chain / sourcing</option>
+              <option>Planejamento comercial</option>
+              <option>Outro</option>
+            </select>
+          </div>
+
+          <!-- Horizonte de decisão -->
+          <div class="form-group">
+            <label>Horizonte de decisão</label>
+            <select name="horizonte">
+              <option value="">Selecione...</option>
+              <option>Imediato (até 30 dias)</option>
+              <option>Curto prazo (1–3 meses)</option>
+              <option>Médio prazo (3–6 meses)</option>
+              <option>Avaliando alternativas</option>
+            </select>
+          </div>
+
+          <!-- Mensagem -->
+          <div class="form-group">
+            <label>Mensagem adicional</label>
+            <textarea name="mensagem" placeholder="Conte brevemente o contexto da empresa e o desafio que gostaria de discutir."></textarea>
+          </div>
+
+          <hr class="form-divider" />
+          <span class="form-section-label">Contexto da empresa</span>
+
+          <div class="form-group">
+            <label>Setor</label>
+            <select name="setor">
+              <option value="">Selecione...</option>
+              <option>Varejo</option>
+              <option>Moda</option>
+              <option>Bens de consumo</option>
+              <option>Distribuição / Atacado</option>
+              <option>E-commerce</option>
+              <option>Indústria</option>
+              <option>Private Equity / Investidores</option>
+              <option>Serviços</option>
+              <option>Outro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Faturamento aproximado</label>
+            <select name="faturamento">
+              <option value="">Selecione...</option>
+              <option>Até R$ 50 milhões</option>
+              <option>R$ 50 – 200 milhões</option>
+              <option>R$ 200 – 500 milhões</option>
+              <option>R$ 500 milhões – R$ 1 bilhão</option>
+              <option>R$ 1 – 5 bilhões</option>
+              <option>Acima de R$ 5 bilhões</option>
+            </select>
+          </div>
+
+          <hr class="form-divider" />
+          <span class="form-section-label">Informações de contato</span>
+
+          <div class="form-group">
+            <label>Nome *</label>
+            <input type="text" name="nome" placeholder="Seu nome" required />
+          </div>
+          <div class="form-group">
+            <label>Empresa *</label>
+            <input type="text" name="empresa" placeholder="Nome da empresa" required />
+          </div>
+          <div class="form-group">
+            <label>Cargo</label>
+            <select name="cargo">
+              <option value="">Selecione...</option>
+              <option>Sócio / Fundador</option>
+              <option>CEO / Presidente</option>
+              <option>C-level / Vice-Presidente</option>
+              <option>Diretor</option>
+              <option>Head</option>
+              <option>Gerente</option>
+              <option>Investidor / Private Equity</option>
+              <option>Conselheiro</option>
+              <option>Outro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>E-mail corporativo *</label>
+            <input type="email" name="email" placeholder="nome@empresa.com" required />
+          </div>
+          <div class="form-group">
+            <label>Telefone / WhatsApp</label>
+            <input type="tel" name="telefone" placeholder="(11) 99999-9999" />
+          </div>
+
+          <div class="form-checkbox">
+            <input type="checkbox" id="lgpdConsent" required />
+            <!-- ATENÇÃO: criar a página politica-de-privacidade.html antes da publicação
+                 ou trocar este link temporariamente. -->
+            <label for="lgpdConsent">Concordo em receber comunicações da True Worth Consulting e com a <a href="politica-de-privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a>.</label>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit btn-arrow">Agendar conversa estratégica</button>
+          <div class="form-privacy">
+            <span>Conversas iniciais são confidenciais</span>
+            <span>Sem compromisso</span>
+          </div>
+
+        </form>
+        <div class="form-success" id="formSuccess">
+          <div class="form-success-check">✓</div>
+          <h3>Mensagem enviada</h3>
+          <p>Obrigado pelo contato. Retornaremos em até 1 dia útil.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     FOOTER
+     ▸ Atualizar links, e-mail e textos institucionais
+     ▸ Editar colunas de Soluções e Empresa abaixo
+══════════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <a href="#inicio" class="logo footer-logo">
+          <div class="logo-box">TW</div>
+          <span>True Worth <span style="font-weight:300">Consulting</span></span>
+        </a>
+        <p class="footer-desc">Estratégia, M&amp;A e Supply para empresas que buscam crescimento com rentabilidade, eficiência e disciplina de execução.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Soluções</h4>
+        <ul class="footer-links">
+          <li><a href="#solucoes">Strategy</a></li>
+          <li><a href="#solucoes">M&amp;A</a></li>
+          <li><a href="#solucoes">Supply</a></li>
+          <li><a href="#solucoes">Pricing</a></li>
+          <li><a href="#solucoes">Eficiência operacional</a></li>
+          <li><a href="#materiais">Materiais executivos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <ul class="footer-links">
+          <li><a href="#como-trabalhamos">Abordagem</a></li>
+          <li><a href="#cases">Experiência selecionada</a></li>
+          <li><a href="#insights">Insights</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <!-- ATENÇÃO: criar politica-de-privacidade.html antes da publicação ou trocar o link temporariamente. -->
+          <li><a href="politica-de-privacidade.html">Política de Privacidade</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 True Worth <span style="font-weight:300">Consulting</span>. Todos os direitos reservados.</span>
+      <span>trwcon.com <a href="https://www.linkedin.com/company/trwcon/" class="footer-linkedin" target="_blank" rel="noopener" aria-label="LinkedIn da True Worth Consulting"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Header — alterna estilo ao rolar
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('light', window.scrollY > 80);
+  });
+
+  // Menu mobile
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  // ════════════════════════════════════════════════════════════
+  // FORMULÁRIO DE CONTATO
+  // ⚠️ ATENÇÃO: esta função NÃO envia dados a nenhum destino.
+  // É apenas uma simulação visual para demonstração.
+  // SUBSTITUIR antes da publicação por uma integração real
+  // (Formspree, HubSpot, RD Station, Make/Zapier, webhook, CRM).
+  // ════════════════════════════════════════════════════════════
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }
+
+  // Animação leve de entrada
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.style.opacity = '1';
+        el.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.desafio-card, .pilar, .case-cell, .material-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.45s ease, transform 0.45s ease';
+    io.observe(el);
+  });
+</script>
+</body>
+</html>

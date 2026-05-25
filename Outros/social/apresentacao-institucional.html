@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<title>True Worth Consulting — Apresentação Institucional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="deck-stage.js"></script>
+<style>
+  :root {
+    --ink:      #15201F;
+    --ink-3:    #4A5453;
+    --ink-4:    #6B7574;
+    --paper:    #F6F4EE;
+    --paper-2:  #EFECE3;
+    --paper-3:  #E8E4D9;
+    --rule:     #D8D2C2;
+    --teal-900: #0A2422;
+    --teal-700: #1F4C49;
+    --teal-ink: #15363A;
+    --serif: 'Newsreader', Georgia, serif;
+    --sans:  'Geist', system-ui, sans-serif;
+    --mono:  'Geist Mono', 'SF Mono', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--sans); color: var(--ink); }
+
+  deck-stage { --slide-w: 1920px; --slide-h: 1080px; background: #000; }
+  deck-stage > section {
+    width: 1920px; height: 1080px;
+    background: var(--paper);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    font-family: var(--sans);
+  }
+
+  /* shared chrome */
+  .chrome-top, .chrome-bot {
+    position: absolute; left: 80px; right: 80px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--mono); font-size: 14px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--ink-4);
+  }
+  .chrome-top { top: 56px; }
+  .chrome-bot { bottom: 56px; }
+  .chrome-top .l b, .chrome-bot .l b, .chrome-bot .r b { color: var(--ink); font-weight: 500; }
+  .brand-mini { display: flex; align-items: center; gap: 12px; }
+  .brand-mini .mark {
+    width: 44px; height: 26px;
+    background-image: url('assets/logo-t-clean.png');
+    background-size: contain; background-repeat: no-repeat; background-position: center;
+  }
+  .brand-mini .name { font-family: var(--serif); font-size: 20px; letter-spacing: -0.02em; color: var(--ink); }
+  .brand-mini .name b { font-weight: 500; }
+  .brand-mini .name span { color: var(--ink-4); margin-left: 6px; font-style: italic; }
+
+  /* dark variants */
+  .dark { background: var(--teal-900) !important; color: var(--paper); }
+  .dark .chrome-top, .dark .chrome-bot { color: rgba(246,244,238,0.55); }
+  .dark .chrome-top .l b, .dark .chrome-bot .l b, .dark .chrome-bot .r b { color: var(--paper); }
+  .dark .brand-mini .mark { filter: invert(1) brightness(1.05); }
+  .dark .brand-mini .name { color: var(--paper); }
+  .dark .brand-mini .name span { color: rgba(246,244,238,0.55); }
+
+  /* paper-2 variant */
+  .alt { background: var(--paper-2) !important; }
+
+  /* type primitives */
+  .kicker {
+    font-family: var(--mono); font-size: 14px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--ink-4); display: inline-block;
+  }
+  .dark .kicker { color: rgba(246,244,238,0.6); }
+  .kicker b { color: var(--ink); font-weight: 500; }
+  .dark .kicker b { color: var(--paper); }
+  .em { font-style: italic; color: var(--teal-700); font-weight: 500; }
+  .dark .em { color: #6BB4A8; }
+  h1.display {
+    font-family: var(--serif); font-weight: 600;
+    font-size: 144px; line-height: 0.95; letter-spacing: -0.04em;
+    color: var(--ink); text-wrap: balance;
+  }
+  h2.section-h {
+    font-family: var(--serif); font-weight: 600;
+    font-size: 96px; line-height: 0.98; letter-spacing: -0.03em;
+    color: var(--ink); text-wrap: balance;
+  }
+  .dark h1.display, .dark h2.section-h { color: var(--paper); }
+  .lede {
+    font-family: var(--sans); font-size: 26px; line-height: 1.55; color: var(--ink-3);
+    max-width: 60ch;
+  }
+  .dark .lede { color: rgba(246,244,238,0.78); }
+  .body {
+    font-size: 22px; line-height: 1.6; color: var(--ink-3);
+  }
+  .dark .body { color: rgba(246,244,238,0.8); }
+  .body b { color: var(--ink); font-weight: 500; }
+  .dark .body b { color: var(--paper); }
+
+  .num-big {
+    font-family: var(--serif); font-weight: 500;
+    font-size: 96px; line-height: 1; letter-spacing: -0.03em; color: var(--ink);
+    font-feature-settings: 'lnum', 'tnum';
+  }
+  .dark .num-big { color: var(--paper); }
+
+  .mono-tag { font-family: var(--mono); font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-4); }
+  .dark .mono-tag { color: rgba(246,244,238,0.55); }
+
+  /* ╔═════ SLIDE 01 · CAPA ═════╗ */
+  .s-capa { padding: 80px; flex-direction: column; justify-content: space-between; }
+  .s-capa .top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .s-capa .center { display: flex; flex-direction: column; gap: 32px; max-width: 1400px; }
+  .s-capa .stamp {
+    width: 84px; height: 50px; background-image: url('assets/logo-t-watermark.png');
+    background-size: contain; background-repeat: no-repeat; background-position: left center;
+    filter: brightness(0.55) contrast(1.4);
+  }
+  .s-capa h1 { font-size: 168px; line-height: 0.92; }
+  .s-capa .meta { display: flex; gap: 64px; }
+  .s-capa .meta div { display: flex; flex-direction: column; gap: 6px; }
+
+  /* ╔═════ SLIDE 02 · POR QUE ═════╗ */
+  .s-porque { padding: 96px 120px; flex-direction: column; justify-content: center; gap: 56px; }
+  .s-porque .epigraph { max-width: 1500px; border-left: 4px solid var(--ink); padding: 12px 0 12px 40px; }
+  .s-porque .epigraph .quote { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 90px; line-height: 1.15; letter-spacing: -0.025em; color: var(--ink); }
+  .s-porque .epigraph .src { margin-top: 28px; font-family: var(--mono); font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-4); }
+  .s-porque .epigraph .src b { color: var(--ink); font-weight: 500; }
+
+  .s-porque .definition { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; padding-top: 40px; border-top: 1px solid var(--rule); }
+  .s-porque .definition .lbl b { font-family: var(--serif); font-size: 44px; font-weight: 500; letter-spacing: -0.02em; color: var(--ink); display: block; }
+  .s-porque .definition .lbl span { font-family: var(--mono); font-size: 14px; color: var(--ink-4); letter-spacing: 0.1em; margin-top: 8px; display: block; }
+  .s-porque .definition .text { font-family: var(--serif); font-size: 32px; line-height: 1.45; color: var(--ink-3); }
+  .s-porque .definition .text em { font-style: italic; color: var(--teal-700); font-weight: 500; }
+  .s-porque .definition .text b { color: var(--ink); font-weight: 500; }
+
+  /* ╔═════ SLIDE 03 · TESE ═════╗ */
+  .s-tese { padding: 120px; flex-direction: column; justify-content: center; gap: 64px; }
+  .s-tese h1 { font-size: 200px; line-height: 0.92; }
+  .s-tese .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: end; }
+  .s-tese .grid p { font-family: var(--serif); font-size: 32px; line-height: 1.45; color: var(--ink-3); max-width: 28ch; }
+  .s-tese .grid p b { color: var(--ink); font-weight: 500; }
+  .s-tese .grid p em { font-style: italic; color: var(--teal-700); font-weight: 500; }
+
+  /* ╔═════ SLIDE 04 · QUEM SOMOS / STATS ═════╗ */
+  .s-quem { padding: 120px; flex-direction: column; gap: 80px; justify-content: center; }
+  .s-quem-head { display: grid; grid-template-columns: 2fr 3fr; gap: 96px; align-items: end; }
+  .s-quem-head h2 em { font-style: italic; color: var(--teal-700); font-weight: 500; }
+  .s-quem .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 56px; padding-top: 56px; border-top: 1px solid var(--rule); }
+  .s-quem .stat { display: flex; flex-direction: column; gap: 20px; }
+  .s-quem .stat .num { font-family: var(--serif); font-weight: 500; font-size: 200px; line-height: 1; letter-spacing: -0.04em; color: var(--ink); }
+  .s-quem .stat .lbl { font-family: var(--mono); font-size: 16px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); font-weight: 500; }
+  .s-quem .stat .desc { font-size: 22px; line-height: 1.5; color: var(--ink-3); max-width: 32ch; }
+
+  /* ╔═════ SLIDE 05 · PROPÓSITO ═════╗ */
+  .s-prop { padding: 120px; flex-direction: column; justify-content: center; gap: 80px; }
+  .s-prop .top { display: grid; grid-template-columns: 1fr 2fr; gap: 96px; align-items: end; }
+  .s-prop h2 { font-size: 88px; }
+  .s-prop .statement { font-family: var(--serif); font-size: 56px; line-height: 1.18; letter-spacing: -0.02em; color: var(--paper); text-wrap: pretty; }
+  .s-prop .statement em { font-style: italic; color: #6BB4A8; font-weight: 500; }
+  .s-prop .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 64px; padding-top: 56px; border-top: 1px solid rgba(246,244,238,0.15); }
+  .s-prop .pillars .cell { display: flex; flex-direction: column; gap: 16px; }
+  .s-prop .pillars .idx { font-family: var(--mono); font-size: 14px; letter-spacing: 0.16em; color: rgba(246,244,238,0.6); }
+  .s-prop .pillars .nm { font-family: var(--serif); font-weight: 500; font-size: 44px; letter-spacing: -0.02em; color: var(--paper); }
+  .s-prop .pillars .desc { font-size: 20px; line-height: 1.55; color: rgba(246,244,238,0.7); }
+
+  /* ╔═════ SLIDE 06 · SOLUÇÕES ═════╗ */
+  .s-sol { padding: 120px; flex-direction: column; gap: 64px; justify-content: center; }
+  .s-sol-head { display: grid; grid-template-columns: 2fr 3fr; gap: 96px; align-items: end; }
+  .s-sol-head h2 em { font-style: italic; color: var(--teal-700); font-weight: 500; }
+  .s-sol-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; padding-top: 48px; border-top: 1px solid var(--rule); }
+  .s-sol-grid .card { background: var(--paper-3); border: 1px solid var(--rule); padding: 36px; display: flex; flex-direction: column; gap: 20px; min-height: 380px; }
+  .s-sol-grid .card .num { font-family: var(--mono); font-size: 14px; letter-spacing: 0.16em; color: var(--teal-700); font-weight: 500; }
+  .s-sol-grid .card .nm { font-family: var(--serif); font-weight: 500; font-size: 40px; line-height: 1.05; letter-spacing: -0.02em; color: var(--ink); }
+  .s-sol-grid .card .desc { font-size: 18px; line-height: 1.55; color: var(--ink-3); margin-top: auto; }
+  .s-sol-grid .card .desc b { color: var(--ink); font-weight: 500; }
+
+  /* ╔═════ SLIDE 07 · TW EDGE ═════╗ */
+  .s-edge { padding: 120px; flex-direction: column; justify-content: center; gap: 64px; }
+  .s-edge h2 em { color: #6BB4A8; }
+  .s-edge .sub { font-family: var(--mono); font-size: 18px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(246,244,238,0.6); }
+  .s-edge .sub b { color: var(--paper); font-weight: 500; }
+  .s-edge .head { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; align-items: end; }
+  .s-edge .head p { font-size: 24px; line-height: 1.6; color: rgba(246,244,238,0.78); }
+  .s-edge .head p b { color: var(--paper); font-weight: 500; }
+  .s-edge .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 48px; padding-top: 48px; border-top: 1px solid rgba(246,244,238,0.15); }
+  .s-edge .grid .cell { display: flex; flex-direction: column; gap: 16px; }
+  .s-edge .grid .cell .idx { font-family: var(--mono); font-size: 13px; letter-spacing: 0.16em; color: rgba(246,244,238,0.55); }
+  .s-edge .grid .cell .nm { font-family: var(--serif); font-weight: 500; font-size: 30px; line-height: 1.15; color: var(--paper); }
+  .s-edge .grid .cell .desc { font-size: 17px; line-height: 1.55; color: rgba(246,244,238,0.72); }
+
+  /* ╔═════ SLIDE 08 · NOSSO JEITO ═════╗ */
+  .s-jeito { padding: 120px; flex-direction: column; justify-content: center; gap: 56px; }
+  .s-jeito-head h2 em { font-style: italic; color: var(--teal-700); font-weight: 500; }
+  .s-jeito .lede { margin-top: 24px; }
+  .s-jeito .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px 80px; padding-top: 48px; border-top: 1px solid var(--rule); }
+  .s-jeito .row { display: grid; grid-template-columns: 80px 1fr; gap: 32px; }
+  .s-jeito .row .num { font-family: var(--serif); font-weight: 500; font-size: 56px; line-height: 1; color: var(--ink-4); }
+  .s-jeito .row .nm { font-family: var(--serif); font-weight: 600; font-size: 32px; line-height: 1.1; color: var(--ink); margin-bottom: 12px; }
+  .s-jeito .row .nm em { font-style: italic; color: var(--teal-700); font-weight: 500; }
+  .s-jeito .row .tag { font-family: var(--mono); font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-4); margin-bottom: 16px; }
+  .s-jeito .row .desc { font-size: 17px; line-height: 1.55; color: var(--ink-3); }
+  .s-jeito .row .desc b { color: var(--ink); font-weight: 500; }
+
+  /* ╔═════ SLIDE 09 · SÓCIOS ═════╗ */
+  .s-socios { padding: 96px 120px; flex-direction: column; justify-content: center; gap: 40px; }
+  .s-socios-head h2 em { font-style: italic; color: var(--teal-700); font-weight: 500; }
+  .s-socios .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 56px; padding-top: 40px; border-top: 1px solid var(--rule); }
+  .s-socios .card { display: flex; flex-direction: column; gap: 16px; }
+  .s-socios .card .head { display: flex; align-items: center; gap: 20px; }
+  .s-socios .card .photo {
+    width: 132px; height: 132px; border-radius: 50%; flex-shrink: 0;
+    background: var(--paper-3); border: 1px solid var(--rule);
+    background-size: cover; background-position: center 18%;
+    filter: grayscale(0.15);
+  }
+  .s-socios .card .photo.henry { background-image: url('../assets/photos/socio-henry.png'); }
+  .s-socios .card .photo.miguel { background-image: url('../assets/photos/socio-miguel.png'); }
+  .s-socios .card .photo.adriana { background-image: url('../assets/photos/socio-adriana.png'); }
+  .s-socios .card .id { display: flex; flex-direction: column; gap: 4px; }
+  .s-socios .card .nm { font-family: var(--serif); font-weight: 600; font-size: 30px; line-height: 1.05; letter-spacing: -0.02em; color: var(--ink); }
+  .s-socios .card .role { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-4); }
+  .s-socios .card .bio { font-size: 15px; line-height: 1.6; color: var(--ink-3); margin-top: 4px; }
+  .s-socios .card .bio b { color: var(--ink); font-weight: 500; }
+  .s-socios .card dl { display: grid; grid-template-columns: 78px 1fr; gap: 6px 14px; font-size: 13.5px; line-height: 1.45; margin-top: 6px; padding-top: 14px; border-top: 1px dashed var(--rule); }
+  .s-socios .card dt { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-4); padding-top: 3px; }
+  .s-socios .card dd { color: var(--ink-3); }
+
+  /* ╔═════ SLIDE 10 · GOVERNANÇA ═════╗ */
+  .s-gov { padding: 120px; flex-direction: column; justify-content: center; gap: 64px; }
+  .s-gov-head { display: grid; grid-template-columns: 2fr 3fr; gap: 96px; align-items: end; }
+  .s-gov-head h2 em { font-style: italic; color: var(--teal-700); font-weight: 500; }
+  .s-gov-head .lede { font-size: 28px; }
+  .s-gov .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; padding-top: 56px; border-top: 1px solid var(--rule); }
+  .s-gov .cell { display: flex; flex-direction: column; gap: 20px; }
+  .s-gov .cell .lbl { font-family: var(--mono); font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal-700); font-weight: 500; }
+  .s-gov .cell .nm { font-family: var(--serif); font-weight: 500; font-size: 36px; line-height: 1.15; letter-spacing: -0.02em; color: var(--ink); }
+  .s-gov .cell .desc { font-size: 18px; line-height: 1.55; color: var(--ink-3); }
+
+  /* ╔═════ SLIDE 11 · CONVITE ═════╗ */
+  .s-cta { padding: 140px; flex-direction: column; justify-content: center; gap: 80px; }
+  .s-cta h2 { font-size: 144px; line-height: 0.95; max-width: 26ch; }
+  .s-cta h2 em { color: #6BB4A8; }
+  .s-cta .meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 64px; padding-top: 48px; border-top: 1px solid rgba(246,244,238,0.15); }
+  .s-cta .meta .cell { display: flex; flex-direction: column; gap: 12px; }
+  .s-cta .meta .lbl { font-family: var(--mono); font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(246,244,238,0.6); }
+  .s-cta .meta .val { font-family: var(--serif); font-size: 40px; letter-spacing: -0.02em; color: var(--paper); }
+
+  /* ╔═════ SLIDE 12 · FECHAMENTO ═════╗ */
+  .s-end { flex-direction: column; justify-content: center; align-items: center; gap: 56px; padding: 120px; }
+  .s-end .mark {
+    width: 380px; height: 145px;
+    background-image: url('assets/logo-t-watermark.png');
+    background-size: contain; background-repeat: no-repeat; background-position: center;
+    filter: invert(1) brightness(1.1) contrast(1.2);
+  }
+  .s-end .name { font-family: var(--serif); font-size: 64px; letter-spacing: -0.02em; color: var(--paper); }
+  .s-end .name b { font-weight: 500; }
+  .s-end .name span { color: rgba(246,244,238,0.55); margin-left: 12px; font-style: italic; }
+  .s-end .tag { font-family: var(--mono); font-size: 16px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(246,244,238,0.55); }
+  .s-end .tag b { color: var(--paper); font-weight: 500; }
+</style>
+</head>
+<body>
+
+<deck-stage>
+
+  <!-- ═══ 01 · CAPA ═══ -->
+  <section data-screen-label="01 Capa" class="s-capa dark">
+    <div class="top">
+      <div class="brand-mini">
+        <div class="mark"></div>
+        <div class="name"><b>True Worth</b><span>Consulting</span></div>
+      </div>
+      <div class="mono-tag">Apresentação institucional · 2026</div>
+    </div>
+
+    <div class="center">
+      <span class="kicker"><b>§ Boutique de estratégia & IA aplicada</b> · Confidencial · sob NDA</span>
+      <h1 class="display">Valor verdadeiro<br/><em class="em">para decisões</em><br/>que permanecem.</h1>
+      <p class="lede" style="margin-top: 16px;">Consultoria estratégica em estratégia, M&amp;A, supply e IA aplicada — para empresas que tratam <b>margem como decisão</b>, não como sorte.</p>
+    </div>
+
+    <div class="meta">
+      <div>
+        <span class="mono-tag">Documento</span>
+        <span style="font-family: var(--serif); font-size: 22px; color: var(--paper); margin-top: 6px;">TW.001 — Institutional Deck</span>
+      </div>
+      <div>
+        <span class="mono-tag">Contato</span>
+        <span style="font-family: var(--serif); font-size: 22px; color: var(--paper); margin-top: 6px;">contato@trwcon.com</span>
+      </div>
+      <div>
+        <span class="mono-tag">LinkedIn</span>
+        <span style="font-family: var(--serif); font-size: 22px; color: var(--paper); margin-top: 6px;">/company/trwcon</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 02 · POR QUE ═══ -->
+  <section data-screen-label="02 Por que True Worth" class="s-porque">
+    <div class="chrome-top">
+      <span class="l"><b>§ 02</b> · Por que True Worth</span>
+      <span class="r">02 / 12</span>
+    </div>
+
+    <div class="epigraph">
+      <p class="quote">“Preço é o que você paga.<br/>Valor é o que você leva.”</p>
+      <p class="src"><b>Benjamin Graham</b> — The Intelligent Investor, 1949</p>
+    </div>
+
+    <div class="definition">
+      <div class="lbl">
+        <b>true worth</b>
+        <span>/truː wɜːθ/ · expr.</span>
+      </div>
+      <div class="text">
+        O <em>valor verdadeiro</em> de uma decisão executiva — aquele que sustenta <b>margem, governança e legado</b> depois que o ciclo do projeto termina.
+        <br/><br/>
+        Não é o que parece valer. É o que permanece.
+      </div>
+    </div>
+
+    <div class="chrome-bot">
+      <span class="brand-mini"><span class="mark"></span><span class="name"><b>True Worth</b><span>Consulting</span></span></span>
+      <span class="r">TW.001 · Institutional</span>
+    </div>
+  </section>
+
+  <!-- ═══ 03 · TESE ═══ -->
+  <section data-screen-label="03 Tese" class="s-tese alt">
+    <div class="chrome-top">
+      <span class="l"><b>§ 03</b> · Tese fundadora</span>
+      <span class="r">03 / 12</span>
+    </div>
+
+    <h1 class="display">O nome <em class="em">é</em><br/>a tese.</h1>
+
+    <div class="grid">
+      <p>Fomos fundados sobre uma convicção: <b>consultoria existe para criar valor verdadeiro</b> — não slides, não diagnósticos brilhantes que não viram resultado, não tese sem responsabilidade.</p>
+      <p>Por isso somos boutique. Por isso <b>sócios sêniores assinam</b> o trabalho do início ao fim. Por isso recusamos projetos onde o ajuste não é claro.</p>
+    </div>
+
+    <div class="chrome-bot">
+      <span class="brand-mini"><span class="mark"></span><span class="name"><b>True Worth</b><span>Consulting</span></span></span>
+      <span class="r">TW.001</span>
+    </div>
+  </section>
+
+  <!-- ═══ 04 · QUEM SOMOS / STATS ═══ -->
+  <section data-screen-label="04 Quem somos" class="s-quem">
+    <div class="chrome-top">
+      <span class="l"><b>§ 04</b> · Quem somos</span>
+      <span class="r">04 / 12</span>
+    </div>
+
+    <div class="s-quem-head">
+      <span class="kicker"><b>A boutique</b></span>
+      <h2 class="section-h">Especializados em <em class="em">transformação de negócios</em>, estratégia e M&amp;A.</h2>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="num">3</div>
+        <div class="lbl">Sócios fundadores</div>
+        <p class="desc">Sêniores no projeto inteiro — Henry Costa, Miguel Vieira e Adriana Hirano.</p>
+      </div>
+      <div class="stat">
+        <div class="num">65+</div>
+        <div class="lbl">Anos somados de prática</div>
+        <p class="desc">Varejo, M&amp;A, supply, consumo, family business e private equity.</p>
+      </div>
+      <div class="stat">
+        <div class="num">100%</div>
+        <div class="lbl">Independência</div>
+        <p class="desc">Sem conflito de marca, sem incentivo de tamanho — só resultado para o cliente.</p>
+      </div>
+    </div>
+
+    <div class="chrome-bot">
+      <span class="brand-mini"><span class="mark"></span><span class="name"><b>True Worth</b><span>Consulting</span></span></span>
+      <span class="r">TW.001</span>
+    </div>
+  </section>
+
+  <!-- ═══ 05 · PROPÓSITO ═══ -->
+  <section data-screen-label="05 Propósito" class="s-prop dark">
+    <div class="chrome-top">
+      <span class="l"><b>§ 05</b> · Nosso propósito</span>
+      <span class="r">05 / 12</span>
+    </div>
+
+    <div class="top">
+      <div>
+        <span class="kicker"><b>Propósito TW</b></span>
+        <h2 class="section-h" style="margin-top: 24px;">Nosso<br/><em class="em">propósito</em>.</h2>
+      </div>
+      <p class="statement">Elevar organizações a modelos de <em>excelência em gestão e governança</em>, inspirando decisões estratégicas que gerem <em>valor econômico</em>, <em>impacto social</em> e <em>legados duradouros</em>.</p>
+    </div>
+
+    <div class="pillars">
+      <div class="cell">
+        <span class="idx">/ 01</span>
+        <div class="nm">Valor econômico</div>
+        <p class="desc">Margem, fluxo, retorno sobre capital — métrica é o teste, não a aspiração.</p>
+      </div>
+      <div class="cell">
+        <span class="idx">/ 02</span>
+        <div class="nm">Impacto social</div>
+        <p class="desc">Times desenvolvidos, governança fortalecida, decisões responsáveis.</p>
+      </div>
+      <div class="cell">
+        <span class="idx">/ 03</span>
+        <div class="nm">Legado duradouro</div>
+        <p class="desc">O que sustenta a empresa depois que o projeto termina — cultura e modelo.</p>
+      </div>
+    </div>
+
+    <div class="chrome-bot">
+      <span class="brand-mini"><span class="mark"></span><span class="name"><b>True Worth</b><span>Consulting</span></span></span>
+      <span class="r">TW.001</span>
+    </div>
+  </section>
+
+  <!-- ═══ 06 · SOLUÇÕES ═══ -->
+  <section data-screen-label="06 Soluções" class="s-sol">
+    <div class="chrome-top">
+      <span class="l"><b>§ 06</b> · Soluções</span>
+      <span class="r">06 / 12</span>
+    </div>
+
+    <div class="s-sol-head">
+      <span class="kicker"><b>Quatro frentes · Um só padrão</b></span>
+      <h2 class="section-h">Onde a TW <em class="em">cria valor</em>.</h2>
+    </div>
+
+    <div class="s-sol-grid">
+      <div class="card">
+        <span class="num">/ 01 · Estratégia</span>
+        <div class="nm">Planejamento estratégico</div>
+        <p class="desc">Diagnóstico, posicionamento, alocação de capital e <b>desenho de modelo de negócio</b>. Conduzido por sócio em interlocução com conselho.</p>
+      </div>
+      <div class="card">
+        <span class="num">/ 02 · M&amp;A</span>
+        <div class="nm">Fusões e aquisições</div>
+        <p class="desc">Buy-side, sell-side, due diligence comercial e integração pós-deal. Atuação <b>orientada à tese</b>, não ao volume.</p>
+      </div>
+      <div class="card">
+        <span class="num">/ 03 · Supply</span>
+        <div class="nm">Sortimento e supply</div>
+        <p class="desc">Gestão de portfólio, sourcing, planejamento e <b>capital de giro</b>. Margem que aparece no fechamento.</p>
+      </div>
+      <div class="card">
+        <span class="num">/ 04 · IA aplicada</span>
+        <div class="nm">TW Edge™</div>
+        <p class="desc">IA como <b>aceleradora de decisão</b> — leitura de dados, simulação de cenários e operação. Sem hype.</p>
+      </div>
+    </div>
+
+    <div class="chrome-bot">
+      <span class="brand-mini"><span class="mark"></span><span class="name"><b>True Worth</b><span>Consulting</span></span></span>
+      <span class="r">TW.001</span>
+    </div>
+  </section>
+
+  <!-- ═══ 07 · TW EDGE ═══ -->
+  <section data-screen-label="07 TW Edge" class="s-edge dark">
+    <div class="chrome-top">
+      <span class="l"><b>§ 07</b> · TW Edge™ · IA aplicada</span>
+      <span class="r">07 / 12</span>
+    </div>
+
+    <div class="head">
+      <div>
+        <span class="sub"><b>TW Edge™</b> · IA aplicada à decisão executiva</span>
+        <h2 class="section-h" style="margin-top: 24px;">IA que <em>acelera decisão</em> — não substitui julgamento.</h2>
+      </div>
+      <p>O <b>TW Edge™</b> integra modelos de linguagem, análise de dados e automação de operações ao processo consultivo. <br/><br/>Cada engajamento desenha uma <b>arquitetura própria</b> — modelos, dados e fluxos validados em conjunto com o time-cliente.</p>
+    </div>
+
+    <div class="grid">
+      <div class="cell">
+        <span class="idx">/ 01</span>
+        <div class="nm">Leitura de dados em escala</div>
+        <p class="desc">Dossiês, conselhos, pricing, comportamento — sintetizados em horas, não semanas.</p>
+      </div>
+      <div class="cell">
+        <span class="idx">/ 02</span>
+        <div class="nm">Simulação de cenários</div>
+        <p class="desc">Stress-test de plano, sensibilidade de margem, premissas de M&amp;A — testáveis em tempo real.</p>
+      </div>
+      <div class="cell">
+        <span class="idx">/ 03</span>
+        <div class="nm">Automação de operações</div>
+        <p class="desc">Compras, sortimento, follow-up — IA que opera processo, com governança humana.</p>
+      </div>
+      <div class="cell">
+        <span class="idx">/ 04</span>
+        <div class="nm">Governança de IA</div>
+        <p class="desc">Política, risco, auditoria — IA com responsabilidade, do conselho à operação.</p>
+      </div>
+    </div>
+
+    <div class="chrome-bot">
+      <span class="brand-mini"><span class="mark"></span><span class="name"><b>True Worth</b><span>Consulting</span></span></span>
+      <span class="r">TW.001</span>
+    </div>
+  </section>
+
+  <!-- ═══ 08 · NOSSO JEITO ═══ -->
+  <section data-screen-label="08 Nosso jeito" class="s-jeito alt">
+    <div class="chrome-top">
+      <span class="l"><b>§ 08</b> · Nosso jeito</span>
+      <span class="r">08 / 12</span>
+    </div>
+
+    <div class="s-jeito-head">
+      <span class="kicker"><b>Quatro princípios</b> · um modo de trabalhar</span>
+      <h2 class="section-h" style="margin-top: 24px;">Metodologia sólida com <em class="em">soluções sob medida</em>.</h2>
+      <p class="lede">Respeitamos a essência, os valores e a cultura de cada empresa — porque é isso que as torna singulares.</p>
+    </div>
+
+    <div class="grid">
+      <div class="row">
+        <span class="num">01</span>
+        <div>
+          <div class="nm">Consultoria <em>sob medida</em></div>
+          <div class="tag">Cocriada · potencializada por IA</div>
+          <p class="desc">Trabalhamos lado a lado com os executivos. Combinamos <b>rigor analítico</b>, experiência sênior e <b>IA aplicada</b> para acelerar leitura de dados, simulações e cenários.</p>
+        </div>
+      </div>
+      <div class="row">
+        <span class="num">02</span>
+        <div>
+          <div class="nm">Mão na <em>massa</em></div>
+          <div class="tag">Implementação real · ponta a ponta</div>
+          <p class="desc">Atuação direta de equipe sênior, presente do diagnóstico à entrega. Diagnóstico preciso, recomendação assertiva, impacto real.</p>
+        </div>
+      </div>
+      <div class="row">
+        <span class="num">03</span>
+        <div>
+          <div class="nm">Transparência <em>e imparcialidade</em></div>
+          <div class="tag">Compromisso com a empresa-cliente</div>
+          <p class="desc"><b>Independência</b> e clareza. Foco em resultados sustentáveis, valorização de acionistas e responsabilidade social.</p>
+        </div>
+      </div>
+      <div class="row">
+        <span class="num">04</span>
+        <div>
+          <div class="nm">Experiência <em>na prática</em></div>
+          <div class="tag">Trajetória executiva · não apenas advisory</div>
+          <p class="desc">Sócios com <b>liderança executiva direta</b> — defendemos teses em conselho, fechamos M&amp;A com prazo e viramos curva de margem com a casa olhando.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="chrome-bot">
+      <span class="brand-mini"><span class="mark"></span><span class="name"><b>True Worth</b><span>Consulting</span></span></span>
+      <span class="r">TW.001</span>
+    </div>
+  </section>
+
+  <!-- ═══ 09 · SÓCIOS ═══ -->
+  <section data-screen-label="09 Sócios" class="s-socios">
+    <div class="chrome-top">
+      <span class="l"><b>§ 09</b> · Sócios fundadores</span>
+      <span class="r">09 / 12</span>
+    </div>
+
+    <div class="s-socios-head">
+      <span class="kicker"><b>Trio sênior</b> · 50+ anos somados</span>
+      <h2 class="section-h" style="margin-top: 24px;">Quem assina o <em class="em">trabalho</em>.</h2>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="head">
+          <div class="photo henry"></div>
+          <div class="id">
+            <div class="nm">Henry Costa</div>
+            <span class="role">Sócio-fundador</span>
+          </div>
+        </div>
+        <p class="bio"><b>27 anos em Lojas Renner</b>, onde foi <b>Diretor Estatutário de Produto</b> conduzindo planejamento, compras e desenvolvimento de coleção em escala bilionária. Liderou ciclos de expansão de marcas e digitalização do varejo. <b>Conselheiro certificado IBGC</b> com participação em conselhos de líderes do varejo brasileiro.</p>
+        <dl>
+          <dt>Foco</dt><dd>Varejo · Produto · Compras · Conselho</dd>
+          <dt>Setores</dt><dd>Moda · Casa · Vestuário · Mass market</dd>
+        </dl>
+      </div>
+      <div class="card">
+        <div class="head">
+          <div class="photo miguel"></div>
+          <div class="id">
+            <div class="nm">Miguel Vieira</div>
+            <span class="role">Sócio-fundador</span>
+          </div>
+        </div>
+        <p class="bio"><b>+25 anos em estratégia e M&amp;A</b>. <b>Diretor na Accenture</b>, <b>Head de M&amp;A e Strategy na Peers Consulting</b> e passagem pela <b>KPMG</b>. Conduziu fusões, aquisições e desinvestimentos em ciclos completos — da tese de criação de valor à integração pós-fechamento — em mandatos para family offices, fundos e empresas de capital fechado.</p>
+        <dl>
+          <dt>Foco</dt><dd>Estratégia corporativa · M&amp;A · Private Equity</dd>
+          <dt>Setores</dt><dd>Varejo · Saúde · Tecnologia · Serviços</dd>
+        </dl>
+      </div>
+      <div class="card">
+        <div class="head">
+          <div class="photo adriana"></div>
+          <div class="id">
+            <div class="nm">Adriana Hirano</div>
+            <span class="role">Sócia-fundadora</span>
+          </div>
+        </div>
+        <p class="bio"><b>Carreira executiva em sourcing e desenvolvimento de produto</b>, com profundidade em <b>cadeias internacionais</b> e gestão de sortimento. Liderou squads multidisciplinares na construção de marcas próprias e na renovação de portfólio em ciclos curtos de moda e beleza.</p>
+        <dl>
+          <dt>Foco</dt><dd>Sourcing internacional · Sortimento · Marcas próprias</dd>
+          <dt>Setores</dt><dd>Moda · Beleza · Mass market</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="chrome-bot">
+      <span class="brand-mini"><span class="mark"></span><span class="name"><b>True Worth</b><span>Consulting</span></span></span>
+      <span class="r">TW.001</span>
+    </div>
+  </section>
+
+  <!-- ═══ 10 · GOVERNANÇA ═══ -->
+  <section data-screen-label="10 Governança" class="s-gov">
+    <div class="chrome-top">
+      <span class="l"><b>§ 10</b> · Governança & confiança</span>
+      <span class="r">10 / 12</span>
+    </div>
+
+    <div class="s-gov-head">
+      <span class="kicker"><b>Como conduzimos</b></span>
+      <p class="lede">Cada projeto começa por um sócio e termina com um sócio. <b style="color: var(--ink); font-weight: 500;">Não há terceirização do julgamento</b> — e cada recomendação é defendida em conselho.</p>
+    </div>
+
+    <div class="grid">
+      <div class="cell">
+        <span class="lbl">/ 01 · NDA & sigilo</span>
+        <div class="nm">Confidencialidade total</div>
+        <p class="desc">Cada conversa inicial é conduzida sob NDA. Documentos, dados e contexto permanecem dentro do projeto.</p>
+      </div>
+      <div class="cell">
+        <span class="lbl">/ 02 · Conselho IBGC</span>
+        <div class="nm">Padrão de conselho</div>
+        <p class="desc">Sócio com certificação IBGC — interlocução com conselho consultivo, deliberativo e family office.</p>
+      </div>
+      <div class="cell">
+        <span class="lbl">/ 03 · Independência</span>
+        <div class="nm">Sem conflito</div>
+        <p class="desc">Sem incentivo de marca, sem volume de fee. Recusamos projetos onde o ajuste não é claro.</p>
+      </div>
+    </div>
+
+    <div class="chrome-bot">
+      <span class="brand-mini"><span class="mark"></span><span class="name"><b>True Worth</b><span>Consulting</span></span></span>
+      <span class="r">TW.001</span>
+    </div>
+  </section>
+
+  <!-- ═══ 11 · CONVITE ═══ -->
+  <section data-screen-label="11 Convite" class="s-cta dark">
+    <div class="chrome-top">
+      <span class="l"><b>§ 11</b> · Próximo passo</span>
+      <span class="r">11 / 12</span>
+    </div>
+
+    <span class="kicker"><b>Conversa inicial</b> · sob NDA · conduzida por sócio</span>
+
+    <h2 class="section-h">Vamos juntos desenhar o <em>futuro</em> da sua empresa — com propósito, estratégia e resultados reais?</h2>
+
+    <div class="meta">
+      <div class="cell">
+        <span class="lbl">E-mail</span>
+        <span class="val">contato@trwcon.com</span>
+      </div>
+      <div class="cell">
+        <span class="lbl">LinkedIn</span>
+        <span class="val">/company/trwcon</span>
+      </div>
+      <div class="cell">
+        <span class="lbl">Website</span>
+        <span class="val">trwcon.com</span>
+      </div>
+    </div>
+
+    <div class="chrome-bot">
+      <span class="brand-mini"><span class="mark"></span><span class="name"><b>True Worth</b><span>Consulting</span></span></span>
+      <span class="r">TW.001 — Sob NDA</span>
+    </div>
+  </section>
+
+  <!-- ═══ 12 · FECHAMENTO ═══ -->
+  <section data-screen-label="12 Fechamento" class="s-end dark">
+    <div class="mark"></div>
+    <div class="name"><b>True Worth</b><span>Consulting</span></div>
+    <span class="tag"><b>Valor verdadeiro</b> · Para decisões que permanecem.</span>
+  </section>
+
+</deck-stage>
+
+</body>
+</html>

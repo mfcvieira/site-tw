@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ══════════════════════════════════════════════════
+       TEMPLATE DE ARTIGO — TW Consulting
+       Como usar:
+         1. Duplicar este arquivo para /insights/[slug-do-artigo].html
+         2. Substituir TODOS os placeholders [TODO: ...] pelos valores reais
+         3. Substituir o conteúdo de <article> pelo texto do artigo
+         4. Atualizar o JSON-LD Article com headline, datePublished, dateModified
+         5. Adicionar URL do novo artigo em insights.html
+       Cada placeholder está marcado com [TODO: ...] e comentário acima.
+  ══════════════════════════════════════════════════ -->
+
+  <!-- [TODO: title — 50-65 caracteres, com palavra-chave] -->
+  <title>[TODO: Título do artigo] | Insights TW Consulting</title>
+  <!-- [TODO: meta description — 150-160 caracteres, com chamada para ação] -->
+  <meta name="description" content="[TODO: Resumo executivo do artigo em ~155 caracteres]" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="TW Consulting" />
+  <meta name="theme-color" content="#07515E" />
+  <!-- [TODO: canonical com slug real] -->
+  <link rel="canonical" href="https://trwcon.com/insights/[slug].html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="[TODO: Título do artigo]" />
+  <meta property="og:description" content="[TODO: Resumo executivo do artigo]" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://trwcon.com/insights/[slug].html" />
+  <meta property="og:site_name" content="TW Consulting" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:image" content="https://trwcon.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="[TODO: Título do artigo]" />
+  <meta name="twitter:description" content="[TODO: Resumo executivo do artigo]" />
+  <meta name="twitter:image" content="https://trwcon.com/og-image.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+
+  <!-- ══════════════════════════════════════════════════
+       JSON-LD — Article (preenchido por artigo)
+       Atualizar: headline, datePublished, dateModified, image, url
+  ══════════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "[TODO: Título do artigo]",
+    "description": "[TODO: Resumo executivo do artigo]",
+    "image": "https://trwcon.com/og-image.png",
+    "datePublished": "[TODO: 2026-MM-DD]",
+    "dateModified": "[TODO: 2026-MM-DD]",
+    "author": {
+      "@type": "Organization",
+      "name": "TW Consulting",
+      "url": "https://trwcon.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "TW Consulting",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://trwcon.com/og-image.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://trwcon.com/insights/[slug].html"
+    },
+    "inLanguage": "pt-BR",
+    "isPartOf": { "@id": "https://trwcon.com/#website" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/tw-content.css" />
+  <script defer src="/assets/js/tw-analytics.js"></script>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════
+     HEADER COMPARTILHADO — usar IGUAL nas demais páginas de conteúdo
+══════════════════════════════════════════════════ -->
+<header class="tw-header">
+  <div class="container">
+    <div class="tw-header-inner">
+      <a href="/" class="tw-logo">
+        <div class="tw-logo-box">TW</div>
+        <div class="tw-logo-text">True Worth <span>Consulting</span></div>
+      </a>
+      <nav class="tw-nav">
+        <a href="/#solucoes">Soluções</a>
+        <a href="/#ia-aplicada">IA aplicada</a>
+        <a href="/insights.html" class="active">Insights</a>
+        <a href="/materiais.html">Materiais</a>
+        <a href="/#contato" class="tw-nav-cta">Conversar com um sócio</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- Hero do artigo -->
+<section class="tw-article-hero">
+  <div class="container-narrow">
+    <a href="/insights.html" class="tw-back-link" style="color: var(--teal-400);">← Voltar para Insights</a>
+    <!-- [TODO: eyebrow — categoria/tag do artigo, ex.: M&A · Pricing · IA aplicada] -->
+    <div class="tw-article-eyebrow">[TODO: Categoria]</div>
+    <!-- [TODO: H1 — repetir o título do artigo] -->
+    <h1 class="tw-article-title">[TODO: Título do artigo, com <em>destaque</em> opcional]</h1>
+    <div class="tw-article-meta">
+      <span class="author">TW Consulting</span>
+      <span class="dot"></span>
+      <!-- [TODO: data de publicação em formato legível, ex.: 12 de maio de 2026] -->
+      <span>[TODO: Data de publicação]</span>
+      <span class="dot"></span>
+      <!-- [TODO: tempo de leitura estimado, ex.: 8 min de leitura] -->
+      <span>[TODO: X min de leitura]</span>
+    </div>
+  </div>
+</section>
+
+<!-- Corpo do artigo -->
+<article class="tw-article-body">
+  <div class="container-narrow">
+
+    <!-- ════════════════════════════════════════════════
+         INSTRUÇÕES DE REDAÇÃO (apagar antes de publicar)
+
+         Tom: executivo, consultivo, em português brasileiro.
+         Estrutura recomendada:
+         - Lead (2-3 parágrafos): o problema do leitor e por que importa agora
+         - Diagnóstico em 3-4 seções (H2)
+         - Cada seção pode ter 2-3 sub-tópicos (H3)
+         - Conclusão executiva: o que o decisor faz amanhã de manhã
+
+         Diretrizes do projeto:
+         - NÃO usar buzzwords ("transformação disruptiva", "soluções inovadoras")
+         - NÃO inventar números, clientes ou cases
+         - SIM dar exemplos concretos (sem nomear cliente)
+         - SIM conectar ao framework TW Decision Lens quando IA for relevante
+         - SIM fechar com convite para conversa, nunca com promessa vaga
+         ════════════════════════════════════════════════ -->
+
+    <p>[TODO: Lead do artigo — 2-3 parágrafos que estabelecem o problema do decisor.]</p>
+
+    <p>[TODO: Continuação do lead — por que esse problema importa agora, qual o custo de não enfrentá-lo.]</p>
+
+    <h2>[TODO: Primeiro argumento / primeira seção do diagnóstico]</h2>
+    <p>[TODO: Desenvolvimento da seção. Manter parágrafos curtos. Use exemplos concretos sem nominar clientes.]</p>
+
+    <h2>[TODO: Segundo argumento]</h2>
+    <p>[TODO: Desenvolvimento.]</p>
+
+    <h3>[TODO: Sub-tópico, se útil]</h3>
+    <p>[TODO: Desenvolvimento.]</p>
+
+    <h2>[TODO: Terceiro argumento ou síntese]</h2>
+    <p>[TODO: Desenvolvimento.]</p>
+
+    <blockquote>[TODO: Frase-chave do artigo — uma ideia que sintetize a tese, em 1-2 linhas.]</blockquote>
+
+    <h2>O que fazer na segunda-feira de manhã</h2>
+    <p>[TODO: Conclusão acionável — 3-5 movimentos concretos que o leitor pode iniciar imediatamente.]</p>
+
+    <!-- CTA fixo de fim de artigo -->
+    <div class="tw-article-cta">
+      <div class="tw-article-cta-text">
+        <h3>Quer discutir esse contexto na sua empresa?</h3>
+        <p>Conversa inicial sob NDA quando aplicável. Resposta em 1–2 dias úteis.</p>
+      </div>
+      <a href="/#contato" class="tw-article-cta-btn">Conversar com um sócio →</a>
+    </div>
+
+  </div>
+</article>
+
+<!-- Artigos relacionados -->
+<section class="tw-article-related">
+  <div class="container">
+    <h2>Insights relacionados</h2>
+    <div class="tw-list-grid">
+      <!-- [TODO: 3 cards de artigos relacionados — copiar do insights.html] -->
+      <article class="tw-card tw-card--coming">
+        <div class="tw-card-meta"><span>[TODO: Categoria]</span><span class="dot"></span><span class="status-soon">Em breve</span></div>
+        <h3>[TODO: Título do artigo relacionado]</h3>
+        <p class="tw-card-desc">[TODO: Resumo curto do artigo relacionado.]</p>
+        <span class="tw-card-link disabled">Em breve</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     FOOTER COMPARTILHADO — usar IGUAL nas demais páginas
+══════════════════════════════════════════════════ -->
+<footer class="tw-footer">
+  <div class="container">
+    <div class="tw-footer-inner">
+      <div class="tw-footer-brand">
+        <a href="/" class="tw-logo">
+          <div class="tw-logo-box">TW</div>
+          <div class="tw-logo-text" style="color: #fff;">True Worth <span>Consulting</span></div>
+        </a>
+        <p>Boutique de consultoria em estratégia, M&amp;A, supply e IA aplicada para empresas que tratam margem como decisão.</p>
+      </div>
+      <div>
+        <h4>Soluções</h4>
+        <ul>
+          <li><a href="/#solucoes">Estratégia</a></li>
+          <li><a href="/#solucoes">M&amp;A</a></li>
+          <li><a href="/#solucoes">Supply</a></li>
+          <li><a href="/#ia-aplicada">IA aplicada</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="/#como-trabalhamos">Abordagem</a></li>
+          <li><a href="/insights.html">Insights</a></li>
+          <li><a href="/materiais.html">Materiais</a></li>
+          <li><a href="/glossario.html">Glossário</a></li>
+          <li><a href="/#contato">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tw-footer-bottom">
+      <span>© 2026 True Worth Consulting. Todos os direitos reservados.</span>
+      <span><a href="https://www.linkedin.com/company/trwcon/" target="_blank" rel="noopener">LinkedIn</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

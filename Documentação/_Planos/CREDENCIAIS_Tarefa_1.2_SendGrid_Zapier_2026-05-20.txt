@@ -1,0 +1,81 @@
+================================================================================
+TW CONSULTING - TAREFA 1.2: CREDENCIAIS SENDGRID + ZAPIER
+Data: 2026-05-20
+Status: Em Configuração
+================================================================================
+
+SENDGRID ACCOUNT
+================================================================================
+Email: mfcvieira2@gmail.com
+Recovery Code: VTBNLEVV3W7IXYSPEZDDPB9Y
+[⚠️  GUARDAR COM SEGURANÇA - Backup para acesso à conta]
+
+API Key: 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
+API Key Name: Zapier_TW_2026
+Status: ✓ Gerada e copiada em 2026-05-20
+
+================================================================================
+ZAPIER CONFIGURATION
+================================================================================
+
+ZAP 1: Form Submission → Email Notification + Google Sheets Log
+-----------------------------------------------------------------
+Trigger: Webhooks by Zapier → Catch Hook
+Webhook URL: https://hooks.zapier.com/hooks/catch/27673103/4orh3f0/
+
+Action 1: SendGrid → Send Email
+To: contato@trwcon.com
+Subject: 🔔 Novo lead — {{nome}} ({{setor}})
+Body: [Template de notificação interna - ver GUIA_Tarefa_1.2]
+
+Action 2: Google Sheets → Append Row
+Sheet: TW_Leads_2026
+Row Data: timestamp, nome, email, cargo, empresa, setor, tema, contexto, status, notes
+
+ZAP 2: Google Sheets Trigger → Welcome Email (Futuro)
+-----------------------------------------------------------------
+Trigger: Google Sheets → New Row
+Delay: 2 minutos
+Action: SendGrid → Send Email (Welcome message to prospect)
+
+================================================================================
+FORMSPREE CONFIGURATION
+================================================================================
+Endpoint: mwvybkjq
+POST Webhook: https://hooks.zapier.com/hooks/catch/27673103/4orh3f0/
+[Pendente: Configurar Formspree para enviar webhook para Zapier]
+
+================================================================================
+GOOGLE SHEETS
+================================================================================
+Sheet Name: TW_Leads_2026
+Headers: timestamp | nome | email | cargo | empresa | setor | tema | contexto | status | notes
+[Pendente: Criar sheet]
+
+================================================================================
+PRÓXIMOS PASSOS (2026-05-20)
+================================================================================
+1. ✓ Criar conta SendGrid com mfcvieira2@gmail.com
+2. ⏳ Gerar API Key no SendGrid
+3. ⏳ Conectar SendGrid ao Zapier (Zap 1)
+4. ⏳ Configurar Action 1 (Email de notificação interna)
+5. ⏳ Criar Google Sheet TW_Leads_2026
+6. ⏳ Configurar Action 2 (Append to Google Sheets)
+7. ⏳ Configurar Formspree para enviar webhook
+8. ⏳ Testar end-to-end (5 submissões)
+9. ⏳ Documentar resultados e métricas
+10. ⏳ Validar SLA <48h e delivery ≥95%
+
+================================================================================
+NOTAS IMPORTANTES
+================================================================================
+- Email corporativo (miguel.vieira@trwcon.com) com problemas de envio/recebimento
+  Solução temporária: usar mfcvieira2@gmail.com para autenticação SendGrid
+  Depois: configurar "FROM" address para contato@trwcon.com quando corporativo estiver OK
+
+- Honeypot (_gotcha) já configurado no formulário do site
+
+- Deadline Tarefa 1.2: 2026-05-27 (7 dias)
+  Target: 1+ submission/dia
+
+================================================================================
