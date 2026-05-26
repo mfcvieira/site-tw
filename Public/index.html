@@ -583,8 +583,8 @@ section + section { border-top: 1px solid var(--rule); }
 
 /* ───────── SOLUÇÕES ───────── */
 #solucoes { padding: 56px 0; }
-.solutions-head { margin-bottom: 32px; display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; }
-.solutions-head h2 { max-width: none; font-size: clamp(32px, 3.6vw, 52px); line-height: 1.08; }
+.solutions-head { margin-bottom: 32px; width: 100%; display: block; }
+.solutions-head h2 { max-width: none; width: 100%; font-size: clamp(32px, 3.6vw, 52px); line-height: 1.08; }
 .solutions {
   display: grid; grid-template-columns: 260px 1fr;
   border-top: 1px solid var(--ink);
@@ -640,7 +640,6 @@ section + section { border-top: 1px solid var(--rule); }
   .sol-tab:nth-child(odd) { border-right: 1px solid var(--rule); }
   .sol-panel { padding: 32px 0; }
   .sol-panel.active { grid-template-columns: 1fr; gap: 28px; }
-  .solutions-head { grid-template-columns: 1fr; }
 }
 
 /* ───────── TW EDGE — engine block (dark) ───────── */
@@ -1384,7 +1383,6 @@ image-slot {
 
     <div class="solutions-head">
       <h2>Cinco frentes que <span class="italic-em">protegem margem,</span><br>aceleram crescimento e criam valor</h2>
-      <a href="#contato" class="btn btn--ink" style="flex-shrink:0;">Falar sobre seu projeto</a>
     </div>
 
     <div class="solutions">
