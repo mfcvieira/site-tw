@@ -428,7 +428,7 @@ header.nav {
 @media (max-width: 900px) {
   .nav-links, .live-dot { display: none; }
   .nav-inner { grid-template-columns: auto 1fr auto; }
-  .nav-menu-toggle { display: flex; }
+  .nav-menu-toggle { display: flex; grid-column: 3; }
   .nav-right { display: none; }
 }
 
@@ -1858,11 +1858,13 @@ document.addEventListener('DOMContentLoaded', function() {
     toggle.addEventListener('click', function() {
       toggle.classList.toggle('active');
       menu.classList.toggle('active');
+      document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
     });
     menu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', function() {
         toggle.classList.remove('active');
         menu.classList.remove('active');
+        document.body.style.overflow = '';
       });
     });
   }
