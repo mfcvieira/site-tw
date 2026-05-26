@@ -466,6 +466,45 @@
   /* reveal */
   .reveal { opacity: 0; transform: translateY(12px); transition: opacity .9s ease, transform .9s ease; }
   .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* ─── Mobile Navigation ─── */
+  .nav-menu-toggle {
+    display: none; width: 32px; height: 32px; flex-direction: column;
+    justify-content: center; gap: 6px; cursor: pointer;
+    background: none; border: none; padding: 0;
+    margin-right: 12px;
+  }
+  .nav-menu-toggle span {
+    display: block; width: 100%; height: 2px; background: var(--ink);
+    transition: all .3s ease;
+  }
+  .nav-menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(10px, 10px); }
+  .nav-menu-toggle.active span:nth-child(2) { opacity: 0; }
+  .nav-menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
+
+  .nav-mobile-menu {
+    position: fixed; top: 64px; left: 0; right: 0; bottom: 0;
+    background: var(--paper); display: flex; flex-direction: column;
+    gap: 0; padding: 24px 20px; opacity: 0; visibility: hidden;
+    transition: opacity .3s ease, visibility .3s ease; z-index: 35;
+    max-height: calc(100vh - 64px); overflow-y: auto; -webkit-overflow-scrolling: touch;
+  }
+  .nav-mobile-menu.active { opacity: 1; visibility: visible; }
+  .nav-mobile-menu a {
+    font-family: var(--mono); font-size: 13px; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--ink-3); padding: 16px 0;
+    border-bottom: 1px solid var(--rule);
+    transition: color .15s;
+    display: block;
+  }
+  .nav-mobile-menu a:hover { color: var(--ink); }
+  .nav-mobile-menu .btn { width: 100%; text-align: center; margin-top: 24px; padding: 12px 16px; }
+
+  @media (max-width: 900px) {
+    .nav-links, .nav-right { display: none; }
+    .nav-inner { grid-template-columns: auto 1fr auto; }
+    .nav-menu-toggle { display: flex; }
+  }
   </style>
 </head>
 <body>
@@ -474,8 +513,11 @@
 <header class="nav">
   <div class="wrap nav-inner">
     <a href="index.html" class="brand">
-      <div class="brand-mark"></div>
-      <div class="brand-name"><b>TW</b><span>Consulting</span></div>
+      <svg class="brand-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="100" height="100" fill="#04383F" rx="8"/>
+        <text x="50" y="68" font-family="Inter, system-ui, sans-serif" font-weight="700" font-size="52" fill="#F6F4EE" text-anchor="middle" letter-spacing="-1">TW</text>
+      </svg>
+      <div class="brand-name"><b>True Worth</b><span>Consulting</span></div>
     </a>
     <nav class="nav-links">
       <a href="index.html#solucoes">Soluções</a>
@@ -487,8 +529,22 @@
     <div class="nav-right">
       <a href="index.html#contato" class="nav-cta">Falar com sócio</a>
     </div>
+    <button class="nav-menu-toggle" id="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+
+<nav class="nav-mobile-menu" id="nav-mobile">
+  <a href="index.html">Home</a>
+  <a href="quem-somos.html">Quem Somos</a>
+  <a href="index.html#solucoes">Soluções</a>
+  <a href="index.html#edge">TW Edge</a>
+  <a href="index.html#abordagem">Abordagem</a>
+  <a href="index.html#equipe">Sócios</a>
+  <a href="index.html#contato">Contato</a>
+  <a href="index.html#contato" class="btn btn--teal" style="margin-top:24px;">Falar com sócio</a>
+</nav>
 
 
 <!-- ═══════════ § 02 · QUEM SOMOS ═══════════ -->
@@ -726,6 +782,26 @@
     });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* Mobile nav toggle */
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.getElementById('nav-toggle');
+    const menu = document.getElementById('nav-mobile');
+    if (toggle && menu) {
+      toggle.addEventListener('click', function() {
+        toggle.classList.toggle('active');
+        menu.classList.toggle('active');
+        document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+      });
+      menu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          toggle.classList.remove('active');
+          menu.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      });
+    }
+  });
 </script>
 
 </body>
