@@ -39,7 +39,7 @@
   ];
   var FIELDS = ['quem', 'empresa', 'desafio', 'jogo', 'frente'];
   var LABELS = { quem: 'Quem fala', empresa: 'Empresa', desafio: 'Desafio', jogo: 'O que está em jogo', frente: 'Como a TW pode ajudar' };
-  var RAW = ['fatos', 'nome', 'cargo', 'empresa', 'setor', 'porte', 'desafio', 'jogo', 'frente', 'socio'];
+  var RAW = ['fatos', 'nome', 'cargo', 'empresa', 'setor', 'local', 'porte', 'desafio', 'jogo', 'frente', 'socio'];
   var STATUS = { idle: 'Pronto para ouvir', think: 'Pensando', write: 'Escrevendo', ready: 'Desafio organizado', off: 'Fora do ar' };
 
   // ---------- janela
@@ -140,7 +140,7 @@
     });
   }
   function normKey(k) { return k.toLowerCase().normalize('NFD').replace(/[^a-z]/g, ''); }
-  var KEYS = { fatos: 'fatos', nome: 'nome', cargo: 'cargo', papel: 'cargo', empresa: 'empresa', setor: 'setor', porte: 'porte', tamanho: 'porte', faturamento: 'porte', desafio: 'desafio', problema: 'desafio', emjogo: 'jogo', jogo: 'jogo', impacto: 'jogo', frente: 'frente', caminho: 'frente', socio: 'socio', interesse: 'inv', investimento: 'inv', qualificado: 'qual', qualificada: 'qual' };
+  var KEYS = { fatos: 'fatos', nome: 'nome', cargo: 'cargo', papel: 'cargo', empresa: 'empresa', setor: 'setor', local: 'local', cidade: 'local', regiao: 'local', localizacao: 'local', porte: 'porte', tamanho: 'porte', faturamento: 'porte', desafio: 'desafio', problema: 'desafio', emjogo: 'jogo', jogo: 'jogo', impacto: 'jogo', frente: 'frente', caminho: 'frente', socio: 'socio', interesse: 'inv', investimento: 'inv', qualificado: 'qual', qualificada: 'qual' };
   function tidyField(v, max) {
     max = max || 220;
     v = tidy(v);
@@ -185,7 +185,7 @@
   // ---------- resumo
   function viewOf(f, k) {
     if (k === 'quem') return [firstName(f.nome), f.cargo].filter(Boolean).join(', ');
-    if (k === 'empresa') return [f.empresa, f.setor, f.porte].filter(Boolean).join(', ');
+    if (k === 'empresa') return [f.empresa, f.setor, f.local, f.porte].filter(Boolean).join(', ');
     return f[k] || '';
   }
   function filled(f, k) {
