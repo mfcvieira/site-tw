@@ -29,7 +29,8 @@ const SOCIOS = [
   { id: 'miguel', nome: 'Miguel Vieira', papel: 'Estratégia, M&A e IA', env: 'AGENTE_WA_MIGUEL' },
   { id: 'adriana', nome: 'Adriana Hirano', papel: 'Sourcing e categorias', env: 'AGENTE_WA_ADRIANA' },
 ];
-const OBRIGATORIOS = ['nome', 'cargo', 'empresa', 'porte', 'desafio', 'emjogo', 'frente'];
+// além destes, a frente (regras antigas) ou a prioridade (regras novas)
+const OBRIGATORIOS = ['nome', 'cargo', 'empresa', 'porte', 'desafio', 'emjogo'];
 const VAZIO = /^(-|\?|\.\.\.|vazio|\(vazio\)|n\/a|a descobrir|n[aã]o informado|n[aã]o sei|n[aã]o disse|ainda n[aã]o sei|a confirmar|avaliando)$/iu;
 
 function sair(status, dados) {
@@ -65,7 +66,7 @@ export function campos(texto) {
 export function qualificada(f, atual) {
   const tem = (o, k) => typeof o[k] === 'string' && o[k].trim() !== '';
   const sim = (o, k) => tem(o, k) && /^s/i.test(o[k].trim());
-  return sim(atual, 'qualificado') && sim(atual, 'interesse') && OBRIGATORIOS.every((k) => tem(f, k));
+  return sim(atual, 'qualificado') && sim(atual, 'interesse') && OBRIGATORIOS.every((k) => tem(f, k)) && (tem(f, 'frente') || tem(f, 'prioridade'));
 }
 
 export default async (req) => {
