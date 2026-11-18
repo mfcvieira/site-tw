@@ -4,12 +4,12 @@
  * resumo "O desafio numa página" ao lado e, só com o caso qualificado e a autorização da pessoa,
  * botões para continuar no WhatsApp com um dos sócios.
  *
- * LIGADO = false: o site continua com o formulário de contato e o agente só aparece no link de
- * teste (?agente=teste). Para ligar para todos, troque para true.
+ * LIGADO = true: o agente vale para todos os visitantes. Com false, ele só aparece no link de
+ * teste (?agente=teste, e ?agente=off desliga na aba).
  */
 (function () {
   'use strict';
-  var LIGADO = false;
+  var LIGADO = true;
 
   var CFG = window.TW_AGENTE || {};
   var API = CFG.api || '/api/agente';
@@ -409,7 +409,7 @@
     state.replies++;
     var r = splitReply(raw);
     setParas(bubble, r.vis || 'Anotei o que você contou no resumo do desafio');
-    if (truncated) bubble.appendChild(el('span', 'ag-cut', 'A resposta foi cortada'));
+    if (truncated && !r.ficha) bubble.appendChild(el('span', 'ag-cut', 'A resposta foi cortada'));   // o resumo já começou: a mensagem chegou inteira
     mergeFicha(r.ficha);
     var inv = qualOf(r.ficha && r.ficha.inv);
     if (inv) state.inv = inv;

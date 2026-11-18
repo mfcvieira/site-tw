@@ -67,7 +67,7 @@ nome: o primeiro nome do visitante
 cargo: o cargo ou o papel de quem fala
 empresa: o nome da empresa
 setor: o setor da empresa
-local: a cidade e o estado da empresa, ou de onde a pessoa fala
+local: a cidade e a sigla do estado, no formato Cidade (UF), da empresa ou de onde a pessoa fala
 porte: faturamento aproximado por ano ou número de funcionários
 desafio: o desafio em uma frase, nas palavras do negócio
 em_jogo: o que isso custa ou arrisca hoje, e por que agora

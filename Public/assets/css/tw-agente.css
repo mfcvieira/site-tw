@@ -1,9 +1,7 @@
 /* Agente de IA da TW Consulting: janela de conversa e caixa na seção Contato */
 
-/* seção Contato: com o agente ligado, a caixa do agente entra no lugar do formulário */
-.contact-form.contato-agente{display:none}
-html.agente-on .contact-form.contato-agente{display:flex;flex-direction:column;gap:18px}
-html.agente-on #form-contato{display:none !important}
+/* seção Contato: a caixa do agente fica no lugar do antigo formulário */
+.contact-form.contato-agente{display:flex;flex-direction:column;gap:18px}
 .contato-agente p.txt{margin:0;font-size:15px;line-height:1.6;color:var(--ink-3,#3C4750)}
 .contato-agente form{display:flex;flex-direction:column;gap:12px;margin:0}
 .contato-agente textarea{width:100%;min-height:120px;padding:14px 16px;border:1px solid var(--rule,#DDD7C9);border-radius:0;background:#FFFFFF;color:var(--ink,#0B0F12);font:inherit;font-size:15px;line-height:1.5;resize:vertical}

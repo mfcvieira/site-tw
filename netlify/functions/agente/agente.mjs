@@ -112,7 +112,7 @@ export default async (req) => {
       method: 'POST',
       signal: ctl.signal,
       headers: { 'content-type': 'application/json', 'x-api-key': chave, 'anthropic-version': '2023-06-01' },
-      body: JSON.stringify({ model: modelo, max_tokens: 1200, system: REGRAS, messages: msgs }),
+      body: JSON.stringify({ model: modelo, max_tokens: 3000, system: REGRAS, messages: msgs }),
     });
     j = await resp.json().catch(() => null);
   } catch {
