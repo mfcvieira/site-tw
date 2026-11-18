@@ -1,0 +1,5 @@
+# Configuração do Netlify para o site da TW Consulting.
+# A publicação continua apontando para a pasta Public (definida no painel do Netlify).
+# Aqui só fica a pasta das funções do servidor, como a do agente de IA.
+[functions]
+  directory = "netlify/functions"
