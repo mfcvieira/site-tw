@@ -11,12 +11,13 @@
  *   AGENTE_WA_HENRY, AGENTE_WA_MIGUEL, AGENTE_WA_ADRIANA
  *                          55 + DDD + número, só dígitos. Sócio sem número não aparece
  *   AGENTE_MAX_MSGS        opcional: mensagens do visitante por conversa (padrão 20)
- *   AGENTE_MODELO_TESTE    opcional: modelo do link de teste (padrão claude-opus-5-5)
+ *   AGENTE_MODELO_TESTE    opcional: modelo do link de teste (padrão: o mesmo de AGENTE_MODELO)
  *   AGENTE_API_URL         opcional, só para teste local: endereço de uma API simulada
  *
+ * As regras vão com cache (o texto fixo é reaproveitado entre as mensagens, mais barato e rápido).
  * Link de teste (trwcon.com/?agente=teste): a página manda teste: true e a conversa usa as regras
- * em teste (regras-teste.mjs), o modelo de teste e o cache do texto fixo. Os visitantes continuam
- * com regras.mjs e AGENTE_MODELO até a versão nova ser aprovada.
+ * em teste (regras-teste.mjs) e o modelo de teste, sem afetar os visitantes, que seguem com
+ * regras.mjs e AGENTE_MODELO. Para comparar modelos no teste, mande modelo: claude-opus-5-5.
  */
 import REGRAS from './regras.mjs';
 import REGRAS_TESTE from './regras-teste.mjs';
@@ -109,14 +110,15 @@ export default async (req) => {
   const maxMsgs = parseInt(process.env.AGENTE_MAX_MSGS || '20', 10) || 20;
   if (doVisitante > maxMsgs) return sair(429, { error: 'rate_limited' });
 
-  // link de teste: regras em teste, modelo de teste e cache do texto fixo
+  // regras com cache; no link de teste, as regras e o modelo de teste
   const teste = pedido.teste === true;
   let modeloUsado = modelo;
-  let sistema = REGRAS;
+  let regras = REGRAS;
   if (teste) {
-    modeloUsado = MODELOS_TESTE.includes(pedido.modelo) ? pedido.modelo : (process.env.AGENTE_MODELO_TESTE || 'claude-opus-5-5');
-    sistema = [{ type: 'text', text: REGRAS_TESTE, cache_control: { type: 'ephemeral' } }];
+    modeloUsado = MODELOS_TESTE.includes(pedido.modelo) ? pedido.modelo : (process.env.AGENTE_MODELO_TESTE || modelo);
+    regras = REGRAS_TESTE;
   }
+  const sistema = [{ type: 'text', text: regras, cache_control: { type: 'ephemeral' } }];
 
   // chamada ao modelo
   let resp;
