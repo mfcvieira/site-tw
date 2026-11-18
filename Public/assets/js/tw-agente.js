@@ -4,8 +4,9 @@
  * resumo "O desafio numa página" ao lado e, só com o caso qualificado e a autorização da pessoa,
  * botões para continuar no WhatsApp com um dos sócios.
  *
- * LIGADO = true: o agente vale para todos os visitantes. Com false, ele só aparece no link de
- * teste (?agente=teste, e ?agente=off desliga na aba).
+ * LIGADO = true: o agente vale para todos os visitantes. O link de teste (?agente=teste) usa a
+ * versão em teste das regras no servidor, e ?agente=off volta ao normal na aba. Com LIGADO = false,
+ * o agente só aparece no link de teste.
  */
 (function () {
   'use strict';
@@ -17,9 +18,9 @@
   var LINKEDIN = 'https://www.linkedin.com/company/trwcon/';
   var MAX_USER = 16;                                        // mensagens do visitante por conversa (o servidor aceita 20)
 
-  // ---------- liga e desliga
-  function ligado() {
-    if (LIGADO) return true;
+  // ---------- liga e desliga. O link de teste (?agente=teste) também usa a versão em teste das
+  // regras no servidor; ?agente=off sai do teste nesta aba
+  function modoTeste() {
     try {
       var q = new URLSearchParams(location.search).get('agente');
       if (q === 'teste') sessionStorage.setItem('twAgente', '1');
@@ -27,7 +28,8 @@
       return sessionStorage.getItem('twAgente') === '1';
     } catch (e) { return false; }
   }
-  if (!ligado()) return;
+  var TESTE = modoTeste();
+  if (!LIGADO && !TESTE) return;
   document.documentElement.classList.add('agente-on');
 
   var GREETING = 'Oi, eu sou o agente de IA da TW Consulting\n\nMe conta qual desafio da sua empresa você quer discutir, que eu organizo com você e encaminho para um dos sócios';
@@ -98,7 +100,7 @@
   // ---------- servidor: guarda a chave, as regras e os números dos sócios
   function ask(turns, signal) {
     var st = state;
-    return fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: 'same-origin', signal: signal, body: JSON.stringify({ turns: turns }) })
+    return fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: 'same-origin', signal: signal, body: JSON.stringify(TESTE ? { turns: turns, teste: true } : { turns: turns }) })
       .then(function (r) {
         return r.json().catch(function () { return {}; }).then(function (j) {
           if (!r.ok || !j || typeof j.text !== 'string') {

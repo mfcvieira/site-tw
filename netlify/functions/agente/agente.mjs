@@ -11,11 +11,18 @@
  *   AGENTE_WA_HENRY, AGENTE_WA_MIGUEL, AGENTE_WA_ADRIANA
  *                          55 + DDD + número, só dígitos. Sócio sem número não aparece
  *   AGENTE_MAX_MSGS        opcional: mensagens do visitante por conversa (padrão 20)
+ *   AGENTE_MODELO_TESTE    opcional: modelo do link de teste (padrão claude-opus-5-5)
  *   AGENTE_API_URL         opcional, só para teste local: endereço de uma API simulada
+ *
+ * Link de teste (trwcon.com/?agente=teste): a página manda teste: true e a conversa usa as regras
+ * em teste (regras-teste.mjs), o modelo de teste e o cache do texto fixo. Os visitantes continuam
+ * com regras.mjs e AGENTE_MODELO até a versão nova ser aprovada.
  */
 import REGRAS from './regras.mjs';
+import REGRAS_TESTE from './regras-teste.mjs';
 
 const API_URL = 'https://api.anthropic.com/v1/messages';
+const MODELOS_TESTE = ['claude-opus-5-5', 'claude-sonnet-5-5'];
 const SOCIOS = [
   { id: 'henry', nome: 'Henry Costa', papel: 'Estratégia, varejo e produto', env: 'AGENTE_WA_HENRY' },
   { id: 'miguel', nome: 'Miguel Vieira', papel: 'Estratégia, M&A e IA', env: 'AGENTE_WA_MIGUEL' },
@@ -102,9 +109,19 @@ export default async (req) => {
   const maxMsgs = parseInt(process.env.AGENTE_MAX_MSGS || '20', 10) || 20;
   if (doVisitante > maxMsgs) return sair(429, { error: 'rate_limited' });
 
+  // link de teste: regras em teste, modelo de teste e cache do texto fixo
+  const teste = pedido.teste === true;
+  let modeloUsado = modelo;
+  let sistema = REGRAS;
+  if (teste) {
+    modeloUsado = MODELOS_TESTE.includes(pedido.modelo) ? pedido.modelo : (process.env.AGENTE_MODELO_TESTE || 'claude-opus-5-5');
+    sistema = [{ type: 'text', text: REGRAS_TESTE, cache_control: { type: 'ephemeral' } }];
+  }
+
   // chamada ao modelo
   let resp;
   let j = null;
+  const inicio = Date.now();
   const ctl = new AbortController();
   const timer = setTimeout(() => ctl.abort(), 55000);
   try {
@@ -112,7 +129,7 @@ export default async (req) => {
       method: 'POST',
       signal: ctl.signal,
       headers: { 'content-type': 'application/json', 'x-api-key': chave, 'anthropic-version': '2023-06-01' },
-      body: JSON.stringify({ model: modelo, max_tokens: 3000, system: REGRAS, messages: msgs }),
+      body: JSON.stringify({ model: modeloUsado, max_tokens: 3000, system: sistema, messages: msgs }),
     });
     j = await resp.json().catch(() => null);
   } catch {
@@ -125,6 +142,7 @@ export default async (req) => {
   const texto = (Array.isArray(j.content) ? j.content : []).filter((b) => b && b.type === 'text').map((b) => b.text).join('');
   if (!texto.trim()) return sair(502, { error: 'empty_completion' });
   const saida = { text: texto, truncated: j.stop_reason === 'max_tokens' };
+  if (teste) saida.teste = { modelo: modeloUsado, ms: Date.now() - inicio, uso: j.usage || null };
 
   // os números dos sócios só saem com a conversa qualificada (conferido aqui, não na página)
   let f = {};
