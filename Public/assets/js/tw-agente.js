@@ -32,9 +32,7 @@
   if (!LIGADO && !TESTE) return;
   document.documentElement.classList.add('agente-on');
 
-  var GREETING = TESTE
-    ? 'Olá! Sou o agente de IA da TW Consulting\n\nQual é o principal desafio da sua empresa hoje?'
-    : 'Oi, eu sou o agente de IA da TW Consulting\n\nMe conta qual desafio da sua empresa você quer discutir, que eu organizo com você e encaminho para um dos sócios';
+  var GREETING = 'Olá! Sou o agente de IA da TW Consulting\n\nQual é o principal desafio da sua empresa hoje?';
   var STARTERS = [
     'Nossa receita cresce e a margem não acompanha',
     'Estamos avaliando uma aquisição',
@@ -42,7 +40,7 @@
     'Quero usar IA nas decisões da empresa'
   ];
   var FIELDS = ['quem', 'empresa', 'desafio', 'jogo', 'frente'];
-  var LABELS = { quem: 'Quem fala', empresa: 'Empresa', desafio: 'Desafio', jogo: 'O que está em jogo', frente: TESTE ? 'Prioridade' : 'Como a TW pode ajudar' };
+  var LABELS = { quem: 'Quem fala', empresa: 'Empresa', desafio: 'Desafio', jogo: 'O que está em jogo', frente: 'Prioridade' };
   var RAW = ['fatos', 'nome', 'cargo', 'empresa', 'setor', 'local', 'porte', 'desafio', 'jogo', 'frente', 'socio'];
   var STATUS = { idle: 'Pronto para ouvir', think: 'Pensando', write: 'Escrevendo', ready: 'Desafio organizado', off: 'Fora do ar' };
 
@@ -205,7 +203,7 @@
   function waMessage(socio) {
     var f = state.ficha, name = firstName(f.nome);
     var who = [name ? 'aqui é ' + name : '', f.cargo ? f.cargo + (f.empresa ? ' da ' + f.empresa : '') : (f.empresa || '')].filter(Boolean).join(', ');
-    var rows = [['Empresa', viewOf(f, 'empresa')], ['Desafio', f.desafio], ['O que está em jogo', f.jogo], [TESTE ? 'Prioridade' : 'O que procuro', f.frente]]
+    var rows = [['Empresa', viewOf(f, 'empresa')], ['Desafio', f.desafio], ['O que está em jogo', f.jogo], ['Prioridade', f.frente]]
       .filter(function (r) { return r[1]; });
     var hello = 'Olá' + (socio ? ', ' + firstName(socio.nome) : '') + (who ? ', ' + who : '') + '. Vim pelo site da TW Consulting';
     return [hello, '', 'Resumo que o agente de IA organizou comigo'].concat(rows.map(function (r) { return r[0] + ': ' + r[1]; })).join('\n');
@@ -352,13 +350,13 @@
   function grow() { box.style.height = 'auto'; box.style.height = Math.max(48, Math.min(box.scrollHeight + 2, 140)) + 'px'; }
 
   // ---------- conversa com o modelo
-  // nota das regras em teste: entender, interpretar, mostrar valor e converter, nesta ordem
-  function pageNoteTeste(n) {
+  // nota da página: entender, interpretar, mostrar valor e converter, nesta ordem
+  function pageNote(n) {
     var falta = [], f0 = state.ficha;
     if (!f0.desafio) falta.push('a natureza do problema');
     if (!f0.jogo) falta.push('o que está em jogo');
     if (!f0.porte) falta.push('o faturamento aproximado');
-    if (!f0.frente) falta.push('a prioridade, como hipótese de trabalho');
+    if (!f0.frente) falta.push('a prioridade (o que olhar primeiro)');
     if (!f0.nome || !f0.cargo || !f0.empresa) falta.push('quem fala: nome, cargo, empresa e cidade');
     if (state.inv !== 'sim') falta.push('o aceite para encaminhar o resumo ao sócio indicado');
     var page = '[Nota da página] Esta é a sua resposta número ' + n;
@@ -366,32 +364,9 @@
     if (state.invited) page += '. Os botões de WhatsApp dos sócios já estão na tela: mantenha qualificado: sim e não repita o convite';
     else if (!falta.length) page += '. Tudo pronto: se o caso combinar com a TW, marque qualificado: sim e diga que a pessoa escolhe com quem falar nos botões de WhatsApp logo abaixo';
     else {
-      page += '. Ainda falta, na ordem das etapas: ' + falta.join('; ') + '. Uma pergunta por vez, ligada à última resposta. Não fale dos botões antes disso';
+      page += '. Ainda falta, na ordem das etapas: ' + falta.join('; ') + '. Uma pergunta por vez, ligada à última resposta, sem repetir pergunta já feita. Não fale dos botões antes disso';
       if (n >= 8) page += '. A conversa já está longa: pergunte só o que falta, de forma direta';
       if (state.qual === 'nao') page += '. Você já tinha indicado o LinkedIn: se a pessoa mostrar um caso que combina com a TW, retome e pergunte só o que falta';
-    }
-    return page;
-  }
-  function pageNote(n) {
-    if (TESTE) return pageNoteTeste(n);
-    var missing = [], f0 = state.ficha;
-    if (!f0.desafio) missing.push('o desafio concreto');
-    if (!f0.nome) missing.push('o nome da pessoa');
-    if (!f0.cargo) missing.push('o cargo dela');
-    if (!f0.empresa) missing.push('a empresa e o setor');
-    if (!f0.porte) missing.push('o porte da empresa (faturamento aproximado ou número de funcionários)');
-    if (!f0.jogo) missing.push('o que está em jogo');
-    if (!f0.frente) missing.push('a frente em que a pessoa procura apoio');
-    if (state.inv !== 'sim') missing.push('a confirmação de que ela quer levar o assunto para uma conversa com um sócio');
-    var page = '[Nota da página] Esta é a sua resposta número ' + n;
-    if (f0.fatos) page += '. O que a pessoa já disse: ' + f0.fatos + '. Confira isso antes de perguntar e não pergunte de novo';
-    if (state.invited) page += '. Os botões de WhatsApp dos sócios já estão na tela, mantenha qualificado: sim e não repita o convite';
-    else if (!missing.length) page += '. Os pontos já estão respondidos: se o caso combinar com a TW, marque qualificado: sim e convide para escolher um sócio nos botões de WhatsApp';
-    else {
-      page += '. Para liberar o WhatsApp ainda falta: ' + missing.join('; ') + '. Não fale dos botões antes disso';
-      if (n >= 5) page += '. A conversa já está longa: pergunte só o que falta, de forma direta. Só marque qualificado: nao se o caso não combinar com a TW';
-      if (state.qual === 'nao') page += '. Você já tinha indicado o LinkedIn: se a pessoa mostrar um caso que combina com a TW, retome e pergunte só o que falta';
-      if (n > 1) page += '. Se você já comentou o desafio, não comente de novo nem repita o que a pessoa disse: vá direto à próxima pergunta, em no máximo 20 palavras';
     }
     return page;
   }
