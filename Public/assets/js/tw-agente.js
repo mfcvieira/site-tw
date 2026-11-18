@@ -355,15 +355,16 @@
     if (!f0.porte) missing.push('o porte da empresa (faturamento aproximado ou número de funcionários)');
     if (!f0.jogo) missing.push('o que está em jogo');
     if (!f0.frente) missing.push('a frente em que a pessoa procura apoio');
-    if (state.inv !== 'sim') missing.push('a confirmação de que ela quer conversar com um sócio sobre um projeto');
+    if (state.inv !== 'sim') missing.push('a confirmação de que ela quer levar o assunto para uma conversa com um sócio');
     var page = '[Nota da página] Esta é a sua resposta número ' + n;
     if (f0.fatos) page += '. O que a pessoa já disse: ' + f0.fatos + '. Confira isso antes de perguntar e não pergunte de novo';
     if (state.invited) page += '. Os botões de WhatsApp dos sócios já estão na tela, mantenha qualificado: sim e não repita o convite';
     else if (!missing.length) page += '. Os pontos já estão respondidos: se o caso combinar com a TW, marque qualificado: sim e convide para escolher um sócio nos botões de WhatsApp';
     else {
       page += '. Para liberar o WhatsApp ainda falta: ' + missing.join('; ') + '. Não fale dos botões antes disso';
-      if (n >= 7) page += '. A conversa já está longa: pergunte só o que falta, de forma direta. Só marque qualificado: nao se o caso não combinar com a TW';
+      if (n >= 5) page += '. A conversa já está longa: pergunte só o que falta, de forma direta. Só marque qualificado: nao se o caso não combinar com a TW';
       if (state.qual === 'nao') page += '. Você já tinha indicado o LinkedIn: se a pessoa mostrar um caso que combina com a TW, retome e pergunte só o que falta';
+      if (n > 1) page += '. Se você já comentou o desafio, não comente de novo nem repita o que a pessoa disse: vá direto à próxima pergunta, em no máximo 20 palavras';
     }
     return page;
   }
