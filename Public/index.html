@@ -865,25 +865,47 @@ section + section { border-top: 1px solid var(--rule); }
 @media (max-width: 1000px) { .setores-row { grid-template-columns: repeat(3, 1fr); } .setor:nth-child(3n) { border-right: none; } .setor { border-bottom: 1px solid var(--rule); } }
 @media (max-width: 600px) { .setores-row { grid-template-columns: repeat(2, 1fr); } .setor:nth-child(3n) { border-right: 1px solid var(--rule); } .setor:nth-child(2n) { border-right: none;} }
 
+/* ───────── CLIENTES (faixa na home) ───────── */
+#clientes { padding: 56px 0; }
+.clientes-band-head { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; margin-bottom: 20px; }
+.clientes-band-title { font-family: var(--mono); font-size: 11.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-4); margin: 0; }
+.clientes-band-link { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); border-bottom: 1px solid var(--rule); padding-bottom: 4px; white-space: nowrap; }
+.clientes-band-link:hover { border-color: var(--ink); color: var(--teal-700); }
+.clientes-logos { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); }
+.clientes-logos li { display: flex; align-items: center; justify-content: center; min-height: 104px; padding: 20px 18px; border-right: 1px solid var(--rule); }
+.clientes-logos li:nth-child(4n) { border-right: none; }
+.clientes-logos li:nth-child(-n+4) { border-bottom: 1px solid var(--rule); }
+.clientes-logos img { height: var(--h, 28px); width: auto; max-width: 100%; object-fit: contain; opacity: .88; transition: opacity .2s ease; }
+.clientes-logos li:hover img { opacity: 1; }
+@media (max-width: 560px) {
+  #clientes { padding: 44px 0; }
+  .clientes-band-head { flex-direction: column; gap: 10px; }
+  .clientes-logos { grid-template-columns: repeat(2, 1fr); }
+  .clientes-logos li { min-height: 88px; padding: 16px 12px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .clientes-logos li:nth-child(2n) { border-right: none; }
+  .clientes-logos li:nth-child(n+7) { border-bottom: none; }
+  .clientes-logos img { height: calc(var(--h, 28px) * .82); }
+}
+
 /* ───────── SÓCIOS ───────── */
 #equipe { padding: 56px 0; }
 .team-head { margin-bottom: 32px; }
 .team-head h2 { margin-top: 16px; font-size: clamp(24px, calc((100vw - 64px) / 30), 56px); line-height: 1; letter-spacing: -0.03em; }
-.team-list { border-top: 1px solid var(--ink); }
+.team-list { border-top: 1px solid var(--ink); display: grid; grid-template-columns: calc((100% - 112px) / 3 + 28px) calc((100% - 112px) / 3 + 56px) calc((100% - 112px) / 3 + 28px); }
 .partner {
-  display: grid; grid-template-columns: 300px 1fr 240px;
-  gap: 36px; align-items: start;
-  padding: 24px 0; border-bottom: 1px solid var(--rule);
+  display: flex; flex-direction: column; gap: 20px;
+  padding: 32px 28px; border-right: 1px solid var(--rule);
   transition: background .2s ease;
 }
-.partner:hover { background: var(--paper-3); }
-.partner-id { display: flex; flex-direction: row; gap: 16px; align-items: flex-start; }
+.partner:first-child { padding-left: 0; }
+.partner:last-child { padding-right: 0; border-right: none; }
+.partner-id { display: flex; flex-direction: column; gap: 18px; }
 .partner-id-text { display: flex; flex-direction: column; gap: 4px; }
 .partner-name { font-family: var(--serif); font-size: 20px; letter-spacing: -0.02em; line-height: 1.1; }
 .partner-role { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-4); margin-top: 4px; }
 .partner-bio { font-size: 14px; line-height: 1.55; color: var(--ink-2); }
 .partner-bio b { color: var(--ink); font-weight: 500;}
-.partner-meta { display: flex; flex-direction: column; gap: 0; border-left: 1px solid var(--rule); padding-left: 24px; }
+.partner-meta { display: flex; flex-direction: column; gap: 0; margin-top: auto; padding-top: 14px; border-top: 1px dashed var(--rule); }
 .partner-meta dl { display: grid; grid-template-columns: auto 1fr; gap: 8px 18px; font-family: var(--mono); font-size: 11.5px; }
 .partner-meta dt { color: var(--ink-4); letter-spacing: 0.1em; text-transform: uppercase; }
 .partner-meta dd { color: var(--ink); }
@@ -894,8 +916,10 @@ section + section { border-top: 1px solid var(--rule); }
 .partner-meta a:hover { border-color: var(--ink); color: var(--teal-700); }
 
 @media (max-width: 1000px) {
-  .partner { grid-template-columns: 1fr; gap: 16px; }
-  .partner-meta { border-left: none; padding-left: 0; padding-top: 12px; border-top: 1px dashed var(--rule); }
+  .team-list { grid-template-columns: 1fr; }
+  .partner, .partner:first-child, .partner:last-child { padding: 28px 0; border-right: none; border-bottom: 1px solid var(--rule); }
+  .partner-id { flex-direction: row; align-items: flex-end; gap: 16px; }
+  .partner .partner-photo { width: 40%; max-width: 200px; flex-shrink: 0; }
 }
 
 /* ───────── CONTATO ───────── */
@@ -1088,16 +1112,14 @@ image-slot {
 }
 .sol-img image-slot { width: 100%; height: 100%; }
 
-/* Partner photo */
+/* Partner photo: foto inteira na mesa (nov/2026) */
 .partner-photo {
-  width: 72px; height: 72px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background: transparent;
+  width: 100%; aspect-ratio: 4 / 5;
+  background: var(--paper-2);
   overflow: hidden;
   position: relative;
 }
-.partner-photo img { display: block; width: 100%; height: 100%; object-fit: cover; transform: scale(1.02); }
+.partner-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .partner-photo image-slot { width: 100%; height: 100%; border-radius: 50%; }
 
 /* Sobre / philosophy band */
@@ -1219,6 +1241,14 @@ image-slot {
   .nav-menu-toggle { display: flex; grid-column: 3; }
 }
 
+/* Menu com 7 itens: sem quebra de linha; abaixo de 1180px vira menu recolhido */
+.nav-links a { white-space: nowrap; }
+@media (max-width: 1280px) and (min-width: 1181px) { .nav-links { gap: 22px; } }
+@media (max-width: 1180px) {
+  .nav-links, .live-dot, .nav-right { display: none; }
+  .nav-menu-toggle { display: flex; grid-column: 3; }
+}
+
 @media (max-width: 768px) {
   section { padding: 80px 0; }
   h1 { font-size: clamp(32px, 5vw, 64px); }
@@ -1311,6 +1341,7 @@ image-slot {
       <a href="#solucoes">Soluções</a>
       <a href="#edge">TW Edge</a>
       <a href="#abordagem">Abordagem</a>
+      <a href="clientes.html">Clientes</a>
       <a href="#equipe">Sócios</a>
       <a href="quem-somos.html">Quem somos</a>
       <a href="#contato">Contato</a>
@@ -1329,6 +1360,7 @@ image-slot {
   <a href="#solucoes">Soluções</a>
   <a href="#edge">TW Edge</a>
   <a href="#abordagem">Abordagem</a>
+  <a href="clientes.html">Clientes</a>
   <a href="#equipe">Sócios</a>
   <a href="quem-somos.html">Quem Somos</a>
   <a href="#contato">Contato</a>
@@ -1618,6 +1650,26 @@ image-slot {
 
 
 
+<!-- ═══════════ CLIENTES ═══════════ -->
+<section id="clientes" data-screen-label="07 Clientes">
+  <div class="wrap">
+    <div class="clientes-band-head">
+      <h2 class="clientes-band-title">Clientes</h2>
+      <a href="clientes.html" class="clientes-band-link">Ver clientes →</a>
+    </div>
+    <ul class="clientes-logos" aria-label="Clientes da TW Consulting">
+      <li><img src="assets/clientes/logo-frigelar.png" alt="Frigelar" style="--h:30px" loading="lazy" /></li>
+      <li><img src="assets/clientes/logo-global-prime.png" alt="Global Prime" style="--h:32px" loading="lazy" /></li>
+      <li><img src="assets/clientes/logo-dellamed.png" alt="Dellamed" style="--h:23px" loading="lazy" /></li>
+      <li><img src="assets/clientes/logo-ecofitus.png" alt="Ecofitus" style="--h:34px" loading="lazy" /></li>
+      <li><img src="assets/clientes/logo-central.png" alt="Central Importadora Têxtil" style="--h:34px" loading="lazy" /></li>
+      <li><img src="assets/clientes/logo-abvtex.png" alt="ABVTEX" style="--h:30px" loading="lazy" /></li>
+      <li><img src="assets/clientes/logo-ast.png" alt="AST Facilities" style="--h:42px" loading="lazy" /></li>
+      <li><img src="assets/clientes/logo-wecan.png" alt="WeCan BR" style="--h:46px" loading="lazy" /></li>
+    </ul>
+  </div>
+</section>
+
 <!-- ═══════════ EQUIPE ═══════════ -->
 <section id="equipe" data-screen-label="08 Sócios">
   <div class="wrap">
@@ -1631,7 +1683,7 @@ image-slot {
       <div class="partner">
         <div class="partner-id">
           <div class="partner-photo">
-            <img src="assets/photos/socio-henry.png" alt="Henry Costa, sócio TW Consulting" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" loading="lazy" />
+            <img src="assets/photos/socio-henry-mesa.jpg" alt="Henry Costa, sócio TW Consulting" width="800" height="1000" loading="lazy" decoding="async" />
           </div>
           <div class="partner-id-text">
             <span class="tag">/ 001</span>
@@ -1652,7 +1704,7 @@ image-slot {
       <div class="partner">
         <div class="partner-id">
           <div class="partner-photo">
-            <img src="assets/photos/socio-miguel.png" alt="Miguel Vieira, sócio TW Consulting" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" loading="lazy" />
+            <img src="assets/photos/socio-miguel-mesa.jpg" alt="Miguel Vieira, sócio TW Consulting" width="800" height="1000" loading="lazy" decoding="async" />
           </div>
           <div class="partner-id-text">
             <span class="tag">/ 002</span>
@@ -1673,7 +1725,7 @@ image-slot {
       <div class="partner">
         <div class="partner-id">
           <div class="partner-photo">
-            <img src="assets/photos/socio-adriana.png" alt="Adriana Hirano, sócia TW Consulting" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" loading="lazy" />
+            <img src="assets/photos/socio-adriana-mesa.jpg" alt="Adriana Hirano, sócia TW Consulting" width="800" height="1000" loading="lazy" decoding="async" />
           </div>
           <div class="partner-id-text">
             <span class="tag">/ 003</span>
@@ -1801,6 +1853,7 @@ image-slot {
       <div class="foot-col">
         <h5>Empresa</h5>
         <ul>
+          <li><a href="clientes.html">Clientes</a></li>
           <li><a href="#equipe">Sócios</a></li>
           <li><a href="#abordagem">Abordagem</a></li>
           <li><a href="#quando">Quando chamar</a></li>

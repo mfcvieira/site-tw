@@ -192,6 +192,11 @@
     .quem-stat:first-child { padding-top: 0; }
   }
 
+  /* ═══════════ FOTO DOS SÓCIOS ═══════════ */
+  .quem-foto { max-width: 1080px; margin: 0 auto 56px; }
+  .quem-foto img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid rgba(246,244,238,0.14); }
+  @media (max-width: 900px) { .quem-foto { margin-bottom: 40px; } }
+
   /* ═══════════ TW SIGNATURE ═══════════ */
   .tw-signature {
     margin-top: 64px;
@@ -498,6 +503,13 @@
   }
   .nav-mobile-menu a:hover { color: var(--ink); }
   .nav-mobile-menu .btn { width: 100%; text-align: center; margin-top: 24px; padding: 12px 16px; }
+  /* Menu com 7 itens: sem quebra de linha; abaixo de 1180px vira menu recolhido */
+  .nav-links a { white-space: nowrap; }
+  @media (max-width: 1280px) and (min-width: 1181px) { .nav-links { gap: 22px; } }
+  @media (max-width: 1180px) {
+    .nav-links, .nav-right { display: none; }
+    .nav-menu-toggle { display: flex; grid-column: 3; }
+  }
   </style>
 </head>
 <body>
@@ -516,6 +528,7 @@
       <a href="index.html#solucoes">Soluções</a>
       <a href="index.html#edge">TW Edge</a>
       <a href="index.html#abordagem">Abordagem</a>
+      <a href="clientes.html">Clientes</a>
       <a href="index.html#equipe">Sócios</a>
       <a href="quem-somos.html" class="active">Quem somos</a>
       <a href="index.html#contato">Contato</a>
@@ -535,6 +548,7 @@
   <a href="index.html#solucoes">Soluções</a>
   <a href="index.html#edge">TW Edge</a>
   <a href="index.html#abordagem">Abordagem</a>
+  <a href="clientes.html">Clientes</a>
   <a href="index.html#equipe">Sócios</a>
   <a href="index.html#contato">Contato</a>
   <a href="index.html#contato" class="btn btn--teal" style="margin-top:24px;">Falar com sócio</a>
@@ -548,6 +562,10 @@
     <div class="quem-hero reveal">
       <h2>Consultoria especializada em <em>transformação de negócios</em>, estratégia e M&amp;A</h2>
     </div>
+
+    <figure class="quem-foto reveal">
+      <img src="assets/photos/socios-tw.jpg" alt="Henry Costa, Miguel Vieira e Adriana Hirano, sócios da TW Consulting" width="1600" height="900" loading="lazy" decoding="async" />
+    </figure>
 
     <div class="quem-stats reveal">
       <div class="quem-stat">
@@ -737,6 +755,7 @@
         <h5>Empresa</h5>
         <ul>
           <li><a href="quem-somos.html">Quem somos</a></li>
+          <li><a href="clientes.html">Clientes</a></li>
           <li><a href="index.html#equipe">Sócios</a></li>
           <li><a href="index.html#abordagem">Abordagem</a></li>
           <li><a href="index.html#contato">Contato</a></li>
